@@ -3375,6 +3375,28 @@ console.log("Average Rating: ", avg);
 
 // 21 - String.replace()
 
+// let text = "Mr Blue has a blue house and a blue car";
+// console.log(text.replace("blue", "red"));
+
+// let result = text.replace("blue", (match) => {
+//   return match.toUpperCase();
+// });
+
+// console.log(result);
+
+// result = text.replace(/blue/g, "red");
+// console.log(result);
+
+// result = text.replace(/blue/gi, "red");
+// console.log(result);
+
+// result = text.replace(/blue/gi, (match) => {
+//   return match.toUpperCase();
+// });
+// console.log(result);
+
+// 22 - String.replaceAll()
+
 let text = "Mr Blue has a blue house and a blue car";
 
 // ======================================
