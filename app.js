@@ -2907,11 +2907,11 @@ for (let i = 0; i < words1.length; i++) {
 }
 */
 
-const magicSquare = [
-  [2, 7, 6],
-  [9, 5, 1],
-  [4, 3, 8],
-];
+// const magicSquare = [
+//   [2, 7, 6],
+//   [9, 5, 1],
+//   [4, 3, 8],
+// ];
 
 // for (let i = 0; i < magicSquare.length; i++) {
 //   // console.log(magicSquare[i]);
@@ -3397,7 +3397,60 @@ console.log("Average Rating: ", avg);
 
 // 22 - String.replaceAll()
 
-let text = "Mr Blue has a blue house and a blue car";
+// let text = "Mr Blue has a blue house and a blue car";
+// console.log(text.replaceAll("blue", "red"));
+// let result = text.replaceAll("blue", (match) => {
+//   return match.toUpperCase();
+// });
+// console.log(result);
+// result = text.replaceAll(/blue/g, "red");
+// console.log(result);
+
+// result = text.replaceAll(/blue/gi, "red");
+// console.log(result);
+
+// result = text.replaceAll(/blue/gi, (match) => {
+//   return match.toUpperCase();
+// });
+// console.log(result);
+
+// result = text.replaceAll(/blue/gi, "powerup".toUpperCase());
+// console.log(result);
+
+// // result = text.replaceAll(/blue/, "red"); // error
+// console.log(result);
+
+// 23 - String.charCodeAt() 24 - String.codePointAt()
+
+// 25 - String.fromCharCode() 26 - String.fromCodePoint()
+
+// 27 - String.normalize()
+
+// 28 - String.toLowerCase() 29 - String.toUpperCase()
+
+// const greeting = "hello WORLD!";
+// console.log(greeting.toLowerCase());
+// console.log(greeting.toUpperCase());
+
+// 30 - String.toLocaleUpperCase() 31 - String.toLocaleLowerCase()
+
+// const lower = "istanbul";
+// console.log(lower.toLocaleUpperCase("en-US")); // English US
+
+// const upper = lower.toLocaleUpperCase("tr");
+// console.log(upper); // Turkish
+
+// console.log(upper.toLocaleLowerCase("en-US"));
+
+// console.log(upper.toLocaleLowerCase("tr"));
+
+// 32 - String.toString() 33 - String.valueOf()
+
+// const stringObject = new String("Hello World!");
+// console.log(stringObject.toString());
+// console.log(stringObject.valueOf());
+
+// 34 - String.raw()
 
 // ======================================
 // 08 - Writing Reusable Code with Functions
@@ -3405,19 +3458,250 @@ let text = "Mr Blue has a blue house and a blue car";
 
 // 001 Our First Function
 // ======================================
+// GOALS
+// write valid functions
+// write functions with arguments
+// compare function expressions & function statements
+// write a bunch of functions
 
-// 002
+/*
+// NOTES
+
+// // STEP 1: Define the function:
+// function grumpus() {
+//   console.log("ugh...you again...");
+//   console.log("FOR THE LAST TIME...");
+//   console.log("LEAVE ME ALONE!!!");
+// }
+// // STEP 2: Call the function:
+// grumpus();
+// grumpus();
+// grumpus();
+
+// for (let i = 0; i < 50; i++) {
+//   grumpus();
+// }
+*/
+
+// My Practice
+// FUNCTIONS
+// Reusable procedures
+// Functions allow us to write reusable, modular code
+// We define a "chunk" of code that we can then execute at a later point.
+
+// function grumps() {
+//   console.log("iam bharu");
+//   console.log("iam fine");
+//   console.log("iam better");
+// }
+
+// // grumps();
+// // grumps();
+// // grumps();
+// // console.log(grumps);
+
+// // looping
+// for (let i = 0; i < 3; i++) {
+//   grumps();
+// }
+
+// 002 Dice Roll Function
 // ======================================
-// 003
+
+/*
+// NOTES
+
+// // Define our first function
+// function rollDie() {
+//   // Pick a random number from 1-6
+//   // - Math.random() gives us a decimal from 0-1
+//   // - We multiply by 6, so now we have a random number between 0 up to 6 (but not including 6).  Something likee 3.490823 or 5.991234
+//   // - Then we floor to remove the decimal,  leaving us with a whole number from 0-5
+//   //- Lastly we add one, to get a number between 1 and 6
+//   let roll = Math.floor(Math.random() * 6) + 1;
+//   console.log(`Rolled: ${roll}`);
+// }
+
+// // We can call functions inside of other functions!
+// function throwDice() {
+//   rollDie();
+//   rollDie();
+//   rollDie();
+//   rollDie();
+//   rollDie();
+//   rollDie();
+// }
+
+// //Call it!
+// throwDice();
+*/
+
+// My Practice
+
+// function rollDie() {
+//   let roll = Math.floor(Math.random() * 6) + 1;
+//   console.log(`Rolled: ${roll}`);
+// }
+
+// there are many methods to throw dice 6 times
+
+// METHOD 1 typing 6 times
+
+// rollDie();
+// rollDie();
+// rollDie();
+// rollDie();
+// rollDie();
+// rollDie();
+
+// METHOD 2 looping
+
+// for (let i = 0; i < 6; i++) {
+//   rollDie();
+// }
+
+// METHOD 3 // imp Function within a function
+
+// function throwDice() {
+//   rollDie();
+//   rollDie();
+//   rollDie();
+//   rollDie();
+//   rollDie();
+//   rollDie();
+// }
+
+// throwDice();
+// console.log(rollDie);
+// console.log(throwDice);
+
+// 003 Introducing Arguments
 // ======================================
+
+/*
+// NOTES 
+
+// function greet() {
+// 	console.log('Hi');
+// }
+
+// // greet now expects a single argument
+// function greet(nickname) {
+//   console.log(`Hi, ${nickname}!`);
+// }
+// greet("Sansa");
+// greet("Ramsay");
+
+// // EXAMPLE 2
+// function rollDie() {
+//   let roll = Math.floor(Math.random() * 6) + 1;
+//   console.log(`Rolled: ${roll}`);
+// }
+// // We can now specify how many dice to roll!
+// function throwDice(numRolls) {
+//   for (let i = 0; i < numRolls; i++) {
+//     rollDie();
+//   }
+// }
+
+// throwDice(2);
+// throwDice(6);
+*/
+
 // 004
 // ======================================
 // 005
 // ======================================
 // 006
 // ======================================
-// 007
+
+// 007 Function Challenge 1 password Validator
 // ======================================
+
+/*
+// NOTES
+
+// // Write a isValidPassword function
+// // It accepts 2 arguments: password and username
+// // Password must:
+// //	- be at least 8 characters
+// //  - cannot contain spaces
+// //  - cannot contain the username
+// // If all requirements are met, return true.
+// //Otherwise: false
+
+// // isValidPassword('89Fjj1nms', 'dogLuvr');  //true
+// // isValidPassword('dogLuvr123!', 'dogLuvr') //false
+// // isValidPassword('hello1', 'dogLuvr') //false
+
+// function isValidPassword(password, username) {
+//   if (password.length < 8) {
+//     return false;
+//   }
+//   if (password.indexOf(" ") !== -1) {
+//     return false;
+//   }
+//   if (password.indexOf(username) !== -1) {
+//     return false;
+//   }
+//   return true;
+// }
+
+// function isValidPassword(password, username) {
+//   if (
+//     password.length < 8 ||
+//     password.indexOf(" ") !== -1 ||
+//     password.indexOf(username) !== -1
+//   ) {
+//     return false;
+//   }
+//   return true;
+// }
+
+// function isValidPassword(password, username) {
+//   const tooShort = password.length < 8;
+//   const hasSpace = password.indexOf(" ") !== -1;
+//   const tooSimilar = password.indexOf(username) !== -1;
+//   if (tooShort || hasSpace || tooSimilar) return false;
+//   return true;
+// }
+
+// function isValidPassword(password, username) {
+//   const tooShort = password.length < 8;
+//   const hasSpace = password.indexOf(" ") !== -1;
+//   const tooSimilar = password.indexOf(username) !== -1;
+//   if (!tooShort && !hasSpace && !tooSimilar) return true;
+//   return false;
+// }
+
+// function isValidPassword(password, username) {
+//   const tooShort = password.length < 8;
+//   const hasSpace = password.indexOf(" ") !== -1;
+//   const tooSimilar = password.indexOf(username) !== -1;
+//   return !tooShort && !hasSpace && !tooSimilar;
+// }
+*/
+
+// My Practice
+
+// // Write a isValidPassword function
+// // It accepts 2 arguments: password and username
+// // Password must:
+// //	- be at least 8 characters
+// //  - cannot contain spaces
+// //  - cannot contain the username
+// // If all requirements are met, return true.
+// //Otherwise: false
+
+function isValidPassword(password, username) {
+  if (password.length < 8) {
+    return false;
+  }
+  if (password.indexOf(" ") !== -1) {
+    return false;
+  }
+}
+
 // 008
 // ======================================
 // 009
@@ -3426,7 +3710,14 @@ let text = "Mr Blue has a blue house and a blue car";
 // ======================================
 
 // ======================================
-// 08 - Writing Reusable Code with Functions
+// 09 - An Advanced Look at Functions
+// ======================================
+
+// 001
+// ======================================
+
+// ======================================
+// 10 - Apply Functions to Collections of Data
 // ======================================
 
 // 001
