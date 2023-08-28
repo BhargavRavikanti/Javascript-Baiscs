@@ -3693,17 +3693,90 @@ console.log("Average Rating: ", avg);
 // // If all requirements are met, return true.
 // //Otherwise: false
 
-function isValidPassword(password, username) {
-  if (password.length < 8) {
-    return false;
-  }
-  if (password.indexOf(" ") !== -1) {
-    return false;
-  }
-}
+// function isValidPassword(password, username) {
+//   if (password.length < 8) {
+//     return false;
+//   }
+//   if (password.indexOf(" ") !== -1) {
+//     return false;
+//   }
+//   if (password.indexOf(username) !== -1) {
+//     return false;
+//   }
+//   return true;
+// }
 
-// 008
+// console.log(isValidPassword("89Fjj1nms", "dogLuvr"));
+// console.log(isValidPassword("89Fjj1", "dogLuv"));
+// console.log(isValidPassword("bharu1234", "bharu"));
+// console.log(isValidPassword("1234bharu1234", "bharu"));
+// console.log(isValidPassword("1234haru1234", "bharu"));
+// console.log(isValidPassword("1234haru 1234", "bharu"));
+
+// function isValidPassword(password, username) {
+//   if (
+//     password.length < 8 ||
+//     password.indexOf(" ") !== -1 ||
+//     password.indexOf(username) !== -1 ||
+//     username.indexOf(" ") !== -1
+//   ) {
+//     return false;
+//   }
+//   return true;
+// }
+
+// console.log(isValidPassword("bharu123", "dhanush"));
+// console.log(isValidPassword("bharu12 3", "dhanush"));
+// console.log(isValidPassword("bharu123", "d hanush"));
+
+// function isValidPassword(password, username) {
+//   const tooShort = password.length < 8;
+//   const hasSpace = password.indexOf(" ") !== -1;
+//   const tooSimilar = password.indexOf(username) !== -1;
+//   const hasSpaceUsername = username.indexOf(" ") !== -1;
+//   if (tooShort || hasSpace || tooSimilar) return false;
+//   return true;
+// }
+
+// console.log(isValidPassword("bharu123", "dhanush"));
+// console.log(isValidPassword("bharu12 3", "dhanush"));
+// console.log(isValidPassword("bharu12", "dhanush"));
+// console.log(isValidPassword("bharu123", "d hanush"));
+// console.log(isValidPassword("bharu123", "dhanushbharu"));
+// console.log(isValidPassword("bharu123", "bharu123"));
+
+// 008 Function Challenge 2 Average
 // ======================================
+
+/*
+// NOTES
+
+// // Write a function to find the average value in an array of numbers
+// //avg([0,50]) //25
+// //avg([75,76,80,95,100]) //85.2
+
+// function avg(arr) {
+//   let total = 0;
+//   //loop over each num
+//   for (let num of arr) {
+//     //add them together
+//     total += num;
+//   }
+//   //divide by number of nums
+//   return total / arr.length;
+// }
+*/
+
+// My Practice
+
+// function avg(arr) {
+//   let total = 0;
+//   for (let num of arr) {
+//     total += num;
+//   }
+//   return total / arr.length;
+// }
+
 // 009
 // ======================================
 // 010
