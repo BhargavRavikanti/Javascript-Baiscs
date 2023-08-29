@@ -3577,6 +3577,21 @@ console.log("Average Rating: ", avg);
 
 // 003 Introducing Arguments
 // ======================================
+// INPUTS Right now, our simple functions accept zero inputs. They behave the same way every time.
+// function greet() {
+//   console.log("Hi");
+// }
+// greet();
+// greet();
+// greet();
+// every time we get same result without inputs
+
+// ARGUMENTS we can also write functions that accept inputs, called arguments
+// function greet(name) {
+//   console.log("Hi", name);
+// }
+// greet("bharu"); // with inputs we are getting what we enter in arguments values
+// greet("dhanush");
 
 /*
 // NOTES 
@@ -3608,12 +3623,278 @@ console.log("Average Rating: ", avg);
 // throwDice(6);
 */
 
-// 004
+// My Practice
+
+// without inputs
+// function greet() {
+//   console.log("Hi");
+// }
+// greet();
+// greet();
+// greet();
+
+// with inputs
+// function greet(nickname) {
+//   console.log(`Hi, ${nickname}!`);
+// }
+// greet("bharu");
+// greet("dhanush");
+// greet("ram");
+
+// We have seen this before
+// No inputs
+// console.log("hello".toUpperCase());
+// // Arguments
+// // Different inputs
+// console.log("hello".indexOf("h"));
+// console.log("hello".indexOf("o"));
+// console.log("hello".indexOf("p"));
+
+// Example 2
+// function rollDie() {
+//   let roll = Math.floor(Math.random() * 6) + 1;
+//   console.log(`Rolled:${roll}`);
+// }
+// function throwDice(numRoles) {
+//   for (let i = 0; i < numRoles; i++) {
+//     rollDie();
+//   }
+// }
+
+// throwDice(5);
+// throwDice(2);
+// throwDice(4);
+
+// 004 Functions With Multiple Arguments
 // ======================================
-// 005
+
+/*
+// Notes
+
+// function square(num) {
+//   console.log(num * num);
+// }
+
+// function sum(x, y) {
+//   console.log(x + y);
+// }
+
+// function divide(a, b) {
+//   console.log(a / b);
+// }
+*/
+
+// My Practice
+
+// function square(num) {
+//   console.log(num * num);
+// }
+// square(4);
+// square(5);
+// square(7);
+
+// function sum(x, y) {
+//   console.log(x + y);
+// }
+// sum(2, 4);
+// sum(2, 9);
+// sum(10, 9);
+// sum(10); // second argument is undefined // NaN
+// console.log(5 / undefined);
+// // sum(,10); // error
+
+// function subtraction(x, y) {
+//   console.log(x - y);
+// }
+// subtraction(4, 2);
+// subtraction(20, 2);
+// subtraction(2, 5);
+// subtraction(2);
+
+// function division(x, y) {
+//   console.log(x / y);
+// }
+// division(10, 2);
+// division(10, 5);
+// division(10, 3);
+// division(10, 15);
+
+// function getRemainder(x, y) {
+//   console.log(x % y);
+// }
+// getRemainder(10, 4);
+// getRemainder(9, 4);
+// getRemainder(9, 8);
+
+// 005 The Return statement
 // ======================================
-// 006
+// RETURN
+// Built-in methods RETURN values when we call them.We can store these values:
+
+// NO RETURN
+// Our functions print values out, but cannot store or capture in variables
+
+// With RETURN
+// Now we can capture or store a return value in variable!
+
+// RETURN
+// The return statement ends function execution AND specifies the value to be returned by that function
+
+/*
+// NOTES
+
+// // No return!
+// function add(x, y) {
+//   console.log(x + y);
+// }
+
+// // This version returns the sum of x & y;
+// function add(x, y) {
+//   return x + y;
+// }
+
+// // We can capture the return value:
+// const total = add(4, 9); //13
+*/
+
+// My Pratice
+
+// const yell = "I will end you".toUpperCase();
+// console.log(yell);
+
+// const idx = ["a", "b", "c"].indexOf("c");
+// console.log(idx);
+
+// console.log("hello".toUpperCase());
+
+// "hello".toUpperCase(); // nothing happens
+
+// const scream = "hello".toUpperCase();
+// console.log(scream);
+
+// NO RETURN
+// Our functions print values out, but cannot store or capture in variables
+
+// function add(x, y) {
+//   console.log(x + y);
+// }
+// add(1, 2);
+// const sum = add(1, 2); // only can print in console
+// console.log(sum); // we cannot store add(1,2) value in sum variable
+
+// With RETURN
+// Now we can capture or store a return value in variables!
+
+// function add(x, y) {
+//   return x + y; // RETURN!
+// }
+
+// const sum = add(10, 16);
+// console.log(sum); // we can now store or capture add(1,2) value in sum variable bcoz RETURN
+// const answer = add(100, 200);
+// console.log(answer);
+// const addition = add(12, 12);
+// console.log(addition);
+
+// 006 More on Return Values
 // ======================================
+// RETURN
+// The return statement ends function execution AND specifies the value to be returned by that function
+
+/*
+// NOTES
+
+// function square(x) {
+//   return x * x;
+//   console.log("ALL DONE!"); //this NEVER runs;
+// }
+
+// // One way of writing this function
+// function isPurple(color) {
+//   if (color.toLowerCase() === "purple") {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+
+// // We don't need the else!
+// function isPurple(color) {
+//   if (color.toLowerCase() === "purple") {
+//     return true;
+//   }
+//   return false;
+// }
+
+// // An even shorter way!
+// function isPurple(color) {
+//   return color.toLowerCase() === "purple";
+// }
+
+// function containsPurple(arr) {
+//   for (let color of arr) {
+//     if (color === "purple" || color === "magenta") {
+//       return true;
+//     }
+//   }
+//   return false;
+// }
+*/
+
+// My Practice
+
+// RETURN
+// The return statement ends function execution AND specifies the value to be returned by that function
+// function square(x) {
+//   return x * x;
+//   console.log("ALL DONE!"); // this code never runs
+// }
+
+// function isPurple(color) {
+//   if (color.toLowerCase() === "purple") {
+//     return true;
+//     console.log("YAY!"); // never runs
+//   } else {
+//     return false;
+//   }
+// }
+// console.log(isPurple("blue"));
+// console.log(isPurple("purple"));
+// console.log(isPurple("PURPLE"));
+// console.log(isPurple("PURPPLEE"));
+
+// better way and shorter way, We don't need the else!
+// function isPurple(color) {
+//   if (color.toLowerCase() === "purple") {
+//     return true;
+//   }
+//   return false;
+// }
+// console.log(isPurple("purple"));
+// console.log(isPurple("purplesed"));
+
+// Even shorter way
+// function isPurple(color) {
+//   return color.toLowerCase() === "purple";
+// }
+// console.log(isPurple("purple"));
+// console.log(isPurple("PURPLE"));
+// console.log(isPurple("PURPPLEE"));
+
+// Another Example
+// function containsPurple(arr) {
+//   for (let color of arr) {
+//     if (color === "purple" || color === "magenta") {
+//       return true;
+//     }
+//     // return false; // if return before completing the loop it checks only green is there, if not there it gives false
+//   }
+//   return false; // return should be at the end of the loop so it checks first green, ...then last purple purple is there so returns true
+// }
+// console.log(containsPurple(["green", "purple"]));
+// console.log(containsPurple(["green", "yellow", "purple"]));
+// console.log(containsPurple(["green", "yellow", "purple"]));
+// console.log(containsPurple(["green", "yellow", "purpleee"]));
 
 // 007 Function Challenge 1 password Validator
 // ======================================
@@ -3777,10 +4058,237 @@ console.log("Average Rating: ", avg);
 //   return total / arr.length;
 // }
 
-// 009
+// console.log(avg([20, 20, 20, 20, 10]));
+// console.log(avg([0, 50]));
+// console.log(avg([75, 76, 80, 95, 100]));
+
+// 009 Function Challenge 3 Pangrams
 // ======================================
-// 010
+
+/*
+// NOTES
+
+// // A pangram is a sentence that contains every letter of the alphabet, like:
+// //"The quick brown fox jumps over the lazy dog"
+
+// // Write a function called isPangram, which checks to see if a given sentence contains every letter of the alphabet.  Make sure you igore string casing!
+
+// // isPangram('The five boxing wizards jump quickly') //true
+// // isPangram('The five boxing wizards jump quick') //false
+
+// // Version using indexOf
+// function isPangram(sentence) {
+//   let lowerCased = sentence.toLowerCase();
+//   for (let char of "abcdefghijklmnopqrstuvwxyz") {
+//     if (lowerCased.indexOf(char) === -1) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+
+// // Version using string.includes()
+// // Nice and clean, but not supported in IE
+// function isPangram(sentence) {
+//   let lowerCased = sentence.toLowerCase();
+//   for (let char of "abcdefghijklmnopqrstuvwxyz") {
+//     if (!lowerCased.includes(char)) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+*/
+
+// My Practice
+
+// Method 1
+// function isPangram(sentence) {
+//   let lowerCased = sentence.toLowerCase();
+//   for (let char of "abcdefghijklmnopqrstuvwxyz") {
+//     if (lowerCased.indexOf(char) === -1) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+
+// console.log(isPangram("the five boxing wizards jump quickly")); //true
+// console.log(isPangram("The five boxing wizards jump quicklY")); //false
+// console.log(isPangram("The five boxing wizards jump quick")); //false // not a pangram
+// console.log(isPangram("Iam bharu rockzz")); //false // not a pangram
+
+// Method 2
+// function isPangram(sentence) {
+//   let lowerCased = sentence.toLowerCase();
+//   for (let char of "abcdefghijklmnopqrstuvwxyz") {
+//     if (!lowerCased.includes(char)) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+// console.log(isPangram("the five boxing wizards jump quickly")); //true
+// console.log(isPangram("The five boxing wizards jump quicklY")); //false
+// console.log(isPangram("The five boxing wizards jump quick")); //false // not a pangram
+// console.log(isPangram("Iam bharu rockzz")); //false // not a pangram
+
+// 010 Function Challenge 4 Get Playing Card
 // ======================================
+
+/*
+// NOTES
+
+// Write a getCard() function which returns a random playing card object, like:
+// 		{
+// 			value: 'K'
+// 			suit: 'clubs'
+// 		}
+//Pick a random value from:
+//----1,2,3,4,5,6,7,8,9,10,J,Q,K,A
+//Pick a random suit from:
+//----clubs,spades, hearts, diamonds
+//Return both in an object
+
+// function getCard() {
+// 	const values = [
+// 		'1',
+// 		'2',
+// 		'3',
+// 		'4',
+// 		'5',
+// 		'6',
+// 		'7',
+// 		'8',
+// 		'9',
+// 		'10',
+// 		'J',
+// 		'Q',
+// 		'K',
+// 		'A'
+// 	];
+// 	const valIdx = Math.floor(Math.random() * values.length);
+// 	const value = values[valIdx];
+
+// 	const suits = [ 'clubs', 'spades', 'hearts', 'diamonds' ];
+// 	const suitIdx = Math.floor(Math.random() * suits.length);
+// 	const suit = suits[suitIdx];
+// 	return { value: value, suit: suit };
+// }
+
+// function pick(arr) {
+//   //return random element from arr
+//   const idx = Math.floor(Math.random() * arr.length);
+//   return arr[idx];
+// }
+
+// function getCard() {
+//   const values = [
+//     "1",
+//     "2",
+//     "3",
+//     "4",
+//     "5",
+//     "6",
+//     "7",
+//     "8",
+//     "9",
+//     "10",
+//     "J",
+//     "Q",
+//     "K",
+//     "A",
+//   ];
+//   const suits = ["clubs", "spades", "hearts", "diamonds"];
+//   return { value: pick(values), suit: pick(suits) };
+// }
+*/
+
+// My Practice
+
+// Write a getCard() function which returns a random playing card object, like:
+// 		{
+// 			value: 'K'
+// 			suit: 'clubs'
+// 		}
+//Pick a random value from:
+//----1,2,3,4,5,6,7,8,9,10,J,Q,K,A
+//Pick a random suit from:
+//----clubs,spades, hearts, diamonds
+//Return both in an object
+
+// Method 1
+// function getCard() {
+//   const values = [
+//     "1",
+//     "2",
+//     "3",
+//     "4",
+//     "5",
+//     "6",
+//     "7",
+//     "8",
+//     "9",
+//     "10",
+//     "J",
+//     "Q",
+//     "K",
+//     "A",
+//   ];
+//   const valIdx = Math.floor(Math.random() * values.length);
+//   const value = values[valIdx];
+
+//   const suits = ["clubs", "spades", "hearts", "diamonds"];
+//   const suitsIdx = Math.floor(Math.random() * suits.length);
+//   const suit = suits[suitsIdx];
+
+//   return { value: value, suit: suit };
+//   // console.log(value, suit);
+// }
+// getCard();
+
+// Method 2
+
+// Write a getCard() function which returns a random playing card object, like:
+// 		{
+// 			value: 'K'
+// 			suit: 'clubs'
+// 		}
+//Pick a random value from:
+//----1,2,3,4,5,6,7,8,9,10,J,Q,K,A
+//Pick a random suit from:
+//----clubs,spades, hearts, diamonds
+//Return both in an object
+
+// function pick(arr) {
+//   const idx = Math.floor(Math.random() * arr.length);
+//   return arr[idx];
+// }
+
+// function getCard() {
+//   const values = [
+//     "1",
+//     "2",
+//     "3",
+//     "4",
+//     "5",
+//     "6",
+//     "7",
+//     "8",
+//     "9",
+//     "10",
+//     "J",
+//     "Q",
+//     "K",
+//     "A",
+//   ];
+
+//   const suits = ["clubs", "spades", "hearts", "diamonds"];
+
+//   return { value: pick(values), suit: pick(suits) };
+// }
+
+// console.log(getCard());
 
 // ======================================
 // 09 - An Advanced Look at Functions

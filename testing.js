@@ -16,3 +16,16 @@
 //   input = prompt("what would you like to do?");
 // }
 // console.log("OK, YOU QUIT THE APP");
+
+// function isPangram(sentence) {
+//   let lowerCased = sentence.toLowerCase();
+//   for (let char of "abcdefghijklmnopqrstuvwxyz") {
+//     if (lowerCased.indexOf(char) === -1) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+// console.log(isPangram("the five boxing wizards jump quickly"));
+// console.log(isPangram("the five boxing wizards jump quicklY"));
+// console.log(isPangram("the five boxing wizards jump quick"));
