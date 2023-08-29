@@ -29,3 +29,14 @@
 // console.log(isPangram("the five boxing wizards jump quickly"));
 // console.log(isPangram("the five boxing wizards jump quicklY"));
 // console.log(isPangram("the five boxing wizards jump quick"));
+
+// function tripleArr(array) {
+//   const thrippledArray = [];
+//   for (let num of array) {
+//     let thriple = num * 3;
+//     thrippledArray.push(thriple);
+//   }
+//   return thrippledArray;
+// }
+// console.log(tripleArr([1, 2, 3]));
+// console.log(tripleArr([4, 4, 4]));

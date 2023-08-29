@@ -4294,7 +4294,417 @@ console.log("Average Rating: ", avg);
 // 09 - An Advanced Look at Functions
 // ======================================
 
-// 001
+// 001 Function Scope
+// ======================================
+// FUNCTIONS IN DETAIL
+// Imporant things you should know about functions
+// GOALS
+// Understand Scope
+// Write Higher Order Functions
+// Pass functions as callbacks
+
+/*
+// NOTES
+
+// //These variables are SCOPED to the function
+// function lol() {
+//   let person = "Tom";
+//   const age = 45;
+//   var color = "teal";
+//   console.log(age);
+// }
+// // These variables are SCOPED to changeColor()
+// function changeColor() {
+//   let color = "purple";
+//   const age = 19;
+//   console.log(age);
+// }
+// lol();
+// changeColor();
+// age; //DOES NOT EXIST!
+// color; //DOES NOT EXIST!
+// person; //DOES NOT EXIST!
+
+// let bird = "mandarin duck";
+
+// function birdWatch() {
+//   //this bird is scoped to birdWatch()
+//   let bird = "golden pheasant";
+//   console.log(bird); //"golden pheasant"
+// }
+// birdWatch();
+// console.log(bird); //"mandarin duck"
+*/
+
+// My Practice
+
+// FUNCTIONS IN DETAIL
+// Imporant things you should know about functions
+// GOALS
+// Understand Scope
+// Write Higher Order Functions
+// Pass functions as callbacks
+
+// SCOPE
+// Variable "visibility"
+// The location where a variable is defined dictates WHERE WE HAVE ACCESS TO THE VARIABLE
+
+// FUNCTION SCOPE
+function lol() {
+  let person = "Tom";
+  console.log(person);
+  const age = 45;
+  console.log(age);
+  var color = "teal";
+  console.log(color);
+}
+// lol(); // we can access person age color inside the function
+// console.log(person);
+// console.log(age);
+// console.log(color); // person age color are scoped to lol() means we cannot access out side of that function
+
+// function lol() {
+//   let person = "Tom";
+//   const age = 45;
+//   var color = "teal";
+//   console.log(age);
+// }
+
+// function changeColor() {
+//   let color = "purple";
+//   const age = 19;
+//   console.log(age);
+// }
+// lol();
+// changeColor();
+
+// Another Example
+// let bird = "mandarin duck"; // let const var behave the same way for function scope
+// const bird = "mandarin duck";
+// var bird = "mandarin duck";
+
+// function birdWatch() {
+//   // let bird = "golden pheasant";
+//   // const bird = "golden pheasant";
+//   var bird = "golden pheasant";
+//   console.log(bird);
+// }
+// birdWatch();
+// console.log(bird);
+
+// 002 Block Scope
+// ======================================
+
+/*
+// NOTES
+
+// // let & const are BLOCK SCOPED
+// if (true) {
+//   const animal = "eel";
+//   console.log(animal); //'eel'
+// }
+// console.log(animal); //NOT DEFINED!
+
+// // VAR IS NOT BLOCK SCOPED
+// if (true) {
+//   var animal = "eel";
+//   console.log(animal); //'eel'
+// }
+// console.log(animal); //'eel'
+
+// // let animals = ['grizzly bear', 'panda bear', 'spectacled bear'];
+// // var i = 10;
+// // for (var i = 0; i < animals.length; i++) {
+// //   console.log(i, animals[i])
+// // }
+// // console.log(i)
+
+// // let animals = ['grizzly bear', 'panda bear', 'spectacled bear'];
+// // let i = 10;
+// // for (let i = 0; i < animals.length; i++) {
+// //   console.log(i, animals[i])
+// // }
+// // console.log(i)
+
+// function doubleArr(arr) {
+//   const result = []; //scoped to the doubleArr function
+//   for (let num of arr) {
+//     let double = num * 2; //scoped to this loop
+//     result.push(double);
+//   }
+//   return result;
+// }
+*/
+
+// My Practice
+
+// if (true) {
+//   let animal = "eel";
+//   console.log(animal);
+// }
+// // console.log(animal); // animal is not defined // animal is not accessed at outside
+
+// if (true) {
+//   var animal = "eel";
+//   console.log(animal);
+// }
+// console.log(animal); // animal access to outside of the scope there is potentional problem
+
+// UNDERSTAND THIS
+// let animals = ["grizzly bear", "panda bear", "spectacled bear"];
+// var i = 10;
+// for (var i = 0; i < animals.length; i++) {
+//   console.log(i, animals[i]);
+// }
+// console.log(i); // the only i value we are getting is from loop // this is a problem we are not able to call declared i variable
+
+// UNDERSTAND THIS
+// let animals = ["grizzly bear", "panda bear", "spectacled bear"];
+// var i = 10;
+// for (let i = 0; i < animals.length; i++) {
+//   console.log(i, animals[i]);
+// }
+// console.log(i);
+
+// UNDERSTAND THIS
+// let animals = ["grizzly bear", "panda bear", "spectacled bear"];
+// let i = 10;
+// for (let i = 0; i < animals.length; i++) {
+//   console.log(i, animals[i]);
+// }
+// console.log(i); // i they exist in different scopes so they are not confliciting
+
+// function doubleArr(arr) {
+//   const result = [];
+//   for (let num of arr) {
+//     let double = num * 2;
+//     result.push(double);
+//   }
+//   return result;
+// }
+// console.log(doubleArr([2, 4]));
+// console.log(doubleArr([6, 12]));
+
+// 003 Lexical Scope
+// ======================================
+
+/*
+// NOTES
+
+function outer() {
+  let movie = 'Amadeus';
+
+  function inner() {
+    // let movie = "The Shining";
+
+    function extraInner() {
+      //movie is not defined in this function
+      //but it has access to parent function's variables
+      console.log(movie.toUpperCase())
+    }
+    extraInner();
+  }
+  inner();
+}
+
+outer(); //'AMADEUS'
+
+*/
+
+// My Practice
+
+// 004 Function Expressions
+// ======================================
+// FUNCTIONS EXPRESSIONS
+// There is another syntax we can use to define functions:
+// Function can be stored in variable because functions are objects
+// FUNCTIONS ARE OBJECTS
+// Functions can store in an array
+// Functions can be passed as an arguments
+
+/*
+// NOTES
+
+// // Function Statement
+// function add(x, y) {
+  //   return x + y;
+  // }
+
+  // // Function Expression (Anonymous)
+  // const sum = function (x, y) {
+    //   return x + y;
+    // };
+    
+    // // Function Expression (Named)
+    // const product = function multiply(x, y) {
+      //   return x * y;
+      // };
+      */
+
+// My Practice
+
+// // Function Statement
+// function add(x, y) {
+//   return x + y;
+// }
+// console.log(add(2, 3));
+
+// // Function Expression (Anonymous)
+// const add = function (x, y) {
+//   return x + y;
+// };
+// console.log(add(4, 5));
+// console.dir(add);
+
+// // Function Expression (Named)
+// const add = function sum(x, y) {
+//   return x, y;
+// };
+// console.log(add(3, 3));
+
+// // Function Expression (Named)
+// const product = function multiply(x, y) {
+//   return x * y;
+// };
+// console.log(product(3, 5));
+
+// 005 High Order Functions
+// ======================================
+// FUNCTIONS ARE OBJECTS
+// A function which takes another function as an argument or returns a function is known as higher order function.
+
+/*
+// NOTES
+
+// function add(x, y) {
+//   return x + y;
+// }
+
+// const subtract = function (x, y) {
+//   return x - y;
+// };
+
+// function multiply(x, y) {
+//   return x * y;
+// }
+
+// const divide = function (x, y) {
+//   return x / y;
+// };
+
+// //We can store functions in an array!
+// const operations = [add, subtract, multiply, divide];
+
+// //Loop over all the functions in operations
+// for (let func of operations) {
+//   let result = func(30, 5); //execute func!
+//   console.log(result);
+// }
+
+// // We can also store functions in objects!
+// const thing = {
+//   doSomething: multiply,
+// };
+// thing.doSomething(4, 5); //20
+*/
+
+// My Practice
+// A function which takes another function as an argument or returns a function is known as higher order function.
+
+function add(x, y) {
+  return x + y;
+}
+
+const subtract = function (x, y) {
+  return x - y;
+};
+
+function multiply(x, y) {
+  return x * y;
+}
+
+const divide = function (x, y) {
+  return x / y;
+};
+
+const operations = [add, subtract, multiply, divide];
+// console.log(operations[0]);
+// console.log(operations[1]);
+// console.log(add);
+// console.log(operations[1]());
+// console.log(operations[1](100, 4));
+// console.log(operations[0](94, 6));
+
+// for (let func of operations) {
+//   let result = func(30, 5);
+//   console.log(result);
+// }
+
+// by adding a function to an object is called method
+// const thing = {
+//   doSomething: multiply,
+// };
+// console.log(thing);
+// console.log(thing.doSomething(50, 2));
+
+// 006 Functions as Arguments
+// ======================================
+// HIGHER ORDER FUNCTIONS
+// A function which takes another function as an argument or returns a function is known as higher order function.
+
+/*
+// NOTES
+
+// // This function accepts another function as an argument
+// function callThreeTimes(f) {
+//   //And calls it 3 times:
+//   f();
+//   f();
+//   f();
+// }
+
+// function cry() {
+//   console.log("BOO HOO I'M SO SAD!");
+// }
+
+// function rage() {
+//   console.log("I HATE EVERYTHING!");
+// }
+
+// function repeatNTimes(action, num) {
+//   // call action (a function) num number of times
+//   for (let i = 0; i < num; i++) {
+//     action();
+//   }
+// }
+
+// repeatNTimes(rage, 13);
+
+// // Accepts 2 functions as arguments
+// // Randomly selects 1 to execute
+// function pickOne(f1, f2) {
+//   let rand = Math.random();
+//   if (rand < 0.5) {
+//     f1();
+//   } else {
+//     f2();
+//   }
+// }
+*/
+
+// My Practice
+// HIGHER ORDER FUNCTIONS
+// A function which takes another function as an argument or returns a function is known as higher order function.
+
+// 007 Functions as Return Values
+// ======================================
+
+// My Practice
+
+// 008 Callbacks
+// ======================================
+
+// 009 Hoisting
 // ======================================
 
 // ======================================
@@ -4302,4 +4712,6 @@ console.log("Average Rating: ", avg);
 // ======================================
 
 // 001
+// ======================================
+// 002
 // ======================================
