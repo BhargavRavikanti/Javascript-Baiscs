@@ -4650,7 +4650,8 @@ const operations = [add, subtract, multiply, divide];
 // 006 Functions as Arguments
 // ======================================
 // HIGHER ORDER FUNCTIONS
-// A function which takes another function as an argument or returns a function is known as higher order function.
+// A function which takes another function as an argument
+// or returns a function is known as higher order function.
 
 /*
 // NOTES
@@ -4693,8 +4694,66 @@ const operations = [add, subtract, multiply, divide];
 */
 
 // My Practice
+
 // HIGHER ORDER FUNCTIONS
-// A function which takes another function as an argument or returns a function is known as higher order function.
+// A function which takes another function as an argument
+// or returns a function is known as higher order function.
+
+// FUNCTIONS AS ARGUMENTS
+// function callTwice(func) {
+//   func();
+//   func();
+// }
+
+// function laugh() {
+//   console.log("hahahahahahah");
+// }
+
+// callTwice(laugh); // pass a function as an argument
+
+// function callThreeTimes(f) {
+//   f();
+//   f();
+//   f();
+// }
+
+// function cry() {
+//   console.log("iam sad");
+// }
+
+// function rage() {
+//   console.log("i hate everthing");
+// }
+
+// callThreeTimes(cry);
+// callThreeTimes(rage);
+// callThreeTimes(work);
+
+// function work() {
+//   console.log("i have work");
+// }
+
+// function repeatNTimes(action, num) {
+//   for (let i = 0; i < num; i++) {
+//     action();
+//   }
+// }
+
+// repeatNTimes(rage, 13);
+// repeatNTimes(cry, 13);
+// repeatNTimes(rage, 10);
+
+// function pickOne(f1, f2) {
+//   let rand = Math.random();
+//   if (rand < 0.5) {
+//     f1();
+//   } else {
+//     f2();
+//   }
+//   console.log(rand);
+// }
+
+// pickOne(cry, rage);
 
 // 007 Functions as Return Values
 // ======================================
@@ -4704,8 +4763,12 @@ const operations = [add, subtract, multiply, divide];
 // 008 Callbacks
 // ======================================
 
+// My Practice
+
 // 009 Hoisting
 // ======================================
+
+// My Practice
 
 // ======================================
 // 10 - Apply Functions to Collections of Data
