@@ -4758,7 +4758,139 @@ const operations = [add, subtract, multiply, divide];
 // 007 Functions as Return Values
 // ======================================
 
+/*
+// NOTES
+
+// // This function returns a function!
+// function multiplyBy(num) {
+//   return function (x) {
+//     return x * num;
+//   };
+// }
+
+// //triple holds a function:
+// const triple = multiplyBy(3);
+// //we can call it:
+// triple(4); //12
+// triple(10); //30
+
+// const double = multiplyBy(2);
+// double(3); //6
+// double(9); //18
+
+// const halve = multiplyBy(0.5);
+// halve(5); //2.5
+// halve(100); //50
+
+// // This function also acts as a "function factory"
+// function makeBetweenFunc(x, y) {
+//   return function (num) {
+//     return num >= x && num <= y;
+//   };
+// }
+// // This function checks if a value is between 0 and 18
+// const isChild = makeBetweenFunc(0, 18);
+// isChild(10); //true
+// isChild(56); //false
+
+// const isInNineties = makeBetweenFunc(1990, 1999);
+// isInNineties(1994); //true
+// isInNineties(1987); //false
+
+// const isNiceWeather = makeBetweenFunc(60, 79);
+// isNiceWeather(68); //true
+// isNiceWeather(98); //false
+*/
+
 // My Practice
+
+// // METHOD 2
+// function multiplyBy(num) {
+//   const f = function () {
+//     console.log("Blah");
+//   };
+//   return f;
+// }
+
+// console.log(multiplyBy);
+// console.log(multiplyBy());
+
+// // storing in a variable
+// const mystery = multiplyBy();
+// console.log(mystery);
+
+// METHOD 1 better and standard approach
+// function multiplyBy(num) {
+//   return function () {
+//     console.log("hi");
+//   };
+// }
+
+// console.log(multiplyBy);
+// console.log(multiplyBy());
+
+// // storing in a variable
+// const mystery = multiplyBy();
+// console.log(mystery);
+
+// function multiplyBy(num) {
+//   return function (x) {
+//     return x * num;
+//   };
+// }
+
+// const double = multiplyBy(2);
+// console.log(double(3));
+// console.log(double(10));
+
+// const triple = multiplyBy(3);
+// console.log(triple); // triple is holding function(x){
+// // return x*num};// calling triple(10) 10 -> x so answer is 10 * 3 = 30
+// console.log(triple(10));
+// console.log(triple(100));
+
+// const halve = multiplyBy(0.5);
+// console.log(halve);
+// console.log(halve()); // didn't pass parameter so NaN
+// console.log(halve(1));
+// console.log(halve(10));
+// console.log(halve(100));
+// console.log(halve(3));
+
+// function makeBetweenFunc(x, y) {
+//   return function (num) {
+//     return num >= x && num <= y;
+//   };
+// }
+
+// const isChild = makeBetweenFunc(0, 18);
+// console.log(isChild);
+// // // isChild storing function (num){
+// // return num >=x && num <= y;
+// //}
+// console.log(isChild(2)); // 2 -> num So x=0,y=18, passing parameter num is 2. 2 is > x and 2 is less than y so giving boolean expression true
+// console.log(isChild(10));
+// console.log(isChild(19)); // 19 -> num So x=0,y=18, passing parameter num is 19. 19 is > x and 19 greater than y but y = 18 only so giving boolean expression false
+// console.log(isChild(30));
+// console.log(isChild(15));
+// console.log(isChild(45));
+
+// const isInNineties = makeBetweenFunc(1990, 1999);
+// console.log(isInNineties);
+// console.log(isInNineties(1989));
+// console.log(isInNineties(1992));
+// console.log(isInNineties(1992));
+// console.log(isInNineties(1993));
+// console.log(isInNineties(2000));
+// console.log(isInNineties(2002));
+
+// const isNiceWeather = makeBetweenFunc(60, 79);
+// console.log(isNiceWeather);
+// console.log(isNiceWeather(45));
+// console.log(isNiceWeather(76));
+// console.log(isNiceWeather(98));
+// console.log(isNiceWeather(30));
+// console.log(isNiceWeather(81));
 
 // 008 Callbacks
 // ======================================
