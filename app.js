@@ -4833,6 +4833,7 @@ const operations = [add, subtract, multiply, divide];
 // const mystery = multiplyBy();
 // console.log(mystery);
 
+// ANOTHER EXAMPLE
 // function multiplyBy(num) {
 //   return function (x) {
 //     return x * num;
@@ -4842,6 +4843,9 @@ const operations = [add, subtract, multiply, divide];
 // const double = multiplyBy(2);
 // console.log(double(3));
 // console.log(double(10));
+// THIS WORKS TO JUST REMEMBER THIS NOT IMPORTANT
+// console.log(multiplyBy(3)(5)); // num -> 3, x -> 5
+// console.log(multiplyBy(2)(8)); // num -> 2, x -> 8
 
 // const triple = multiplyBy(3);
 // console.log(triple); // triple is holding function(x){
@@ -4894,19 +4898,213 @@ const operations = [add, subtract, multiply, divide];
 
 // 008 Callbacks
 // ======================================
+// CALLBACK FUNCTIONS A callback function is a function passed into another function as an argument, which is then invoked inside the outer function.
+
+/*
+// NOTES
+
+// function grumpus() {
+//   alert("GAHHH GO AWAY!");
+// }
+
+// // setTimeout(callback, delay)
+// setTimeout(function () {
+//   //we pass an anonymous callback function
+//   alert("WELCOME!");
+// }, 5000);
+
+// //DON'T WORRY ABOUT ANY OF THIS SYNTAX!!
+// const btn = document.querySelector("button");
+// // JUST FOCUS ON THE CALLBACK WE PASS IN!
+// btn.addEventListener("click", function () {
+//   alert("WHY DID YOU CLICK ME!!??");
+// });
+
+*/
 
 // My Practice
+// CALLBACK FUNCTIONS A callback function is a function passed into another function as an argument, which is then invoked inside the outer function.
+
+// METHOD 1
+// function grumps() {
+//   // console.log("go away");
+//   alert("hello bharu");
+// }
+
+// setTimeout(grumps, 5000);
+
+// METHOD 2
+// using anonymous function for one time use only
+// setTimeout(function () {
+//   alert("hi bharu");
+// }, 5000);
+
+// ANOTHER Example
+// function callTwice(func) {
+//   func();
+//   func();
+// }
+
+// function laugh() {
+//   console.log("hahahahaha");
+// }
+
+// callTwice(laugh); // laugh is a call back function
 
 // 009 Hoisting
 // ======================================
+// HOISTING
+// Housting allows you to use functions and variables before they are declared
+
+/*
+// NOTES
+
+// variables declared with var are hoisted
+// console.log(animal);
+// var animal = 'Tapir';
+// console.log(animal);
+
+// variables declared with let & const are not hoisted
+// const shrimp = 'Harlequin Shrimp';
+// console.log(shrimp);
+
+// function statements are hoisted
+// howl();
+
+// function howl() {
+//   console.log("AWOOOOOOO");
+// }
+
+// function expressions are...kind of hoisted.
+// The variable is hoisted, but has a value of undefined
+// hoot();
+// var hoot = function () {
+//   console.log("HOOOO HOOOOO");
+// };
+*/
 
 // My Practice
+// Housting allows you to use functions and variables before they are declared
+
+// console.log(animal);
+// var animal = "Tapir";
+// console.log(animal);
+
+// // // console.log(shrimp); // cannot access "shrimp" before initialization
+// let shrimp = "Harlequin Shrimp";
+// console.log(shrimp);
+
+// howl(); // this also works
+
+// function howl() {
+//   console.log("awoooooooo");
+// }
+
+// howl();
+
+// STORING FUNCTION IN A VARIABLE
+
+// // hoot(); // this will not work
+// console.log(hoot); // undefined
+
+// var hoot = function () {
+//   console.log("hooooooo hooooooo");
+// };
+
+// hoot();
 
 // ======================================
 // 10 - Apply Functions to Collections of Data
 // ======================================
 
-// 001
+// 001 Intro to Array Callback Methods
 // ======================================
-// 002
+// ARRAY CALLBACK METHODS
+// Arrays come with many built-in methods that accept call functions
+// Now that we have covered callbacks, we can learn these methods!
+// SUPER USEFUL!
+
+// GOALS
+//Understand and use these methods:
+// 1) forEach
+// 2) map
+// 3) filter
+// 4) find
+// 5) reduce
+// 6) some
+// 7) every
+
+// 002 forEach
+// ======================================
+
+/*
+// NOTES
+
+// const numbers = [20, 21, 22, 23, 24, 25, 26, 27];
+
+// // Using anonymous function expression:
+// numbers.forEach(function (num) {
+//   console.log(num * 2);
+// });
+
+// function printTriple(n) {
+//   console.log(n * 3);
+// }
+
+// // Using a pre-defined function:
+// numbers.forEach(printTriple);
+
+// // Using the index:
+// numbers.forEach(function (num, idx) {
+//   console.log(idx, num);
+// });
+
+// const books = [
+//   {
+//     title: "Good Omens",
+//     authors: ["Terry Pratchett", "Neil Gaiman"],
+//     rating: 4.25,
+//   },
+//   {
+//     title: "Bone: The Complete Edition",
+//     authors: ["Jeff Smith"],
+//     rating: 4.42,
+//   },
+//   {
+//     title: "American Gods",
+//     authors: ["Neil Gaiman"],
+//     rating: 4.11,
+//   },
+//   {
+  //     title: "A Gentleman in Moscow",
+  //     authors: ["Amor Towles"],
+  //     rating: 4.36,
+  //   },
+  // ];
+  
+  // // Printing all book titles using forEach:
+  // books.forEach(function (book) {
+    //   console.log(book.title.toUpperCase());
+    // });
+    
+    // // Printing all book titles using for...of:
+    // for (let book of books) {
+      //   console.log(book.title.toUpperCase());
+      // }
+      
+      // // Printing all book titles using for loop:
+      // for (let i = 0; i < books.length; i++) {
+//   console.log(books[i].title.toUpperCase());
+// }
+*/
+
+// My Practice
+
+// 003
+// ======================================
+// 004
+// ======================================
+// 005
+// ======================================
+// 006
 // ======================================
