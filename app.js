@@ -4611,23 +4611,23 @@ outer(); //'AMADEUS'
 // My Practice
 // A function which takes another function as an argument or returns a function is known as higher order function.
 
-function add(x, y) {
-  return x + y;
-}
+// function add(x, y) {
+//   return x + y;
+// }
 
-const subtract = function (x, y) {
-  return x - y;
-};
+// const subtract = function (x, y) {
+//   return x - y;
+// };
 
-function multiply(x, y) {
-  return x * y;
-}
+// function multiply(x, y) {
+//   return x * y;
+// }
 
-const divide = function (x, y) {
-  return x / y;
-};
+// const divide = function (x, y) {
+//   return x / y;
+// };
 
-const operations = [add, subtract, multiply, divide];
+// const operations = [add, subtract, multiply, divide];
 // console.log(operations[0]);
 // console.log(operations[1]);
 // console.log(add);
@@ -5036,6 +5036,9 @@ const operations = [add, subtract, multiply, divide];
 
 // 002 forEach
 // ======================================
+// Accepts a callback function.
+// Calls the function once per element in the array.
+// The forEach() method calls a function and iterates over the elements of an array.The forEach() method can also be used on MAPS and  SETS.
 
 /*
 // NOTES
@@ -5099,12 +5102,490 @@ const operations = [add, subtract, multiply, divide];
 */
 
 // My Practice
+// Accepts a callback function.
+// Calls the function once per element in the array.
+// The forEach() method calls a function and iterates over the elements of an array.The forEach() method can also be used on MAPS and  SETS.
 
-// 003
+// const numbers = [20, 21, 22, 23, 24, 25, 26, 27];
+// const evenNumbers = [2, 4, 6, 8, 10];
+
+// using anonymous function // mostly we use this type
+// numbers.forEach(function (num) {
+//   console.log(num);
+// });
+// numbers.forEach(function (num) {
+//   console.log(num * 2);
+// });
+// numbers.forEach(function (num) {
+//   console.log(num * num);
+// });
+
+// function we can re-use
+// function printTriple(n) {
+//   console.log(n * 3);
+// }
+
+// numbers.forEach(printTriple);
+// evenNumbers.forEach(printTriple); // 2x3,4x3,6x3,8x3,10x3
+
+// const books = [
+//   {
+//     title: "Good Omens",
+//     authors: ["Terry Pratchett", "Neil Gaiman"],
+//     rating: 4.25,
+//   },
+//   {
+//     title: "Bone: The Complete Edition",
+//     authors: ["Jeff Smith"],
+//     rating: 4.42,
+//   },
+//   {
+//     title: "American Gods",
+//     authors: ["Neil Gaiman"],
+//     rating: 4.11,
+//   },
+//   {
+//     title: "A Gentleman in Moscow",
+//     authors: ["Amor Towles"],
+//     rating: 4.36,
+//   },
+// ];
+
+// books.forEach(function (item) {
+//   console.log(item);
+// });
+// books.forEach(function (item) {
+//   console.log(item.title);
+// });
+
+// we can use any of these methods to achieve the same result but forEach() method may be better i think
+// books.forEach(function (item) {
+//   console.log(item.title.toUpperCase());
+// });
+
+// // using for of loop
+// for (let book of books) {
+//   console.log(book.title.toUpperCase());
+// }
+
+// // using regular for loop
+// for (let i = 0; i < books.length; i++) {
+//   console.log(books[i].title.toUpperCase());
+// }
+
+// forEach() using two parameters we can get index too
+// numbers.forEach(function (num, index) {
+//   console.log(index, num);
+// });
+
+// evenNumbers.forEach(function (num, index) {
+//   console.log(index, num);
+// });
+
+// books.forEach(function (element, elementindex) {
+//   console.log(elementindex, element);
+// });
+
+// const nums = [9, 8, 7, 6, 5, 4, 3, 2, 1];
+
+// nums.forEach(function (element) {
+//   console.log(element * element);
+// });
+
+// nums.forEach(function (element) {
+//   if (element % 2 === 0) {
+//     console.log(element);
+//   }
+// });
+
+// 003 Map
 // ======================================
-// 004
+// MAP Creates a new array with the results of calling a callback on every element in the array
+
+/*
+// NOTES
+
+// const numbers = [20, 21, 22, 23, 24, 25, 26, 27];
+// const words = ['asap', 'byob', 'rsvp', 'diy'];
+
+// //Map creates a new array by calling your callback function with each element in the original array.
+// const doubles = numbers.map(function (num) {
+//   return num * 2; //Need to return the value!
+// });
+// //[40, 42, 44, 46, 48, 50, 52, 54]
+
+// const numDetail = numbers.map(function (n) {
+//   return {
+//     value: n,
+//     isEven: n % 2 === 0
+//   }
+// })
+
+// const abbrevs = words.map(function (word) {
+//   return word.toUpperCase().split('').join('.');
+// })
+// //["A.S.A.P", "B.Y.O.B", "R.S.V.P", "D.I.Y"]
+
+// const books = [{
+//     title: 'Good Omens',
+//     authors: ['Terry Pratchett', 'Neil Gaiman'],
+//     rating: 4.25
+//   },
+//   {
+//     title: 'Bone: The Complete Edition',
+//     authors: ['Jeff Smith'],
+//     rating: 4.42
+//   },
+//   {
+//     title: 'American Gods',
+//     authors: ['Neil Gaiman'],
+//     rating: 4.11
+//   },
+//   {
+//     title: 'A Gentleman in Moscow',
+//     authors: ['Amor Towles'],
+//     rating: 4.36
+//   }
+// ]
+
+// const titles = books.map(function (b) {
+//   return b.title;
+// })
+// //["Good Omens", "Bone: The Complete Edition", "American Gods", "A Gentleman in Moscow"]
+*/
+
+// My practice
+
+// MAP Creates a new array with the results of calling a callback on every element in the array
+// The map() method is an iterative method. It calls a provided callbackFn function once for each element in an array and constructs a new array from the results.
+
+// const numbers = [20, 21, 22, 23, 24, 25, 26, 27];
+
+// const doubles = numbers.map(function (element) {
+//   return element * 2;
+// });
+// console.log(doubles);
+// console.log(numbers); // map method does not mutate original array
+
+// // squares array
+// const squares = numbers.map(function (element) {
+//   return element * element;
+// });
+// console.log(squares);
+
+// // cubes array
+// const cubes = numbers.map(function (element) {
+//   return element * element * element;
+// });
+// console.log(cubes);
+
+// // checking value is even or not if even gets TRUE otherwise FALSE
+// const numDetail = numbers.map(function (num) {
+//   return {
+//     value: num,
+//     isEven: num % 2 === 0,
+//   };
+// });
+// console.log(numDetail);
+
+// // checking value is even or not if odd gets TRUE otherwise FALSE
+// const isOdd = numbers.map(function (num) {
+//   return {
+//     value: num,
+//     isOdd: num % 2 === 1,
+//   };
+// });
+// console.log(isOdd);
+
+// using for of looping doubling an array elements
+// const doubles2 = [];
+// for (let num of numbers) {
+//   doubles2.push(num * 2);
+// }
+// console.log(doubles2);
+
+// const words = ["asap", "byob", "rsvp", "diy"];
+
+// console.log("asap".toUpperCase().split("").join("."));
+// console.log("asap".toUpperCase().split("").join("-"));
+
+// const abbrevs = words.map(function (word) {
+//   return word.toUpperCase().split("").join(".");
+// });
+// console.log(abbrevs);
+// // // console.log(words); // original will not change
+
+// const abbrevs2 = words.map(function (word) {
+//   return word.toUpperCase().split("").join("-");
+// });
+// console.log(abbrevs2);
+// // // console.log(words); // original will not change
+
+// const books = [
+//   {
+//     title: "Good Omens",
+//     authors: ["Terry Pratchett", "Neil Gaiman"],
+//     rating: 4.25,
+//   },
+//   {
+//     title: "Bone: The Complete Edition",
+//     authors: ["Jeff Smith"],
+//     rating: 4.42,
+//   },
+//   {
+//     title: "American Gods",
+//     authors: ["Neil Gaiman"],
+//     rating: 4.11,
+//   },
+//   {
+//     title: "A Gentleman in Moscow",
+//     authors: ["Amor Towles"],
+//     rating: 4.36,
+//   },
+// ];
+
+// const titles = books.map(function (b) {
+//   return b.title.toUpperCase();
+// });
+// console.log(titles);
+
+// const authorsArr = books.map(function (b) {
+//   return b.authors;
+// });
+// console.log(authorsArr);
+
+// const ratingsArr = books.map(function (b) {
+//   return b.rating;
+// });
+// console.log(ratingsArr);
+
+// const texts = ["rofl", "lol", "omg", "ttyl"];
+// const caps = texts.map(function (t) {
+//   return t.toUpperCase();
+// });
+// console.log(caps);
+
+// const caps2 = texts.map(function (t) {
+//   return t.toUpperCase().split("").join("-");
+// });
+// console.log(caps2);
+
+// 004 Arrow Functions Intro
 // ======================================
-// 005
+// syntactically compact alternative to a regular function expression
+
+/*
+NOTES
+
+// //Non-arrow function expression:
+// // const square = function (x) {
+// //   return x * x;
+// // }
+
+// // Equivalent arrow function:
+// const square = (x) => {
+//   return x * x;
+// }
+
+// //parens are option when you have 1 parameter
+// const isEven = num => {
+//   return num % 2 === 0;
+// }
+
+// //Must include parens for multiple parameters
+// const multiply = (x, y) => {
+//   return x * y;
+// }
+
+// // Must include parens for zero parameters
+// const greet = () => {
+//   console.log("HI!")
+// }
+*/
+
+// My Practice
+// another way of writing functions
+// syntactically compact alternative to a regular function expression
+
+// // without array function
+// const square = function(x){
+//   return x*x;
+// }
+
+// arrow function
+// const square = (x) => {
+//   return x * x;
+// };
+// console.log(square(3));
+
+// const isEven = (num) => {
+//   return num % 2 === 0;
+// };
+// console.log(isEven(8));
+// console.log(isEven(5));
+
+// const multiply = (x, y) => {
+//   return x * y;
+// };
+// console.log(multiply(2, 3));
+// console.log(multiply(10, 8));
+
+// const add = (x, y) => {
+//   return x + y;
+// };
+// console.log(add(10, 10));
+// console.log(add(10, 30));
+
+// const subtraction = (x, y) => {
+//   return x - y;
+// };
+// console.log(subtraction(100, 90));
+// console.log(subtraction(8, 10));
+
+// const modulus = (x, y) => {
+//   return x % y;
+// };
+// console.log(modulus(10, 2));
+// console.log(modulus(10, 3));
+
+// Use empty parens for functions w/ no parameters:
+// const greet = () => {
+//   return "Hello Bharu";
+// };
+// console.log(greet());
+
+// const greeting = (name) => {
+//   return `Hi, ${name}`;
+// };
+// console.log(greeting("Bharu"));
+// console.log(greeting("Dhanush"));
+
+// 005 Arrow Function Implicit Returns
 // ======================================
+// IMPLICIT RETURN
+// All these functions do the same thing:
+// const isEven = function (num) { // Regular Function Expression
+//  return num % 2 === 0;
+// };
+// const isEven = (num) => { // arrow function with parens around parameter
+//   return num%2===0;
+// };
+// const isEven = num => { // no parens around parameter
+//  return num%2===0;
+// };
+// const isEven = num => { // implicit return
+//   num%2===0;
+// };
+// const isEven = num => num % 2 === 0; // one-liner implicit return
+
+/*
+// NOTES
+
+// // "Regular" arrow function:
+// const square = n => {
+//   return n * n;
+// }
+// // Implicit Return, on multiple lines using parens
+// const square1 = n => (
+//   n * n
+// )
+
+// // Implicit return one-liner:
+// const square2 = n => n * n;
+
+// const nums = [1, 2, 3, 4, 5, 6, 7, 8];
+
+// // ALL THREE VERSIONS GIVE US THE SAME RESULT:
+// const doubles1 = nums.map(function (n) {
+//   return n * 2;
+// })
+
+// const doubles2 = nums.map(n => {
+//   return n * 2;
+// })
+
+// const doubles3 = nums.map(n => n * 2);
+
+// const parityList = nums.map(function (n) {
+//   if (n % 2 === 0) return 'even';
+//   return 'odd';
+// })
+
+// const parityList1 = nums.map((n) => {
+//   if (n % 2 === 0) return 'even';
+//   return 'odd';
+// });
+// const parityList2 = nums.map((n) => (
+//   n % 2 === 0 ? 'even' : 'odd'
+// ));
+
+// const parityList3 = nums.map((n) => n % 2 === 0 ? 'even' : 'odd');
+*/
+
+// My Practice
+
+// one-liner arrow function
+// const square = (x) => x * x;
+// console.log(square(5));
+// console.log(square(7));
+
+// const addition = (x, y) => x + y;
+// console.log(addition(2, 8));
+// console.log(addition(50, 50));
+
+// const subtraction = (x, y) => x - y;
+// console.log(subtraction(50, 50));
+// console.log(subtraction(50, 30));
+
+// const multiplication = (x, y) => x * y;
+// console.log(multiplication(5, 3));
+// console.log(multiplication(5, 5));
+
+// const nums = [1, 2, 3, 4, 5, 6, 7, 8];
+
+// without arrow function
+// const double1 = nums.map(function (n) {
+//   return n * 2;
+// });
+// console.log(double1);
+
+// // using arrow function
+// const double2 = nums.map((n) => {
+//   return n * 2;
+// });
+// console.log(double2);
+
+// const double3 = nums.map((n) => n * 2);
+// console.log(double3);
+
+// const triple1 = nums.map((n) => {
+//   return n * 3;
+// });
+// console.log(triple1);
+
+// const triple2 = nums.map((n) => n * 3);
+// console.log(triple2);
+
+// const parityList1 = nums.map(function (n) {
+//   if (n % 2 === 0) return "even";
+//   return "odd";
+// });
+
+// console.log(parityList1);
+
+// const parityList2 = nums.map((n) => {
+//   if (n % 2 === 0) return "even";
+//   return "odd";
+// });
+// console.log(parityList2);
+
+// const parityList3 = nums.map((n) => (n % 2 === 0 ? "even" : "odd"));
+// console.log(parityList3);
+
 // 006
+// ======================================
+// 007
+// ======================================
+// 008
+// ======================================
 // ======================================
