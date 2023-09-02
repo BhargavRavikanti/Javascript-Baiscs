@@ -6632,15 +6632,498 @@ NOTES
 // }, {});
 // console.log(groupedByRatings);
 
-// ======================================
-// 1 -
-// ======================================
+///////////////////////////////////////
+// 11 - A Few Miscellaneous JS Features
+//////////////////////////////////////
 
-// 001
-// ======================================
-// 002
-// ======================================
-// 003
-// ======================================
-// 004
-// ======================================
+// ===================================
+// 001 - New JS Features Intro
+// ===================================
+// Arrow Functions
+// String Template Literals
+// Let & Const
+// For...of
+// For...in
+// Exponent Operator
+// String.includes()
+// Array.includes ()
+// Object.values ()
+// Rest & spread -> now
+// Destructuring -> now
+// Default Function Parameters -> now
+// Object Enhancements -> soon
+// Classes -> soon
+// Async Functions -> soon
+
+// GOALS
+// Work with rest & spread
+// Add default function parameters
+// Understanding destructuring
+
+// ===================================
+// 002 - Default Parameters
+// ===================================
+
+/*
+// NOTES
+
+// The old way of adding a default value:
+// function multiply(x, y) {
+//   if (typeof y === 'undefined') {
+//     y = 1;
+//   }
+//   return x * y;
+// }
+
+// A slightly shorter version:
+// function multiply(x, y) {
+//   y = typeof y === 'undefined' ? 1 : y
+//   return x * y;
+// }
+
+// // The new super clean way of adding defaults!
+// function multiply(x, y = 1) {
+//   return x * y;
+// }
+// multiply(3, 4); //12
+// multiply(3); //3
+
+// Another example!
+// const greet = (person, greeting = 'hi') => {
+//   console.log(`${greeting}, ${person}!`)
+// }
+
+// Default value of an array:
+// const blah = (x, y = [1, 2, 3]) => {
+//   console.log(x, y);
+// }
+
+// Multiple default values are possible, but rare
+// const greet = (person, greeting = 'hi', punctuation = '!') => {
+//   console.log(`${greeting}, ${person} ${punctuation}`)
+// }
+*/
+
+// My Practice
+
+// // older ways
+// // Default Paramters
+// function multiply(x, y) {
+//   if (typeof b === "undefined") {
+//     y = 1;
+//   }
+//   return x * y;
+// }
+// console.log(multiply(7));
+// console.log(multiply(7, 3));
+
+// function multiply(x, y) {
+//   y = typeof y === "undefined" ? 1 : y;
+//   return x * y;
+// }
+// console.log(multiply(8));
+// console.log(multiply(8, 3));
+
+// // DEFAULT PARAMETERS The New Way
+// function multiply(x, y = 1) {
+//   return x * y;
+// }
+// console.log(multiply(9));
+// console.log(multiply(9, 3));
+
+// const greet = (person, greeting = "hi") => {
+//   return `${greeting}, ${person}`;
+// };
+// console.log(greet("tim"));
+// console.log(greet("tim", "YOO"));
+
+// const blah = (x, y = [1, 2, 3]) => {
+//   console.log(x, y);
+// };
+// blah(1);
+// blah(2, 3);
+
+// const greet1 = (person, greeting = "hi", punctuation = "!") => {
+//   console.log(`${greeting}, ${person} ${punctuation}`);
+// };
+// greet1("anya");
+// greet1("bharu");
+// greet1("dhanush");
+
+// ===================================
+// 003 - Spread for Function Calls
+// ===================================
+// SPREAD
+// Spread syntax allows an iterable such as an array to be EXPANDED in places where zero or more arguments (for function calls)
+// or
+// elements (for array literals) are expected,
+// or
+// an object expression to be EXPANDED in places where zero or more key-value pairs (for object literals) are expected.
+
+// There is only three use cases
+// spread in function calls
+// spread in array literals
+// spread in object literals
+/*
+
+// NOTES
+
+// function giveMeFour(a, b, c, d) {
+//   console.log("a", a);
+//   console.log("b", b);
+//   console.log("c", c);
+//   console.log("d", d);
+// }
+
+// const colors = ["red", "orange", "yellow", "green"];
+
+// // Without spread:
+// giveMeFour(colors);
+// // a ["red", "orange", "yellow", "green"]
+// // b undefined
+// // c undefined
+// // d undefined
+
+// // WITH SPREAD!!!
+// // Values are passed as separate args:
+// giveMeFour(...colors);
+// // a 'red'
+// // b 'orange'
+// // c 'yellow'
+// // d 'green'
+
+// //We can also spread strings!
+// giveMeFour(..."GOAT");
+// // a G
+// // b O
+// // c A
+// // d T
+*/
+
+// My Practice
+
+// SPREAD
+// Spread syntax allows an iterable such as an array to be EXPANDED in places where zero or more arguments (for function calls)
+// or
+// elements (for array literals) are expected,
+// or
+// an object expression to be EXPANDED in places where zero or more key-value pairs (for object literals) are expected.
+
+// There is only three use cases
+// spread in function calls
+// spread in array literals
+// spread in object literals
+
+// SPREAD For Function Calls
+// Expands an iterable (array, string, etc.)
+
+// const nums = [9, 3, 2, 8];
+// console.log(Math.max(nums)); // NaN
+// // Use spread!
+// console.log(Math.max(...nums)); // 9 // gives the max element
+// console.log(typeof Math.max(...nums));
+// console.log(...nums);
+
+// console.log(Math.max(3, 4, 5, 6, 7, 12, 19, 99, 3));
+// console.log(Math.min(3, 4, 5, 6, 7, 12, 19, 99, 3));
+
+// const nums1 = [45, 23, 34, 7, 5];
+// console.log(Math.max(nums1)); // NaN
+// console.log(Math.max(...nums1)); // this means Math.max(45, 23, 34, 7, 5) gives max number 45
+// console.log(...nums1); // 45 23 34 7 5 // means removing brackets spreads all elements
+
+// function giveMeFour(a, b, c, d) {
+//   console.log("a", a);
+//   console.log("b", b);
+//   console.log("c", c);
+//   console.log("d", d);
+// }
+// giveMeFour(4, 5, 6, 7);
+
+// const colors = ["red", "orange", "yellow", "green"];
+// giveMeFour(colors);
+// giveMeFour(...colors);
+
+// const string = "GOAT";
+// giveMeFour(string);
+// giveMeFour(...string); // means spread(...) making like giveMeFour("G","O","A","T");
+// giveMeFour("G", "O", "A", "T"); // but typing sucks
+
+// // // make a variable
+// let name = "bhar";
+// // // use spread
+// giveMeFour(...name);
+// name = "bharu";
+// giveMeFour(...name); // not giving u bcoz giveMeFour function has four paramaters so it is giving b h a r
+
+// ===================================
+// 004 - Spread in Array Literals
+// ===================================
+// SPREAD In Array Literals
+// Creates a new array using an existing array. Spreads the elements from one array into new array.
+// original arrays will not change only makes copy
+
+/*
+// NOTES
+
+// const cephalopods = [
+//   "dumbo octopus",
+//   "humboldt squid",
+//   "flamboyant cuttlefish",
+// ];
+
+// const gastropods = ["giant african snail", "banana slug", "variable neon slug"];
+
+// const cnidaria = ["fire coral", "moon jelly"];
+
+// const mollusca = [...cephalopods, ...gastropods];
+// //["dumbo octopus", "humboldt squid", "flamboyant cuttlefish", "giant african snail", "banana slug", "variable neon slug"]
+
+// const inverts = [...cnidaria, ...gastropods, ...cephalopods];
+// //["fire coral", "moon jelly", "giant african snail", "banana slug", "variable neon slug", "dumbo octopus", "humboldt squid", "flamboyant cuttlefish"]
+
+// const cephCopy = [...cephalopods];
+// //["dumbo octopus", "humboldt squid", "flamboyant cuttlefish"]
+*/
+
+// My Practice
+
+// SPREAD In Array Literals
+// Creates a new array using an existing array. Spreads the elements from one array into new array.
+// original arrays will not change only makes copy
+// we can use spread to combine arrays and we can also add elements in an arrays
+
+// const nums1 = [1, 2, 3];
+// const nums2 = [4, 5, 6];
+// const spreadNums = [...nums1, ...nums2];
+// console.log(spreadNums); // (6) [1, 2, 3, 4, 5, 6]
+// const spreadNums1 = [...nums1, ...nums2, 7, 8, 9];
+// console.log(spreadNums1); // (9) [1, 2, 3, 4, 5, 6, 7, 8, 9]
+// console.log(nums1, nums2); // originals will not change
+
+// const cephalopods = [
+//   "dumbo octopus",
+//   "humboldt squid",
+//   "flamboyant cuttlefish",
+// ];
+
+// const gastropods = ["giant african snail", "banana slug", "variable neon slug"];
+
+// const cnidaria = ["fire coral", "moon jelly"];
+
+// const mollusca = [...cephalopods, ...gastropods];
+// console.log(mollusca); // using spread we combined arrays as a copy // (6) ['dumbo octopus', 'humboldt squid', 'flamboyant cuttlefish', 'giant african snail', 'banana slug', 'variable neon slug']
+
+// let inverts = [...cnidaria, ...gastropods, ...cephalopods];
+// console.log(inverts); // (8) ['fire coral', 'moon jelly', 'giant african snail', 'banana slug', 'variable neon slug', 'dumbo octopus', 'humboldt squid', 'flamboyant cuttlefish']
+
+// // we can also add elements to inverts if we want
+// inverts = [
+//   "some inverts",
+//   "more inverts",
+//   ...cnidaria,
+//   ...gastropods,
+//   ...cephalopods,
+// ];
+// console.log(inverts); // (10) ['some inverts', 'more inverts', 'fire coral', 'moon jelly', 'giant african snail', 'banana slug', 'variable neon slug', 'dumbo octopus', 'humboldt squid', 'flamboyant cuttlefish']
+
+// const cephCopy = [...cephalopods];
+// console.log(cephCopy);
+
+// console.log(cephCopy === cephalopods); // false
+
+// const copy = cephalopods;
+// console.log(copy === cephalopods); // true
+
+// console.log("abcdefg".split("")); // (7) ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+// console.log([..."abcdefg"]); // (7) ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+// console.log([..."abc", ..."def", "HELLO!!"]); // (7) ['a', 'b', 'c', 'd', 'e', 'f', 'HELLO!!']
+
+// ===================================
+// 005 - Spread in Object Literals
+// ===================================
+// SPREAD In Object Literals
+// Copies properties from one object into another object literal.
+
+/*
+// NOTES
+
+// const feline = {
+//   legs: 4,
+//   family: "Felidae",
+// };
+
+// const canine = {
+//   family: "Caninae",
+//   furry: true,
+//   legs: 4,
+// };
+
+// const dog = {
+//   ...canine,
+//   isPet: true,
+//   adorable: true,
+// };
+// //{family: "Caninae", furry: true, legs: 4, isPet: true, adorable: true}
+
+// const houseCat = {
+//   ...feline,
+//   isGrumpy: true,
+//   personality: "unpredictable",
+// };
+// //{legs: 4, family: "Felidae", isGrumpy: true, personality: "unpredictable"}
+
+// const catDog = {
+//   ...canine,
+//   ...feline,
+// };
+// //{family: "Felidae", furry: true, legs: 4}
+
+// //Order matters! Legs will be 3 here, because we set it AFTER spreading canine.
+// const tripod = {
+//   ...canine,
+//   legs: 3,
+// };
+// //{family: "Caninae", furry: true, legs: 3}
+
+// const catDogClone = {
+//   ...catDog,
+// };
+
+// const random = [
+//   ..."hello",
+//   {
+//     ...catDog,
+//   },
+// ];
+*/
+
+// My Practice
+
+// SPREAD In Object Literals
+// Copies properties from one object into another object literal.
+
+// const feline = {
+//   legs: 4,
+//   family: "Felidae",
+// };
+
+// const canine = {
+//   family: "Caninae",
+//   furry: true,
+// };
+
+// const dog = {
+//   ...canine,
+//   isPet: true,
+//   adorable: true,
+// };
+// console.log(dog); // {family: 'Caninae', furry: true, isPet: true, adorable: true}
+
+// const houseCat = {
+//   ...feline,
+//   isGrumpy: true,
+//   personality: "unpredictable",
+// };
+// console.log(houseCat); // {legs: 4, family: 'Felidae', isGrumpy: true, personality: 'unpredictable'}
+
+// const felineOne = {
+//   legs: 4,
+//   family: "Felidae",
+// };
+
+// const canineOne = {
+//   family: "Caninae",
+//   furry: true,
+//   legs: 4,
+// };
+
+// const catDog = {
+//   ...canineOne,
+//   ...felineOne,
+// };
+// console.log(catDog); // {family: 'Felidae', furry: true, legs: 4}
+
+// const tripod = {
+//   ...canineOne,
+//   legs: 3,
+// };
+// console.log(tripod); // {family: 'Caninae', furry: true, legs: 3} // order matters legs were over written
+
+// const tripod1 = {
+//   legs: 3,
+//   ...canineOne,
+// };
+// console.log(tripod1); // {legs: 4, family: 'Caninae', furry: true}
+
+// const catDogClone = {
+//   ...catDog, // cloning catDog
+// };
+// console.log(catDogClone);
+// console.log(catDogClone === catDog); // false // we cloned catDog to catDogClone means catDogClone is another object so they are not same
+
+// // // objects are not iterable
+// // // console.log([...dog]); // TypeError: dog is not iterable
+
+// console.log({ ...[4, 5, 6] }); // {0: 4, 1: 5, 2: 6} // gets key value pairs
+
+// // we can iterate string in object // not that useful mostly
+// console.log({ ..."asdasd" }); // {0: 'a', 1: 's', 2: 'd', 3: 'a', 4: 's', 5: 'd'}
+
+// const random = [..."hello", { ...catDog }];
+// console.log(random);
+
+// ===================================
+// 006 - The Arguments Object(not new)
+// ===================================
+
+// ===================================
+// 007 - Rest Parameters (new)
+// ===================================
+
+/*
+// NOTES
+
+// // OLD WAY!
+// // function sum() {
+// //   const argsArr = [...arguments]
+// //   return argsArr.reduce((total, currVal) => {
+// //     return total + currVal
+// //   })
+// // }
+
+// // New way using rest:
+// function sum(...nums) {
+//   return nums.reduce((total, currVal) => {
+//     return total + currVal;
+//   });
+// }
+
+// //We can have named params and then collect the rest into an array:
+// function fullName(first, last, ...titles) {
+//   console.log("first", first);
+//   console.log("last", last);
+//   console.log("titles", titles);
+// }
+
+// // We can use rest parameters in arrow functions!
+// const multiply = (...nums) => nums.reduce((total, currVal) => total * currVal);
+*/
+
+// My Practice
+
+// ===================================
+// 008 - Destructuring Arrays
+// ===================================
+
+// ===================================
+// 009 - Destructuring Objects
+// ===================================
+
+// ===================================
+// 010 - Nested Destructuring
+// ===================================
+
+// ===================================
+// 011 - Destructuring Parameters
+// ===================================
