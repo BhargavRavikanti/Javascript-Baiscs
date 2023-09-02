@@ -5927,9 +5927,720 @@ NOTES
 // const smallNums1 = nums.filter((n) => n < 5);
 // console.log(smallNums1);
 
-// 008
+// 008 Some & Every
 // ======================================
-// 009
+// EVERY tests whether all elements in the array pass the provided function. It returns a Boolean value.
+// SOME similar to every, but returns true if ANY of the array elements pass the test function
+
+/*
+NOTES
+
+// const words = ["dog", "dig", "log", "bag", "wag"];
+
+// //Is every word 3 characters long?
+// const all3Letters = words.every((word) => word.length === 3);
+
+// // Do all words end in 'g'?
+// const allEndInG = words.every((word) => {
+//   const last = word.length - 1;
+//   return word[last] === "g";
+// });
+
+// //Does at least 1 book start with 'd'?
+// const someStartWithD = words.some((word) => word[0] === "d");
+
+// // Do all words start with 'd'?
+// const allStartWithD = words.every((word) => word[0] === "d");
+
+// const books = [
+//   {
+//     title: "Good Omens",
+//     authors: ["Terry Pratchett", "Neil Gaiman"],
+//     rating: 4.25,
+//     genres: ["fiction", "fantasy"],
+//   },
+//   {
+//     title: "Changing My Mind",
+//     authors: ["Zadie Smith"],
+//     rating: 3.83,
+//     genres: ["nonfiction", "essays"],
+//   },
+//   {
+//     title: "Bone: The Complete Edition",
+//     authors: ["Jeff Smith"],
+//     rating: 4.42,
+//     genres: ["fiction", "graphic novel", "fantasy"],
+//   },
+//   {
+//     title: "American Gods",
+//     authors: ["Neil Gaiman"],
+//     rating: 4.11,
+//     genres: ["fiction", "fantasy"],
+//   },
+//   {
+//     title: "A Gentleman in Moscow",
+//     authors: ["Amor Towles"],
+//     rating: 4.36,
+//     genres: ["fiction", "historical fiction"],
+//   },
+//   {
+//     title: "The Name of the Wind",
+//     authors: ["Patrick Rothfuss"],
+//     rating: 4.54,
+//     genres: ["fiction", "fantasy"],
+//   },
+//   {
+//     title: "The Overstory",
+//     authors: ["Richard Powers"],
+//     rating: 4.19,
+//     genres: ["fiction", "short stories"],
+//   },
+//   {
+//     title: "The Way of Kings",
+//     authors: ["Brandon Sanderson"],
+//     rating: 4.65,
+//     genres: ["fantasy", "epic"],
+//   },
+//   {
+//     title: "Lord of the flies",
+//     authors: ["William Golding"],
+//     rating: 3.67,
+//     genres: ["fiction"],
+//   },
+// ];
+// //Are all books rated 3.5 or higher?
+// const allGoodBooks = books.every((book) => book.rating > 3.5);
+
+// //Do any books have 2 authors?
+// const any2Authors = books.some((book) => book.authors.length === 2);
+*/
+
+// My Practice
+// EVERY tests whether all elements in the array pass the provided function. It returns a Boolean value.
+// SOME similar to every, but returns true if ANY of the array elements pass the test function
+
+// const words = ["dog", "dig", "log", "bag", "wag"];
+
+// const checkLength = words.every((word) => {
+//   // return w.length === 3;
+//   return word.length === 4;
+// });
+// console.log(checkLength);
+
+// const checkEndG = words.every((word) => {
+//   return word[word.length - 1] === "g";
+// });
+// console.log(checkEndG);
+
+// const words = ["dog", "dig", "dog", "dag", "dag"];
+// const checkStartD = words.every((word) => {
+//   // return word[0] === "d";
+//   return word[1] === "d";
+// });
+// console.log(checkStartD);
+
+// SOME similar to every, but returns true if ANY of the array elements pass the test function
+
+// const words = ["dog", "dig", "log", "bag", "wag"];
+
+// const someStartWithD = words.some((word) => word[0] === "d");
+// console.log(someStartWithD);
+// const allStartWithD = words.every((word) => word[0] === "d");
+// console.log(allStartWithD);
+
+// Another Example
+
+// const books = [
+//   {
+//     title: "Good Omens",
+//     authors: ["Terry Pratchett", "Neil Gaiman"],
+//     rating: 4.25,
+//     genres: ["fiction", "fantasy"],
+//   },
+//   {
+//     title: "Changing My Mind",
+//     authors: ["Zadie Smith"],
+//     rating: 3.83,
+//     genres: ["nonfiction", "essays"],
+//   },
+//   {
+//     title: "Bone: The Complete Edition",
+//     authors: ["Jeff Smith"],
+//     rating: 4.42,
+//     genres: ["fiction", "graphic novel", "fantasy"],
+//   },
+//   {
+//     title: "American Gods",
+//     authors: ["Neil Gaiman"],
+//     rating: 4.11,
+//     genres: ["fiction", "fantasy"],
+//   },
+//   {
+//     title: "A Gentleman in Moscow",
+//     authors: ["Amor Towles"],
+//     rating: 4.36,
+//     genres: ["fiction", "historical fiction"],
+//   },
+//   {
+//     title: "The Name of the Wind",
+//     authors: ["Patrick Rothfuss"],
+//     rating: 4.54,
+//     genres: ["fiction", "fantasy"],
+//   },
+//   {
+//     title: "The Overstory",
+//     authors: ["Richard Powers"],
+//     rating: 4.19,
+//     genres: ["fiction", "short stories"],
+//   },
+//   {
+//     title: "The Way of Kings",
+//     authors: ["Brandon Sanderson"],
+//     rating: 4.65,
+//     genres: ["fantasy", "epic"],
+//   },
+//   {
+//     title: "Lord of the flies",
+//     authors: ["William Golding"],
+//     rating: 3.67,
+//     genres: ["fiction"],
+//   },
+// ];
+
+// const allGoodBooks = books.every((book) => book.rating > 3.5);
+// console.log(allGoodBooks);
+
+// const any2Authors = books.some((book) => book.authors.length === 2);
+// console.log(any2Authors);
+
+// Another SOME Example
+
+// const words = ["dog", "jello", "log", "cupcake", "bag", "wag"];
+
+// // Are there any words longer than 4 characters?
+// const longerThan4C = words.some((word) => {
+//   return words.length > 4;
+// });
+// // // console.log(longerThan4C);
+
+// // // Do any words start with "Z"?
+// const anyStartZ = words.some((word) => {
+//   // return word[0] === "Z";
+//   return word[0] === "j";
+// });
+// console.log(anyStartZ);
+
+// // // Do any words contain "cake"?
+// const containCake = words.some((word) => {
+//   return word.includes("cake");
+// });
+// console.log(containCake);
+
+// 009 Revisiting Sort Part - 2
 // ======================================
-// 010
+// syntax : arr.sort(compareFunc(a,b))
+//// If compareFunc(a,b) returns less than 0
+// Sort a before b
+//// If compareFunc(a,b) returns 0
+// Leave a and b unchanged with respect to each other
+//// If compareFunc(a,b) returns greater than 0
+// sort b before a
+
+/*
+// NOTES
+
+// const prices = [400.5, 3000, 99.99, 35.99, 12.0, 9500];
+// // REMEMBER THAT SORT() MUTATES THE ORIGINAL ARRAY!
+// // I'm using slice() to create a new copy, otherwise we would be sorting the same array 3 times:
+
+// // Default string sort :(
+// const badSort = prices.slice().sort();
+
+// // Ascending Sort:
+// const ascSort = prices.slice().sort((a, b) => a - b);
+
+// // Descending Sort:
+// const descSort = prices.slice().sort((a, b) => b - a);
+
+// const books = [
+//   {
+//     title: "Good Omens",
+//     authors: ["Terry Pratchett", "Neil Gaiman"],
+//     rating: 4.25,
+//     genres: ["fiction", "fantasy"],
+//   },
+//   {
+//     title: "Changing My Mind",
+//     authors: ["Zadie Smith"],
+//     rating: 3.83,
+//     genres: ["nonfiction", "essays"],
+//   },
+//   {
+//     title: "Bone: The Complete Edition",
+//     authors: ["Jeff Smith"],
+//     rating: 4.42,
+//     genres: ["fiction", "graphic novel", "fantasy"],
+//   },
+//   {
+//     title: "American Gods",
+//     authors: ["Neil Gaiman"],
+//     rating: 4.11,
+//     genres: ["fiction", "fantasy"],
+//   },
+//   {
+//     title: "A Gentleman in Moscow",
+//     authors: ["Amor Towles"],
+//     rating: 4.36,
+//     genres: ["fiction", "historical fiction"],
+//   },
+//   {
+//     title: "The Name of the Wind",
+//     authors: ["Patrick Rothfuss"],
+//     rating: 4.54,
+//     genres: ["fiction", "fantasy"],
+//   },
+//   {
+//     title: "The Overstory",
+//     authors: ["Richard Powers"],
+//     rating: 4.19,
+//     genres: ["fiction", "short stories"],
+//   },
+//   {
+//     title: "The Way of Kings",
+//     authors: ["Brandon Sanderson"],
+//     rating: 4.65,
+//     genres: ["fantasy", "epic"],
+//   },
+//   {
+//     title: "Lord of the flies",
+//     authors: ["William Golding"],
+//     rating: 3.67,
+//     genres: ["fiction"],
+//   },
+// ];
+
+// // Sorting books by their rating:
+// books.sort((a, b) => b.rating - a.rating);
+*/
+
+// My Practice
+
+// syntax : arr.sort(compareFunc(a,b))
+//// If compareFunc(a,b) returns less than 0
+// Sort a before b
+//// If compareFunc(a,b) returns 0
+// Leave a and b unchanged with respect to each other
+//// If compareFunc(a,b) returns greater than 0
+// sort b before a
+
+// =================================================
+// const myArr = [400.5, 3000];
+// const ascSort = myArr.sort((a, b) => a - b);
+// console.log(ascSort); // waste of effort
+// const descSort = myArr.sort((a, b) => b - a);
+// console.log(descSort);
+// console.log(ascSort); // mutates the original array
+// console.log(myArr);
+// a        b
+// 400.5   3000 = negative number (-) means moving the smaller numbers to left side of the array [400.5,3000]
+// 400.5   3000 = positive number (+) means moving the larger numbers to left side of the array [3000,400.5]
+// =================================================
+
+// const prices = [400.5, 3000, 99.99, 35.99, 12.0, 9500];
+
+// console.log(prices.sort()); // (6) [12, 3000, 35.99, 400.5, 9500, 99.99] // not the way we wanted 99.99 should on index 2
+
+// const ascendingSort = prices.sort((a, b) => a - b);
+// console.log(ascendingSort);
+// const descendingSort = prices.sort((a, b) => b - a);
+// console.log(descendingSort);
+// console.log(ascendingSort); // gives the descending sort value means mutated
+
+// // sort() is mutating
+// // so we using slice() because it gives copy of that array
+// const badSort = prices.slice().sort();
+// console.log(badSort);
+// const goodAscSort = prices.slice().sort((a, b) => a - b);
+// console.log(goodAscSort);
+// const goodDescSort = prices.slice().sort((a, b) => b - a);
+// console.log(goodDescSort);
+
+// console.log(badSort);
+// console.log(goodAscSort);
+// console.log(goodDescSort);
+
+// 010 Reduce Intro part - 1
+// ======================================
+// REDUCE Executes a reducer function on each element of the array, resulting in a single value.
+// The array reduce in JavaScript is a predefined method used to reduce an array to a single value by passing a callback function on each element of the array. It accepts a function executed on all the items of the specified array in the left-to-right sequence. The returned single value is stored in the accumulator. Thus, array reduce JavaScript is a non-mutating method. This means that instead of changing the actual value variable, it will hold the computed value in the accumulator without changing the original value variable.
+
+/*
+// NOTES
+
+// const nums = [3, 4, 5, 6, 7];
+// // To multiply all values in nums:
+// const product = nums.reduce((total, currentVal) => {
+//   return total * currentVal;
+// });
+
+// // total    currentVal    returnVal
+// // 3             4           12
+// // 12            5           60
+// // 60            6           360
+// // 360           7           2520
+
+// //Final Return Value: 2520
+*/
+
+// My Practice
+
+// REDUCE Executes a reducer function on each element of the array, resulting in a single value.
+
+// const nums = [3, 4, 5, 6, 7];
+// const product = nums.reduce((total, currentVal) => {
+//   return total * currentVal;
+// });
+// console.log(product); // like this works reduce method 3*4*5*6*7 = 2520 // reduces the array into single value
+
+// const addition = nums.reduce((total, currentVal) => {
+//   return total + currentVal;
+// });
+// console.log(addition);
+
+// // SUMMING AN ARRAY
+// const arr = [3, 5, 7, 9, 11];
+// const summing = arr.reduce((total, currentVal) => {
+//   return total + currentVal;
+// });
+// console.log(summing);
+
+// 011 Reduce pt.2
+// ======================================
+// REDUCE Executes a reducer function on each element of the array, resulting in a single value.
+
+/*
+// NOTES
+
+// const grades = [87, 64, 96, 92, 88, 99, 73, 70, 64];
+
+// // One approach to find max using reduce:
+// // const maxGrade = grades.reduce((max, currVal) => {
+// //   if (currVal > max) return currVal;
+// //   return max;
+// // });
+
+// // A shorter version using Math.max:
+// const maxGrade = grades.reduce((max, currVal) => {
+//   return Math.max(max, currVal)
+// });
+// // Finding the min value using Math.min:
+// const minGrade = grades.reduce((min, currVal) => (
+//   //using implicit return for variety's sake
+//   Math.min(min, currVal)
+// ));
+
+// // max     currVal    return
+// // 87        64         87
+// // 87        96         96
+// // 96        92         96
+// /// etc.
+
+// // We can specify an initial value as the 2nd argument to reduce:
+// // arr.reduce(reducerFunction, initialValue)
+// const total = [10, 20, 30, 40, 50].reduce((sum, currVal) => {
+//   return sum + currVal;
+// }, 1000) //sum starts at 1000, then each element is added to it
+*/
+
+// My Practice
+
+// REDUCE Executes a reducer function on each element of the array, resulting in a single value.
+
+// const grades = [87, 64, 96, 92, 88, 99, 73, 70, 64];
+// const maxGrade = grades.reduce((max, currentVal) => {
+//   if (currentVal > max) return currentVal;
+//   return max;
+// });
+// console.log(maxGrade);
+
+// const maxGrade = grades.reduce((max, currentVal) => {
+//   return Math.max(max, currentVal);
+// });
+// console.log(maxGrade);
+
+// const minGrade = grades.reduce((min, currentVal) => {
+//   return Math.min(min, currentVal);
+// });
+// console.log(minGrade);
+
+// console.log(Math.max(3, 5));
+// console.log(Math.max(3, 10));
+// console.log(Math.max(9, 1));
+
+// // FINDING MAX VAL
+// let grades = [89, 96, 58, 77, 62, 93, 81, 99, 73];
+
+// const maxGrade = grades.reduce((max, currentVal) => {
+//   if (currentVal > max) return currentVal;
+//   return max;
+// });
+// console.log(maxGrade);
+
+// // FINDING MAX VAL
+// const minGrade = grades.reduce((min, currentVal) => {
+//   if (currentVal < min) return currentVal;
+//   return min;
+// });
+// console.log(minGrade);
+
+// // A Shorter way Math.max & implicit return
+// const topScore = grades.reduce((max, currentVal) => {
+//   return Math.max(max, currentVal);
+// });
+// console.log(topScore);
+// const lowScore = grades.reduce((min, currentVal) => {
+//   return Math.min(min, currentVal);
+// });
+// console.log(lowScore);
+
+// let sum = [10, 20, 30, 40, 50].reduce((sum, currentVal) => {
+//   return sum + currentVal;
+// }, 0);
+// console.log(sum);
+// sum = [10, 20, 30, 40, 50].reduce((sum, currentVal) => {
+//   return sum + currentVal;
+// }, 1000);
+// console.log(sum);
+
+// 012 Even More Reduce part-3
+// ======================================
+
+/*
+// NOTES
+
+// const votes = ["y", "y", "n", "y", "n", "y", "n", "y", "n", "n", "n", "y", "y"];
+
+// // To tally the votes:
+// // const results = votes.reduce((tally, val) => {
+// //   if (tally[val]) {
+// //     tally[val]++
+// //   } else {
+// //     tally[val] = 1;
+// //   }
+// //   return tally;
+// // }, {})
+
+// // The shorter version:
+// const results = votes.reduce((tally, val) => {
+//   tally[val] = (tally[val] || 0) + 1;
+//   return tally;
+// }, {});
+
+// const books = [
+//   {
+//     title: "Good Omens",
+//     authors: ["Terry Pratchett", "Neil Gaiman"],
+//     rating: 4.25,
+//     genres: ["fiction", "fantasy"],
+//   },
+//   {
+//     title: "Changing My Mind",
+//     authors: ["Zadie Smith"],
+//     rating: 3.83,
+//     genres: ["nonfiction", "essays"],
+//   },
+//   {
+//     title: "Bone: The Complete Edition",
+//     authors: ["Jeff Smith"],
+//     rating: 4.42,
+//     genres: ["fiction", "graphic novel", "fantasy"],
+//   },
+//   {
+//     title: "American Gods",
+//     authors: ["Neil Gaiman"],
+//     rating: 4.11,
+//     genres: ["fiction", "fantasy"],
+//   },
+//   {
+//     title: "A Gentleman in Moscow",
+//     authors: ["Amor Towles"],
+//     rating: 4.36,
+//     genres: ["fiction", "historical fiction"],
+//   },
+//   {
+//     title: "The Name of the Wind",
+//     authors: ["Patrick Rothfuss"],
+//     rating: 4.54,
+//     genres: ["fiction", "fantasy"],
+//   },
+//   {
+//     title: "The Overstory",
+//     authors: ["Richard Powers"],
+//     rating: 4.19,
+//     genres: ["fiction", "short stories"],
+//   },
+//   {
+//     title: "A Truly Horrible Book",
+//     authors: ["Xavier Time"],
+//     rating: 2.18,
+//     genres: ["fiction", "garbage"],
+//   },
+//   {
+//     title: "The Way of Kings",
+//     authors: ["Brandon Sanderson"],
+//     rating: 4.65,
+//     genres: ["fantasy", "epic"],
+//   },
+//   {
+//     title: "Lord of the flies",
+//     authors: ["William Golding"],
+//     rating: 3.67,
+//     genres: ["fiction"],
+//   },
+// ];
+// // To group books by rating:
+// const groupedByRatings = books.reduce((groupedBooks, book) => {
+//   const key = Math.floor(book.rating);
+//   if (!groupedBooks[key]) groupedBooks[key] = [];
+//   groupedBooks[key].push(book);
+//   return groupedBooks;
+// }, {});
+*/
+
+// My Practice
+
+// const votes = ["y", "y", "n", "y", "n", "y", "n", "y", "n", "n", "n", "y", "y"];
+
+// const results = votes.reduce((tally, val) => {
+//   if (tally[val]) {
+//     tally[val]++;
+//   } else {
+//     tally[val] = 1;
+//   }
+//   return tally;
+// }, {});
+// console.log(results);
+
+// // shorter way
+// const results = votes.reduce((tally, value) => {
+//   tally[value] = (tally[value] || 0) + 1;
+//   return tally;
+// }, {});
+// console.log(results);
+
+// const items = [
+//   "bharu",
+//   "bharu",
+//   "dhanush",
+//   "bharu",
+//   "dhanush",
+//   "bharu",
+//   "dhanush",
+//   "sadhana",
+//   "dhanush",
+//   "bharu",
+//   "sadhana",
+// ];
+
+// const howManyItemsEach = items.reduce((tally, value) => {
+//   if (tally[value]) {
+//     tally[value]++;
+//   } else {
+//     tally[value] = 1;
+//   }
+//   return tally;
+// }, {});
+// console.log(howManyItemsEach);
+
+// // shorter way
+// const howManyItemsEach = items.reduce((tally, value) => {
+//   tally[value] = (tally[value] || 0) + 1;
+//   return tally;
+// }, {});
+// console.log(howManyItemsEach);
+
+// EXAMPLE 2
+
+// const books = [
+//   {
+//     title: "Good Omens",
+//     authors: ["Terry Pratchett", "Neil Gaiman"],
+//     rating: 4.25,
+//     genres: ["fiction", "fantasy"],
+//   },
+//   {
+//     title: "Changing My Mind",
+//     authors: ["Zadie Smith"],
+//     rating: 3.83,
+//     genres: ["nonfiction", "essays"],
+//   },
+//   {
+//     title: "Bone: The Complete Edition",
+//     authors: ["Jeff Smith"],
+//     rating: 4.42,
+//     genres: ["fiction", "graphic novel", "fantasy"],
+//   },
+//   {
+//     title: "American Gods",
+//     authors: ["Neil Gaiman"],
+//     rating: 4.11,
+//     genres: ["fiction", "fantasy"],
+//   },
+//   {
+//     title: "A Gentleman in Moscow",
+//     authors: ["Amor Towles"],
+//     rating: 4.36,
+//     genres: ["fiction", "historical fiction"],
+//   },
+//   {
+//     title: "The Name of the Wind",
+//     authors: ["Patrick Rothfuss"],
+//     rating: 4.54,
+//     genres: ["fiction", "fantasy"],
+//   },
+//   {
+//     title: "The Overstory",
+//     authors: ["Richard Powers"],
+//     rating: 4.19,
+//     genres: ["fiction", "short stories"],
+//   },
+//   {
+//     title: "A Truly Horrible Book",
+//     authors: ["Xavier Time"],
+//     rating: 2.18,
+//     genres: ["fiction", "garbage"],
+//   },
+//   {
+//     title: "The Way of Kings",
+//     authors: ["Brandon Sanderson"],
+//     rating: 4.65,
+//     genres: ["fantasy", "epic"],
+//   },
+//   {
+//     title: "Lord of the flies",
+//     authors: ["William Golding"],
+//     rating: 3.67,
+//     genres: ["fiction"],
+//   },
+// ];
+
+// const groupedByRatings = books.reduce((groupedBooks, book) => {
+//   const key = Math.floor(book.rating);
+//   if (!groupedBooks[key]) groupedBooks[key] = [];
+//   groupedBooks[key].push(book);
+//   return groupedBooks;
+// }, {});
+// console.log(groupedByRatings);
+
+// ======================================
+// 1 -
+// ======================================
+
+// 001
+// ======================================
+// 002
+// ======================================
+// 003
+// ======================================
+// 004
 // ======================================
