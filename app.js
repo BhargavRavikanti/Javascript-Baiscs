@@ -1,3 +1,9 @@
+// =========================================
+// =========================================
+//               COLT STEELE
+// =========================================
+// =========================================
+
 // ======================================
 // 01 - Introduction
 // ======================================
@@ -7451,3 +7457,143 @@ const results = [
 //   console.log(`Status: ${statusCode}`);
 // }
 // parseResponse(response);
+
+// =========================================
+// =========================================
+//               JOHN SMILGA
+// =========================================
+// =========================================
+
+////////////////////////////////
+// 03 - Javascript Tutorial Continued
+////////////////////////////////
+
+// ===================================
+// 001 - Connecting The Dots
+// ===================================
+
+// String Methods
+// Global/Local Scope
+// Array Iterators - (map,filter,reduce)
+// Global Objects - Math,Date
+
+// ===================================
+// 002 - String Properties and Methods
+// ===================================
+// String properties and methods
+// wrapper String Object, don't memorize methods
+
+/*
+// NOTES
+
+// String properties and methods
+// wrapper String Object, don't memorize methods
+let text = ' Peter Jordan';
+let result = text.length;
+console.log(result);
+
+console.log(text.length);
+console.log(text.toLowerCase());
+console.log(text.toUpperCase());
+console.log(text.charAt(0));
+console.log(text.charAt(text.length - 1));
+console.log(text.indexOf('e'));
+console.log(text);
+console.log(text.trim());
+console.log(text.trim().toLowerCase().startsWith('peter'));
+console.log(text.includes('eter'));
+console.log(text.slice(0, 2));
+console.log(text.slice(-3));
+
+// const person = {
+//   name: 'peter', // property
+//   greeting() {
+//     // method
+//     console.log("Hey, I'm Peter");
+//   },
+// };
+
+// console.log(person);
+
+// console.log(person.name);
+// person.greeting();
+
+*/
+
+// My Practice
+// String properties and methods
+// wrapper String Object, don't memorize methods
+
+// let text = " Peter Jordan";
+// let result = text.length;
+// console.log(result);
+
+// console.log(text.length);
+// console.log(text.toLowerCase());
+// console.log(text.toUpperCase());
+// console.log(text.charAt(0));
+// console.log(text.charAt(12)); // returns entered index num character
+// console.log(text.charAt(text.length - 1)); // returns last character
+// console.log(text.indexOf("P")); // opposite of chartAt // returns index num of character
+// console.log(text.indexOf("e")); // opposite of chartAt // returns index num of character
+// console.log(text.indexOf("P")); // if entered character is not in the string returns -1
+// console.log(text);
+// console.log(text.trim()); // removes white spaces
+// console.log(text.startsWith("Peter")); // returns true or false
+// console.log(text.trim().toLowerCase().startsWith("peter"));
+// console.log(text.includes("eter")); // checks the entered value in it or not // returns true or false
+// console.log(text.slice(0, 2)); // does not include index 2 // returns 0 index and 1 index characters
+// console.log(text.slice(0, 4)); // does not include index 2 // returns 0 1 2 3 index characters
+// console.log(text.slice(-1)); // returns last character
+// console.log(text.slice(-2)); // returns last two character
+// console.log(text.slice(-3)); // returns last three character
+
+// const person = {
+//   name: "peter", // property
+//   greeting() {
+//     // method
+//     console.log("Hey, I'm Peter");
+//   },
+// };
+
+// console.log(person);
+
+// console.log(person.name);
+// person.greeting();
+
+// ===================================
+// 003 - Template Literals
+// ===================================
+// Template Literals - ES6+
+// Backtick characters `` - above tab (left from one)
+// Interpolation ${} - insert expression(value)
+
+/*
+// NOTES
+
+// Template Literals - ES6+
+// Backtick characters `` - above tab (left from one)
+// Interpolation ${} - insert expression(value)
+
+const name = 'john';
+const age = 25;
+const sentence = "Hey it's " + name + ' and he is ' + age + ' years old';
+
+const value = `Hey it's ${name} and he is ${age} years old. And here is some simple math ${
+  4 + 4
+}`;
+console.log(value);
+
+console.log(sentence);
+
+*/
+
+// My Practice
+
+// Template Literals - ES6+
+// Backtick characters `` - above tab (left from one)
+// Interpolation ${} - insert expression(value)
+
+// ===================================
+// 004 - Strings Challenge
+// ===================================
