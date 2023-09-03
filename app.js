@@ -7080,6 +7080,7 @@ NOTES
 // ===================================
 // 007 - Rest Parameters (new)
 // ===================================
+// REST PARAMETERS collects all remaining arguments into an actual array
 
 /*
 // NOTES
@@ -7112,9 +7113,138 @@ NOTES
 
 // My Practice
 
+// REST PARAMETERS collects all remaining arguments into an actual array
+
+// function sumAll(...nums) {
+//   let total = 0;
+//   for (let n of nums) total += n; // total = total + n
+//   return total;
+// }
+// console.log(sumAll(1, 2));
+// console.log(sumAll(1, 2, 3, 4, 5));
+
+// function sum(...nums) {
+//   return nums.reduce((total, currentVal) => {
+//     return total + currentVal;
+//   });
+// }
+// console.log(sum(4, 5, 6, 7));
+
+// function fullName(first, last, ...titles) {
+//   console.log("first", first);
+//   console.log("last", last);
+//   console.log("titles", titles);
+// }
+// fullName("bharu", "rockzz", "demon king", "magic emperor", "strongest");
+// // first bharu
+// // app.js:7135 last rockzz
+// // app.js:7136 titles (3) ['demon king', 'magic emperor', 'strongest']
+
+// const multiply = (...nums) => {
+//   return nums.reduce((total, currentValue) => total * currentValue);
+// };
+// console.log(multiply(4, 5, 6));
+// console.log(multiply(4, 4, 4));
+// console.log(multiply(9, 9, 1, 1, 2));
+
+// const add = (...nums) => {
+//   return nums.reduce((total, currentValue) => total + currentValue);
+// };
+// console.log(add(4, 5, 6));
+// console.log(add(4, 5, 6, 5));
+
 // ===================================
 // 008 - Destructuring Arrays
 // ===================================
+// DESTRUCTURING A short, clean syntax to "sunpack":
+// -> Values from arrays
+// -> Properties from objects
+// Into distinct variables
+
+/*
+// NOTES
+
+// const raceResults = [
+//   "Eliud Kipchoge",
+//   "Feyisa Lelisa",
+//   "Galen Rupp",
+//   "Ghirmay Ghebreslassie",
+//   "Alphonce Simbu",
+//   "Jared Ward",
+// ];
+
+// // The old way:
+// // const gold = raceResults[0]
+// // const silver = raceResults[1]
+// // const bronze = raceResults[2]
+
+// // Using Destructuring:
+// const [gold, silver, bronze] = raceResults;
+// gold; //'Eliud Kipchoge'
+// silver; //'Feyisa Lelisa'
+// bronze; //'Galen Rupp'
+
+// const [first, , , fourth] = raceResults;
+// first; //'Eliud Kipchoge'
+// fourth; //'Ghirmay Ghebreslassie'
+
+// const [winner, ...others] = raceResults;
+// winner; //'Eliud Kipchoge'
+// others; //["Feyisa Lelisa", "Galen Rupp", "Ghirmay Ghebreslassie", "Alphonce Simbu", "Jared Ward"]
+*/
+
+// My Practice
+
+// DESTRUCTURING A short, clean syntax to "sunpack":
+// -> Values from arrays
+// -> Properties from objects
+// Into distinct variables
+
+// const raceResults = [
+//   "Eliud Kipchoge",
+//   "Feyisa Lelisa",
+//   "Galen Rupp",
+//   "Ghirmay Ghebreslassie",
+//   "Alphonce Simbu",
+//   "Jared Ward",
+// ];
+
+// // OLD way destructuring one at a time
+// const gold = raceResults[0];
+// console.log(gold); // Eliud Kipchoge
+// const silver = raceResults[1];
+// console.log(silver); // Feyisa Lelisa
+// const bronze = raceResults[2];
+// console.log(bronze); // Galen Rupp
+
+// // NEW way destructuring All at once, unpacking values all at once and storing in variables
+// const [gold, silver, bronze] = raceResults;
+// console.log(gold); // Eliud Kipchoge
+// console.log(silver); // Feyisa Lelisa
+// console.log(bronze); // Galen Rupp
+
+// console.log(raceResults); // will not  change or mutate
+
+// const [first, , , fourth] = raceResults; // , -> skips that indexed element
+// console.log(first); // Eliud Kipchoge
+// console.log(fourth); // Ghirmay Ghebreslassie
+
+// const [winner, ...others] = raceResults;
+// console.log(winner); // Eliud Kipchoge
+// console.log(others); // (5) ['Feyisa Lelisa', 'Galen Rupp', 'Ghirmay Ghebreslassie', 'Alphonce Simbu', 'Jared Ward']
+
+// // ARRAY Destructuring
+// const raceResults1 = ["Eliud Kipchoge", "Feyisa Lelisa", "Galen Rupp"];
+
+// const [goldd, silverr, bronzee] = raceResults1;
+// const [fastest, ...everyoneElse] = raceResults1;
+
+// console.log(goldd); // Eliud Kipchoge
+// console.log(silverr); // Feyisa Lelisa
+// console.log(bronzee); // Galen Rupp
+
+// console.log(fastest); // Eliud Kipchoge
+// console.log(everyoneElse); // (2) ['Feyisa Lelisa', 'Galen Rupp']
 
 // ===================================
 // 009 - Destructuring Objects
@@ -7126,4 +7256,5 @@ NOTES
 
 // ===================================
 // 011 - Destructuring Parameters
+// ===================================
 // ===================================
