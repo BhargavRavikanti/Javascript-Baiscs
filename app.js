@@ -7156,10 +7156,11 @@ NOTES
 // ===================================
 // 008 - Destructuring Arrays
 // ===================================
-// DESTRUCTURING A short, clean syntax to "sunpack":
+// DESTRUCTURING A short, clean syntax to "unpack":
 // -> Values from arrays
 // -> Properties from objects
 // Into distinct variables
+// Destructuring is To extract individual values into variables from arrays,objects,nested,parameters
 
 /*
 // NOTES
@@ -7233,7 +7234,7 @@ NOTES
 // console.log(winner); // Eliud Kipchoge
 // console.log(others); // (5) ['Feyisa Lelisa', 'Galen Rupp', 'Ghirmay Ghebreslassie', 'Alphonce Simbu', 'Jared Ward']
 
-// // ARRAY Destructuring
+// SUMMARY // ARRAY Destructuring
 // const raceResults1 = ["Eliud Kipchoge", "Feyisa Lelisa", "Galen Rupp"];
 
 // const [goldd, silverr, bronzee] = raceResults1;
@@ -7250,11 +7251,203 @@ NOTES
 // 009 - Destructuring Objects
 // ===================================
 
+/*
+// NOTES
+
+// const runner = {
+//   first: "Eliud",
+//   last: "Kipchoge",
+//   country: "Kenya",
+//   title: "Elder of the Order of the Golden Heart of Kenya",
+// };
+
+// // const {
+// //   first,
+// //   last,
+// //   time
+// // } = runner;
+
+// const { country: nation, title: honorific } = runner;
+
+// const { first, last, ...other } = runner;
+*/
+
+// My Practice
+
+// const runner = {
+//   first: "Eliud",
+//   last: "Kipchoge",
+//   country: "Kenya",
+//   title: "Elder of the Order of the Golden Heart of Kenya",
+// };
+
+// // The variable names must be existing key names
+// // you can variable name as property name only other name are undefined time -> undefined
+// const { first, last, time } = runner;
+// console.log(first); // Eliud
+// console.log(last); // Kipchoge
+// console.log(time); // undefined
+
+// const { country, state } = runner;
+// console.log(country); // kenya
+// console.log(state); // undefined
+
+// // The variable names must be existing key names but we name them using below method
+// const { country: nation, title: honorific } = runner;
+// console.log(nation); // kenya
+// console.log(honorific); // Elder of the Order of the Golden Heart of Kenya
+
+// const { first, last, ...other } = runner;
+// console.log(first); // Eliud
+// console.log(last); // Kipchoge
+// console.log(other); // {country: 'Kenya', title: 'Elder of the Order of the Golden Heart of Kenya'}
+
+// SUMMARY // OBJECT Destructuring
+
+// const runner = {
+//   first: "Eliud",
+//   last: "Kipchoge",
+//   country: "Kenya",
+//   title: "Elder of the Order of the Golden Heart of Kenya",
+// };
+
+// const { first, last, country, time } = runner;
+// const { first: one, last: end, country: nation } = runner;
+// const { first: numberOne, last: numberEnd, ...other } = runner;
+
+// console.log(first); // Eliud
+// console.log(last); // Kipchoge
+// console.log(country); // Kenya
+// console.log(time); // undefined
+
+// console.log(one); // Eluid
+// console.log(end); // Kipchoge
+// console.log(nation); // Kenya
+
+// console.log(numberOne); // Eluid
+// console.log(numberEnd); // Kipchoge
+// console.log(other); // {country: 'Kenya', title: 'Elder of the Order of the Golden Heart of Kenya'}
+
 // ===================================
 // 010 - Nested Destructuring
 // ===================================
 
+/*
+// NOTES
+
+// const results = [
+//   {
+//     first: "Eliud",
+//     last: "Kipchoge",
+//     country: "Kenya",
+//   },
+//   {
+//     first: "Feyisa",
+//     last: "Lilesa",
+//     country: "Ethiopia",
+//   },
+//   {
+//     first: "Galen",
+//     last: "Rupp",
+//     country: "United States",
+//   },
+// ];
+// // NESTED DESTRUCTURING
+// const [{ first: goldWinner }, { country }] = results;
+// goldWinner; //"Eliud"
+// country; //"Ethiopia"
+*/
+
+// My Practice
+
+const results = [
+  {
+    first: "Eliud",
+    last: "Kipchoge",
+    country: "Kenya",
+  },
+  {
+    first: "Feyisa",
+    last: "Lilesa",
+    country: "Ethiopia",
+  },
+  {
+    first: "Galen",
+    last: "Rupp",
+    country: "United States",
+  },
+];
+
+// const [{ first: goldWinner }, { country }] = results;
+// console.log(goldWinner); // Eliud
+// console.log(country); // Ethiopia
+
+// // another way to destructuring or unpack country value into varable
+// const [, silverMedal] = results;
+// const { country } = silverMedal;
+// console.log(country); // Ethiopia
+
 // ===================================
 // 011 - Destructuring Parameters
 // ===================================
-// ===================================
+
+/*
+// NOTES
+
+// const runner = {
+//   first: "Eliud",
+//   last: "Kipchoge",
+//   country: "Kenya",
+//   title: "Elder of the Order of the Golden Heart of Kenya",
+// };
+
+// // Rather than destructuring INSIDE the function body
+// // function print(person) {
+// //   const {
+// //     first,
+// //     last,
+// //     title
+// //   } = person;
+// //   console.log(`${first} ${last}, ${title}`)
+// // }
+
+// // We can unpack the values we want right in the parameter list:
+// function print({ first, last, title }) {
+//   console.log(`${first} ${last}, ${title}`);
+// }
+
+// const response = ["HTTP/1.1", "200 OK", "application/json"];
+
+// // Also works with array parameters:
+// function parseResponse([protocol, statusCode, contentType]) {
+//   console.log(`Status: ${statusCode}`);
+// }
+*/
+
+// My Practice
+
+// const runner = {
+//   first: "Eliud",
+//   last: "Kipchoge",
+//   country: "Kenya",
+//   title: "Elder of the Order of the Golden Heart of Kenya",
+// };
+
+// function print(person) {
+//   const { first, last, title } = person;
+//   console.log(`${first} ${last}, ${title}`);
+// }
+// print(runner);
+
+// // Another Method Easy for me
+// function print({ first, last, title }) {
+//   console.log(`${first} ${last}, ${title}`);
+// }
+// print(runner);
+
+// const response = ["HTTP/1.1", "200 OK", "application/json"];
+
+// function parseResponse([protocol, statusCode, contentType]) {
+//   console.log(`Status: ${statusCode}`);
+// }
+// parseResponse(response);
