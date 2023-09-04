@@ -40,3 +40,17 @@
 // }
 // console.log(tripleArr([1, 2, 3]));
 // console.log(tripleArr([4, 4, 4]));
+
+// const names = ["anna", "susy", "bob"];
+// const lastName = "shakeandbake";
+// let newArray = [];
+
+// const newArray1 = newArray.concat(names).concat(lastName);
+// console.log(newArray1);
+
+// // for loop
+// for (let i = 0; i < names.length; i++) {
+//   // console.log(names[i]);
+//   newArray.push(`${names[i]} ${lastName}`);
+// }
+// console.log(newArray);

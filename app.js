@@ -7724,21 +7724,459 @@ console.log(allNames);
 
 // My Practice
 
-// Array Properties and Methods
-let names = ["john", "bobo", "barry", "olga", "ben"];
+// // Array Properties and Methods
+// let names = ["john", "bobo", "barry", "olga", "ben"];
+
+// // length
+// console.log(names.length);
+// console.log(names[0]); // returns index 0 element
+// console.log(names[3]); // returns index 3 element
+// console.log(names[names.length - 1]); // returns last element
+// console.log(names[names.length - 2]); // returns second last element
+
+// // concat
+// const lastNames = ["pepper", "onion", "banana"];
+// const allNames = names.concat(lastNames); // returns names array + lastNames array into allNames
+// console.log(allNames);
+
+// // reverse
+// console.log(allNames.reverse());
+
+// // unshift // adds an element at beginning of the array
+// allNames.unshift("susy");
+// allNames.unshift("anna");
+// console.log(allNames);
+
+// // shift // deletes an element at beginning of the array
+// allNames.shift(); // no need passing arguments
+// allNames.shift();
+// allNames.shift();
+// allNames.shift();
+// console.log(allNames);
+
+// // push // adds an element at end of the array
+// allNames.push("susy");
+// allNames.push("anna");
+// allNames.push("bharu");
+// allNames.push("dhanush");
+// console.log(allNames);
+
+// // pop // deletes an element at end of the array
+// allNames.pop();
+// // allNames.pop();
+// // allNames.pop();
+// // allNames.pop();
+// console.log(allNames);
+
+// // mind-map -> // unshift // shift // push // pop - uspushpop
+
+// // splice - mutates original array
+// const specificNames = allNames.splice(2, 1); // 2->from index 2, 1-> how many we should delete
+// console.log(specificNames); // deleted index 2 and returns what index 2 had
+// console.log(allNames); // mutated array
+// const delIndex0 = allNames.splice(0, 1);
+// console.log(delIndex0);
+// console.log(allNames);
 
 // ===================================
 // 006 - Exercise - Full Name
 // ===================================
+
+/*
+// NOTES
+
+// Arrays and for loop
+
+const names = ['anna', 'susy', 'bob'];
+const lastName = 'shakeandbake';
+let newArray = [];
+
+//for loop
+for (let i = 0; i < names.length; i++) {
+  console.log(i);
+  console.log(names[i]);
+  const fullName = `${names[i]} ${lastName}`;
+  newArray.push(fullName);
+}
+
+console.log(names);
+console.log(newArray);
+*/
+
+// My Practice
+
+// // Arrays and for loop
+// const names = ["anna", "susy", "bob"];
+// const lastName = "shakeandbake";
+// let newArray = [];
+
+// const newArray1 = newArray.concat(names).concat(lastName);
+// console.log(newArray1);
+
+// // for loop
+// for (let i = 0; i < names.length; i++) {
+//   // console.log(i);
+//   // console.log(names[i]);
+//   newArray.push(`${names[i]} ${lastName}`);
+// }
+// console.log(names);
+// console.log(newArray);
+
 // ===================================
 // 007 - Exercise - Calculate Total
 // ===================================
+// Functions, return, if, arrays, for loop
+
+/*
+// NOTES
+
+// Functions, return, if, arrays, for loop
+
+const gas = [20, 40, 100, 30];
+const food = [10, 40, 50];
+
+function calculateTotal(arr) {
+  let total = 0;
+  for (let i = 0; i < arr.length; i++) {
+    total += arr[i];
+  }
+  if (total > 100) {
+    console.log(`Whoa! You are spending way too much`);
+    return total;
+  }
+  console.log(`You are good total is less than 100`);
+
+  return total;
+}
+
+const gasTotal = calculateTotal(gas);
+const foodTotal = calculateTotal(food);
+const randomTotal = calculateTotal([200, 4000, 500, 1]);
+
+console.log({
+  gas: gasTotal,
+  food: foodTotal,
+  random: randomTotal,
+});
+
+*/
+
+// My Practice
+// Functions, return, if, arrays, for loop
+
+// const gas = [20, 40, 100, 30];
+// const food = [10, 40, 50];
+
+// function calculateTotal(array) {
+//   let total = 0;
+//   for (let i = 0; i < array.length; i++) {
+//     // console.log(array[i]);
+//     total += array[i];
+//   }
+//   // console.log(total);
+//   if (total > 100) {
+//     console.log("whoa! You are spending way too much");
+//     return total;
+//   }
+//   console.log("You are good total is less than 100");
+
+//   return total;
+// }
+// // calculateTotal(gas);
+// const gasTotal = calculateTotal(gas);
+// const foodTotal = calculateTotal(food);
+// const randomTotal = calculateTotal([200, 4000, 500, 1]);
+// const randomTotal1 = calculateTotal([200, 4000, 500, 1, 200]);
+// const gymExpenses = calculateTotal([1000, 1600, 2000]);
+
+// console.log({
+//   gas: gasTotal,
+//   food: foodTotal,
+//   random: randomTotal,
+//   random1: randomTotal1,
+//   gym: gymExpenses,
+// });
+
 // ===================================
 // 008 - Value vs Reference
 // ===================================
+// Refernce vs Value
+// Primitive Data Types
+// String, Number, Symbol, Boolean, Undefined, Null,
+// Arrays, Functions, Objects = object
+// typeof
+
+// when assigning primitive data type value to a variable any changes are made directly to that value, without affecting original value
+
+// when assigning non-primitive data type value to a variable is done by reference so any changes will affect all the references.
+
+/*
+// NOTES
+
+const number = 1;
+let number2 = number;
+number2 = 7;
+console.log(`the first value is ${number}`);
+console.log(`the second value is ${number2}`);
+
+let person = { name: 'bob' };
+let person2 = { ...person };
+person2.name = 'susy';
+console.log(`the name of the first person is ${person.name}`);
+console.log(`the name of the second person is ${person2.name}`);
+
+*/
+
+// My Practice
+// Refernce vs Value
+// Primitive Data Types
+// String, Number, Symbol, Boolean, Undefined, Null,
+// Arrays, Functions, Objects = object
+// typeof
+
+// when assigning primitive data type value to a variable any changes are made directly to that value, without affecting original value
+
+// when assigning non-primitive data type value to a variable is done by reference so any changes will affect all the references.
+
+// The fundamental difference between primitives and non-primitive is that primitives are immutable and non-primitive are mutable .
+
+// const number = 1;
+// let number2 = number;
+// console.log(`the first value is ${number}`);
+// number2 = 7;
+// console.log(`the first value is ${number}`);
+// console.log(`the second value is ${number2}`);
+
+// let person = { name: "bob" };
+// // let person2 = person; // it affects both values // pit fall
+// let person2 = { ...person }; // use this method to avoid pit fall
+// person2.name = "susy";
+
+// console.log(`the name of the first person is ${person.name}`);
+// console.log(`the name of the second person is ${person2.name}`);
+
 // ===================================
-// 009 -
+// 009 - Null and Undefined
 // ===================================
+// Null and Undefined
+// both represent "no value"
+
+// undefined - "javascript can not find value for this"
+
+// variable without value
+// missing function parameters
+// missing object properties
+
+// null - "developer sets the value"
+
+// My Practice
+
+// let number = 20 + null; // 20 + 0;
+// console.log(number);
+// let number2 = 20 + undefined; // 20 + 0;
+// console.log(number2);
+
 // ===================================
-// 010 -
+// 010 - Truthy and Falsy
+// ===================================
+// Truthy and Falsy
+// falsy values - > "",'',``,0 ,-0 ,NaN ,false, null, undefined
+// Rest are truthy values
+
+/*
+// NOTES
+
+// Truthy and Falsy
+// falsy values - > "",'',``,0 ,-0 ,NaN ,false, null, undefined
+// Rest are truthy values
+
+const bool1 = true;
+const bool2 = 2 > 1;
+
+const text = '';
+
+if (text) {
+  console.log('hey the value Truthy');
+} else {
+  console.log('hey the value Falsy');
+}
+
+// if (bool1) {
+//   console.log(`Hey it works!`);
+// }
+// if (bool2) {
+//   console.log(`Hey it also works!`);
+// }
+
+*/
+
+// My Practice
+
+// Truthy and Falsy
+// falsy values - > "",'',``,0 ,-0 ,NaN ,false, null, undefined
+// Rest are truthy values
+
+// const bool1 = true;
+// const bool2 = 2 > 1;
+
+// if (bool1) {
+//   console.log("Hey it works!");
+// }
+// if (bool2) {
+//   console.log("Hey it also works!");
+// }
+
+// let text = "john"; // truthy
+// text = ""; // falsy
+// text = "n"; // truthy
+// text = 0; // falsy
+// text = -0; // falsy
+// text = NaN; // falsy
+// text = false; // falsy
+// text = null; // falsy
+// text = undefined; // falsy
+// text = 25; // truthy
+// text = "bharu"; // truthy
+
+// if (text) {
+//   console.log(`hey the value ${text} is Truthy`);
+// } else {
+//   console.log(`hey the value ${text} is Falsy`);
+// }
+
+// ===================================
+// 011 - Ternary Operator
+// ===================================
+
+/*
+// NOTES
+
+// unary operator -  typeof
+let text = 'some text';
+// console.log(typeof text); // operand
+// binary operator - assignment
+let number = 3;
+let number2 = 2 + 5;
+// ternary operator
+// condition ? (runs if true) : (runs if false)
+
+const value = 1 < 0;
+
+value ? console.log('value is true') : console.log('value is false');
+
+// if (value) {
+//   console.log('value is true');
+// } else {
+//   console.log('value is false');
+// }
+*/
+
+// My Practice
+
+// // unary operator -  typeof
+// let text = "some text";
+// console.log(typeof text); // operand
+// // binary operator - assignment
+// let number = 3;
+// let number2 = 2 + 5;
+// // ternary operator
+// // condition ? (runs if true) : (runs if false)
+
+// let value = 2 > 1;
+// value = 1 < 0;
+
+// if (value) {
+//   console.log("value is true");
+// } else {
+//   console.log("value is false");
+// }
+
+// // condition ? (runs if true) : (runs if false)
+// value ? console.log("value is true") : console.log("value is false");
+
+// let myAge = 28;
+// let anotherAge = 30;
+// let compareAge = myAge > anotherAge;
+
+// compareAge ? console.log(true) : console.log(false);
+// // or
+// myAge > anotherAge ? console.log(true) : console.log(false);
+
+// compareAge = myAge < anotherAge;
+// compareAge ? console.log(true) : console.log(false);
+
+// ===================================
+// 012 - Global Scope
+// ===================================
+
+/*
+// NOTES
+
+
+*/
+
+// My Practice
+
+// ===================================
+// 013 - Local Scope
+// ===================================
+// Global Scope vs Local Scope
+// any variable outside code block {} is said to be in Global Scope
+// can be accesss anywhere in the program
+// Gotchas : name collisions, modify by mistake
+
+/*
+// NOTES
+
+// Global Scope vs Local Scope
+// any variable outside code block {} is said to be in Global Scope
+// can be accesss anywhere in the program
+// Gotchas : name collisions, modify by mistake
+
+let name = 'bobo';
+name = 'peter';
+
+function calculate() {
+  // some other code...
+  console.log(name);
+  name = 'orange';
+  function inner() {
+    name = 'inner name value';
+    console.log(`this is from inner function ${name}`);
+  }
+  inner();
+}
+calculate();
+
+if (true) {
+  // some other code...
+  console.log(name);
+  name = 'pants';
+}
+
+console.log(`my name is ${name} and I'm awesome`);
+
+*/
+
+// My Practice
+
+// Global Scope vs Local Scope
+// any variable outside code block {} is said to be in Global Scope
+// can be accesss anywhere in the program
+// Gotchas : name collisions, modify by mistake
+
+// ===================================
+// 014 - Variable Lookup
+// ===================================
+
+/*
+// NOTES
+
+
+*/
+
+// My Practice
+
+// ===================================
+// 015 - Callback Functions, Higher Order Functions
 // ===================================
