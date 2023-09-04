@@ -7594,6 +7594,151 @@ console.log(sentence);
 // Backtick characters `` - above tab (left from one)
 // Interpolation ${} - insert expression(value)
 
+// const name = "john";
+// const age = 25;
+// const sentence = "Hey it's " + name + " and he is " + age + " years old";
+
+// console.log(sentence);
+
+// const value = `Hey it's ${name} and he is ${age} years old. And here is some simple math ${
+//   4 + 4
+// }`;
+
+// console.log(value);
+
+// const myName = "bharu";
+// const myAge = 28;
+// const myValue = `Iam ${myName} and age is ${myAge}.`;
+// console.log(myValue);
+
 // ===================================
 // 004 - Strings Challenge
+// ===================================
+/* 
+## Strings #8
+
+1. create function fullName
+2. accept two parameters "firstName", "lastName"
+3. add them together (concat) and return result in uppercase
+4. invoke fullName and pass some values
+5. log result
+6. change the order of arguments
+7. refactor to object parameter
+
+*/
+
+/*
+// NOTES
+
+// function fullName(firstName, lastName) {
+//   const fullName = `${firstName} ${lastName}`;
+//   return fullName.toUpperCase();
+// }
+// console.log(fullName('john', 'smith'));
+
+function fullName({ firstName, lastName }) {
+  const fullName = `${firstName} ${lastName}`;
+  return fullName.toUpperCase();
+}
+
+console.log(fullName({ lastName: 'jordan', firstName: 'peter' }));
+*/
+
+// My Practice
+
+/* 
+## Strings #8
+
+1. create function fullName
+2. accept two parameters "firstName", "lastName"
+3. add them together (concat) and return result in uppercase
+4. invoke fullName and pass some values
+5. log result
+6. change the order of arguments
+7. refactor to object parameter
+
+*/
+
+// function fullName(firstName, lastName) {
+//   const fullName = `${firstName} ${lastName}`;
+//   return fullName.toUpperCase();
+// }
+// console.log(fullName("bharu", "rockzz"));
+// console.log(fullName("dhanush", "nursing"));
+
+// refactoring to object parameters
+
+// function fullName({ firstName, lastName }) {
+//   const fullName = `${firstName} ${lastName}`;
+//   return fullName.toUpperCase();
+// }
+// console.log(fullName({ lastName: "rockzz", firstName: "bharu" }));
+// console.log(fullName({ lastName: "nursing", firstName: "dhanush" }));
+
+// ===================================
+// 005 - Array Properties and Methods
+// ===================================
+
+/*
+// NOTES
+
+// Array Properties and Methods
+let names = ['john', 'bobo', 'barry', 'olga', 'ben'];
+
+//length
+console.log(names.length);
+console.log(names[names.length - 1]);
+
+// concat
+const lastNames = ['pepper', 'onion', 'banana'];
+const allNames = names.concat(lastNames);
+console.log(allNames);
+// reverse
+console.log(allNames.reverse());
+
+//unshift
+allNames.unshift('susy');
+allNames.unshift('anna');
+console.log(allNames);
+//shift
+allNames.shift();
+allNames.shift();
+allNames.shift();
+allNames.shift();
+console.log(allNames);
+//push
+allNames.push('susy');
+console.log(allNames);
+//pop
+allNames.pop();
+// allNames.pop();
+// allNames.pop();
+// allNames.pop();
+console.log(allNames);
+// splice - mutates original array
+const specificNames = allNames.splice(0, 3);
+console.log(specificNames);
+console.log(allNames);
+
+*/
+
+// My Practice
+
+// Array Properties and Methods
+let names = ["john", "bobo", "barry", "olga", "ben"];
+
+// ===================================
+// 006 - Exercise - Full Name
+// ===================================
+// ===================================
+// 007 - Exercise - Calculate Total
+// ===================================
+// ===================================
+// 008 - Value vs Reference
+// ===================================
+// ===================================
+// 009 -
+// ===================================
+// ===================================
+// 010 -
 // ===================================
