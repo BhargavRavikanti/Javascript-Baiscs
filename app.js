@@ -8109,17 +8109,6 @@ value ? console.log('value is true') : console.log('value is false');
 // 012 - Global Scope
 // ===================================
 
-/*
-// NOTES
-
-
-*/
-
-// My Practice
-
-// ===================================
-// 013 - Local Scope
-// ===================================
 // Global Scope vs Local Scope
 // any variable outside code block {} is said to be in Global Scope
 // can be accesss anywhere in the program
@@ -8165,8 +8154,306 @@ console.log(`my name is ${name} and I'm awesome`);
 // can be accesss anywhere in the program
 // Gotchas : name collisions, modify by mistake
 
+// let name = "bobo";
+// name = "peter";
+// //// const name = "john"; // app.js:8159 Uncaught SyntaxError: Identifier 'name' has already been declared (at app.js:8159:7)
+// //// const name1 = "john"; // allowed
+// //// const name2 = "john"; // allowed
+
+// function calculate() {
+//   // some other code...
+//   console.log(name);
+//   name = "orange";
+//   function inner() {
+//     name = "inner name value";
+//     console.log(`this is from inner function ${name}`);
+//   }
+//   inner();
+// }
+// calculate();
+
+// if (true) {
+//   // some other code...
+//   console.log(name);
+//   name = "pants";
+// }
+
+// console.log(`my name is ${name} and I'm awesome`);
+
+// ===================================
+// 013 - Local Scope
+// ===================================
+// Local Scope
+// can not be access from outside code blocks
+// if - NOT VAR
+
+/*
+// NOTES
+
+// Local Scope
+// can not be access from outside code blocks
+// if - NOT VAR
+
+let name = 'bobo';
+
+function calculate() {
+  const name = 'john';
+  const age = 25;
+  // code goes here
+  becomesGlobal = 'global variable';
+}
+
+calculate();
+console.log(becomesGlobal);
+
+if (true) {
+  const name = 'john';
+}
+
+{
+  const name = 'john';
+  const special = 'special';
+}
+console.log(special);
+
+console.log(`my name is ${name} and I'm awesome`);
+*/
+
+// My Practice
+
+// Local Scope
+// can not be access from outside code blocks
+// if - NOT VAR
+
+// let name = "bobo";
+
+// function calculate() {
+//   const name = "john"; // we cannot access or modify this from outside
+//   const age = "25";
+//   // code goes here
+//   becomesGlobal = "global variable";
+// }
+// calculate();
+// console.log(becomesGlobal);
+
+// if (true) {
+//   const name = "john"; //  // we cannot access or modify this from outside
+// }
+
+// {
+//   const name = "john"; //  // we cannot access or modify this from outside
+//   const special = "special"; //  // we cannot access or modify this from outside
+//   // But we can access from inside
+//   console.log(name);
+//   console.log(special);
+// }
+// // // console.log(special); //  //  // we cannot access or modify this from outside
+
+// console.log(`my name is ${name} and I'm awesome`);
+
 // ===================================
 // 014 - Variable Lookup
+// ===================================
+// // Variable Lookup
+// {} - code block
+
+/*
+// NOTES
+
+// Variable Lookup
+// {} - code block
+
+const globalNumber = 5;
+
+function add(num1, num2) {
+  // const globalNumber = 20;
+  const result = num1 + num2 + globalNumber;
+  function multiply() {
+    // const globalNumber = 100;
+    const multiplyResult = result * globalNumber;
+    console.log(multiplyResult);
+  }
+  console.log(multiplyResult);
+
+  multiply();
+  return result;
+}
+
+console.log(add(3, 4));
+*/
+
+// My Practice
+
+// Variable Lookup
+// {} - code block
+
+// const globalNumber = 5;
+
+// function add(num1, num2) {
+//   // const globalNumber = 20;
+//   const result = num1 + num2 + globalNumber; // if function has globalNumber variable it will use it result=3+4+20=27// otherwise it will use outside globalNumber result = 3+4+5=12
+//   function multiply() {
+//     // const globalNumber = 100;
+//     const multiplyResult = result * globalNumber;
+//     console.log(multiplyResult);
+//   }
+//   multiply();
+//   return result;
+// }
+
+// console.log(add(3, 4));
+
+// ===================================
+// 015 - Callback Functions, Higher Order Functions
+// ===================================
+// Callback Functions, Higher Order Functions, Functions as First Class Objects/Citizens
+// Functions are first class objects - stored in a variable (expression), passed as an argument to another function, return from the function (closure)
+
+// Higher Order function - accepts another function as an argument or returns another function as a result
+
+// Callback Function - passed to a another function as an an argument and executed inside that function
+
+/*
+// NOTES
+
+function morning(name) {
+  return `Good morning ${name.toUpperCase()}`;
+}
+function afternoon(name) {
+  return `Good afternoon ${name.repeat(3)}`;
+}
+
+function greet(name, cb) {
+  const myName = 'john';
+  console.log(`${cb(name)}, my name is ${myName}`);
+}
+
+greet('bobo', morning);
+greet('peter', afternoon);
+
+// Callback Functions, Higher Order Functions, Functions as First Class Objects/Citizens
+// Functions are first class objects - stored in a variable (expression), passed as an argument to another function, return from the function (closure)
+
+// Higher Order function - accepts another function as an argument or returns another function as a result
+
+// Callback Function - passed to a another function as an an argument and executed inside that function
+
+// function greetMorning(name) {
+//   const myName = 'john';
+//   console.log(`Good morning ${name}, my name is ${myName}`);
+// }
+// function greetAfternoon(name) {
+//   const myName = 'susan';
+//   console.log(`Good afternoon ${name}, my name is ${myName}`);
+// }
+*/
+
+// My Practice
+
+// Callback Functions, Higher Order Functions, Functions as First Class Objects/Citizens
+// Functions are first class objects - stored in a variable (expression), passed as an argument to another function, return from the function (closure)
+
+// Higher Order function - accepts another function as an argument or returns another function as a result
+
+// Callback Function - passed to a another function as an an argument and executed inside that function
+
+// function greetMorning(name) {
+//   const myName = "john";
+//   console.log(`Good morning ${name}, my name is ${myName}`);
+// }
+// function greetAfternoon(name) {
+//   const myName = "john";
+//   console.log(`Good afternoon ${name}, my name is ${myName}`);
+// }
+// greetMorning("bobo");
+// greetAfternoon("peter");
+
+// function morning(name) {
+//   return `Good morning ${name.toUpperCase()}`;
+// }
+// function afternoon(name) {
+//   return `Good afternoon ${name.repeat(3)}`;
+// }
+
+// function greet(name, cb) {
+//   const myName = "john";
+//   console.log(`${cb(name)}, my name is ${myName}`);
+// }
+// greet("bobo", morning);
+// greet("peter", afternoon);
+
+// ===================================
+// 016 - Array Iterators
+// ===================================
+
+/*
+// NOTES
+
+// Powerfull Array Methods
+// forEach, map, filter, find, reduce
+// Iterate over array - no for loop required
+// Accept CALLBACK function as an argument, calls Callback against each item in a array. Reference Item in the Callback Paramater.
+
+const numbers = [0, 1, 2, 3, 4];
+
+// show all numbers
+
+for (let i = 0; i < numbers.length; i++) {
+  console.log(numbers[i]);
+}
+*/
+
+// My Practice
+
+// Powerfull Array Methods
+// forEach, map, filter, find, reduce
+// Iterate over array - no for loop required
+// Accept CALLBACK function as an argument, calls Callback against each item in a array. Reference Item in the Callback Paramater.
+
+// const numbers = [0, 1, 2, 3, 4];
+
+// // show all numbers
+
+// for (let i = 0; i < numbers.length; i++) {
+//   console.log(numbers[i]);
+// }
+
+// ===================================
+// 017 - forEach
+// ===================================
+// forEach
+// does not return new array
+
+/*
+// NOTES
+
+// forEach
+// does not return new array
+
+const people = [
+  { name: 'bob', age: 20, position: 'developer' },
+  { name: 'peter', age: 25, position: 'designer' },
+  { name: 'susy', age: 30, position: 'the boss' },
+];
+
+function showPerson(person) {
+  console.log(person.position.toUpperCase());
+}
+
+// people.forEach(showPerson);
+
+people.forEach(function (item) {
+  console.log(item.position.toUpperCase());
+});
+*/
+
+// My Practice
+
+// forEach
+// does not return new array
+
+// ===================================
+// 018 - map
 // ===================================
 
 /*
@@ -8178,5 +8465,5 @@ console.log(`my name is ${name} and I'm awesome`);
 // My Practice
 
 // ===================================
-// 015 - Callback Functions, Higher Order Functions
+// 019 - filter
 // ===================================
