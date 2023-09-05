@@ -116,7 +116,7 @@
 //   console.log(`${cb(name)}, my name is ${myName}`);
 // }
 
-// greet(morning, "peter");
+// greet(morning, "peter"); // // good morning PETER, my name is bharu
 
 // good morning PETER, my name is bharu
 
@@ -130,3 +130,13 @@
 // }
 
 // greet(morning, "peter", "rockzz");
+
+// function multiplyBy(num) {
+//   return function (x) {
+//     return x * num;
+//   };
+// }
+
+// const triple = multiplyBy(3);
+// console.log(triple(8));
+// console.log(triple(50));

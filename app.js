@@ -4669,6 +4669,10 @@ outer(); //'AMADEUS'
 // HIGHER ORDER FUNCTIONS
 // A function which takes another function as an argument
 // or returns a function is known as higher order function.
+// HIGHER ORDER FUNCTIONS
+//Functions that operate on/with other functions. They can:
+// -> Accept other functions as arguments
+// -> Return a function
 
 /*
 // NOTES
@@ -4715,6 +4719,10 @@ outer(); //'AMADEUS'
 // HIGHER ORDER FUNCTIONS
 // A function which takes another function as an argument
 // or returns a function is known as higher order function.
+// HIGHER ORDER FUNCTIONS
+//Functions that operate on/with other functions. They can:
+// -> Accept other functions as arguments
+// -> Return a function
 
 // FUNCTIONS AS ARGUMENTS
 // // This function accepts another function as an argument
@@ -4775,6 +4783,10 @@ outer(); //'AMADEUS'
 
 // 007 Functions as Return Values
 // ======================================
+// HIGHER ORDER FUNCTIONS
+//Functions that operate on/with other functions. They can:
+// -> Accept other functions as arguments
+// -> Return a function
 
 /*
 // NOTES
@@ -4821,6 +4833,10 @@ outer(); //'AMADEUS'
 */
 
 // My Practice
+// HIGHER ORDER FUNCTIONS
+//Functions that operate on/with other functions. They can:
+// -> Accept other functions as arguments
+// -> Return a function
 
 // // METHOD 2
 // function multiplyBy(num) {
@@ -7922,6 +7938,8 @@ console.log({
 
 // when assigning non-primitive data type value to a variable is done by reference so any changes will affect all the references.
 
+// The fundamental difference between primitives and non-primitive is that primitives are immutable and non-primitive are mutable .
+
 /*
 // NOTES
 
@@ -8464,8 +8482,224 @@ people.forEach(function (item) {
 // forEach
 // does not return new array
 
+// const people = [
+//   { name: "bob", age: 20, position: "developer" },
+//   { name: "peter", age: 25, position: "designer" },
+//   { name: "susy", age: 30, position: "the boss" },
+// ];
+
+// // iterating people array
+
+// // traditional for loop
+// for (let i = 0; i < people.length; i++) {
+//   console.log(people[i]);
+// }
+// // for of loop
+// for (let item of people) {
+//   console.log(item);
+// }
+
+// // right now we need these methods
+// // method 1 // using function declaration
+// function showPerson(person) {
+//   console.log(person);
+// }
+// // method 2 // using function expression
+// const showPerson2 = function (person) {
+//   console.log(person);
+// };
+
+// people.forEach(showPerson);
+// people.forEach(showPerson2);
+// // method 3 // using anonymous function
+// people.forEach(function (item) {
+//   console.log(item);
+// });
+// // method 4 // using arrow function
+// people.forEach((person) => {
+//   console.log(person);
+// });
+
+// people.forEach(function (item) {
+//   console.log(item.position.toUpperCase());
+// });
+
+// people.forEach(function (item) {
+//   console.log(item.name.toUpperCase());
+// });
+// // using arrow function
+// people.forEach((item) => {
+//   console.log(item.position.toUpperCase());
+// });
+
+// people.forEach((item) => {
+//   console.log(item.name.toUpperCase());
+// });
+
 // ===================================
 // 018 - map
+// ===================================
+// map
+// does return a new array
+// does not change size of original array
+// uses values from original array when making new one
+// map is the most used method for vanilla js and react also.
+
+/*
+// NOTES
+
+// map
+// does return a new array
+// does not change size of original array
+// uses values from original array when making new one
+
+const people = [
+  { name: 'bob', age: 20, position: 'developer' },
+  { name: 'peter', age: 25, position: 'designer' },
+  { name: 'susy', age: 30, position: 'the boss' },
+  { name: 'anna', age: 35, position: 'the boss' },
+];
+
+const ages = people.map(function (person) {
+  return person.age + 20;
+});
+const newPeople = people.map(function (person) {
+  return {
+    firstName: person.name.toUpperCase(),
+    oldAge: person.age + 20,
+  };
+});
+
+const names = people.map(function (person) {
+  return `<h1>${person.name}</h1>`;
+});
+
+document.body.innerHTML = names.join('');
+
+console.log(names);
+
+*/
+
+// My Practice
+
+// map
+// does return a new array
+// does not change size of original array
+// uses values from original array when making new one
+// map is the most used method for vanilla js and react also.
+
+// const people = [
+//   { name: "bob", age: 20, position: "developer" },
+//   { name: "peter", age: 25, position: "designer" },
+//   { name: "susy", age: 30, position: "the boss" },
+//   { name: "anna", age: 35, position: "the boss" },
+// ];
+
+// const ages = people.map(function (item) {
+//   return item.age + 20;
+// });
+// console.log(ages);
+
+// const newPeople = people.map(function (item) {
+//   return {
+//     firstName: item.name.toUpperCase(),
+//     oldAge: item.age + 20,
+//   };
+// });
+// console.log(newPeople);
+
+// const names = people.map(function (item) {
+//   return `<h1>${item.name}</h1>`;
+// });
+// // document.body.innerHTML = names.join(""); // not working for me i don't know why
+// console.log(names);
+
+// ===================================
+// 019 - filter
+// ===================================
+// filter
+// does return a new array
+// can manipulate the size of new array
+// returns based on condition
+
+/*
+// NOTES
+
+// filter
+// does return a new array
+// can manipulate the size of new array
+// returns based on condition
+
+const people = [
+  { name: 'bob', age: 20, position: 'developer' },
+  { name: 'peter', age: 25, position: 'designer' },
+  { name: 'susy', age: 30, position: 'the boss' },
+  { name: 'anna', age: 35, position: 'the boss' },
+];
+
+const youngPeople = people.filter(function (person) {
+  return person.age <= 25;
+});
+
+const developers = people.filter(function (person) {
+  return person.position === 'senior developer';
+});
+
+console.log(developers);
+
+*/
+
+// My Practice
+
+// filter
+// does return a new array
+// can manipulate the size of new array
+// returns based on condition
+
+// const people = [
+//   { name: "bob", age: 20, position: "developer" },
+//   { name: "peter", age: 25, position: "designer" },
+//   { name: "susy", age: 30, position: "the boss" },
+//   { name: "anna", age: 35, position: "the boss" },
+// ];
+
+// const youngPeople = people.filter(function (item) {
+//   return item.age <= 25;
+// });
+// console.log(youngPeople);
+
+// const developers = people.filter(function (item) {
+//   return item.position === "developer";
+//   // return item.position === "senior developer"; // returns empty []
+// });
+// console.log(developers);
+
+// // using arrow function implicit return
+// const youngPeople2 = people.filter((item) => {
+//   return item.age <= 25;
+// });
+// console.log(youngPeople2);
+
+// // using arrow function explicit return
+// const youngPeople3 = people.filter((item) => item.age <= 25);
+// console.log(youngPeople3);
+
+// // using arrow function implicit return
+// const developers2 = people.filter((item) => {
+//   return item.position === "developer";
+//   // return item.position === "senior developer"; // returns empty []
+// });
+// console.log(developers2);
+
+// // using arrow function explicit return
+// const developers3 = people.filter(
+//   (item) => item.position === "developer"
+//   //  item.position === "senior developer" // returns empty []
+// );
+// console.log(developers3);
+
+// ===================================
+// 020 - find
 // ===================================
 
 /*
@@ -8477,5 +8711,32 @@ people.forEach(function (item) {
 // My Practice
 
 // ===================================
-// 019 - filter
+// 021 -
+// ===================================
+
+/*
+// NOTES
+
+
+*/
+
+// My Practice
+
+// ===================================
+// 022 -
+// ===================================
+
+/*
+// NOTES
+
+
+*/
+
+// My Practice
+
+// ===================================
+// 023 -
+// ===================================
+// ===================================
+// 024 -
 // ===================================
