@@ -4578,6 +4578,10 @@ outer(); //'AMADEUS'
 // ======================================
 // FUNCTIONS ARE OBJECTS
 // A function which takes another function as an argument or returns a function is known as higher order function.
+// HIGHER ORDER FUNCTIONS
+//Functions that operate on/with other functions. They can:
+// -> Accept other functions as arguments
+// -> Return a function
 
 /*
 // NOTES
@@ -4615,7 +4619,12 @@ outer(); //'AMADEUS'
 */
 
 // My Practice
+
 // A function which takes another function as an argument or returns a function is known as higher order function.
+// HIGHER ORDER FUNCTIONS
+//Functions that operate on/with other functions. They can:
+// -> Accept other functions as arguments
+// -> Return a function
 
 // function add(x, y) {
 //   return x + y;
@@ -4633,6 +4642,7 @@ outer(); //'AMADEUS'
 //   return x / y;
 // };
 
+// //We can store functions in an array!
 // const operations = [add, subtract, multiply, divide];
 // console.log(operations[0]);
 // console.log(operations[1]);
@@ -4646,6 +4656,7 @@ outer(); //'AMADEUS'
 //   console.log(result);
 // }
 
+// // We can also store functions in objects!
 // by adding a function to an object is called method
 // const thing = {
 //   doSomething: multiply,
@@ -4706,13 +4717,14 @@ outer(); //'AMADEUS'
 // or returns a function is known as higher order function.
 
 // FUNCTIONS AS ARGUMENTS
+// // This function accepts another function as an argument
 // function callTwice(func) {
 //   func();
 //   func();
 // }
 
 // function laugh() {
-//   console.log("hahahahahahah");
+//   console.log("hahahahahahah"); // we can pass this function as an argument
 // }
 
 // callTwice(laugh); // pass a function as an argument
@@ -4905,7 +4917,7 @@ outer(); //'AMADEUS'
 // 008 Callbacks
 // ======================================
 // CALLBACK FUNCTIONS A callback function is a function passed into another function as an argument, which is then invoked inside the outer function.
-
+// my definiton of callback function: A function passing as an argument to higher order function.
 /*
 // NOTES
 
@@ -8371,9 +8383,9 @@ greet('peter', afternoon);
 // function morning(name) {
 //   return `Good morning ${name.toUpperCase()}`;
 // }
-// function afternoon(name) {
-//   return `Good afternoon ${name.repeat(3)}`;
-// }
+// // function afternoon(name) {
+// //   return `Good afternoon ${name.repeat(3)}`;
+// // }
 
 // function greet(name, cb) {
 //   const myName = "john";

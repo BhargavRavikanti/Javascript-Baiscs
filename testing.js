@@ -54,3 +54,79 @@
 //   newArray.push(`${names[i]} ${lastName}`);
 // }
 // console.log(newArray);
+// 5 sep 2023 tue //================================================
+// printing hahaha 100 times to console
+// function callTenTimes(func) {
+//   for (let i = 0; i < 100; i++) { // call template or higher order function to do 100 times
+//     func();
+//   }
+// }
+
+// function laughing() {
+//   console.log("hahahaha");
+// }
+
+// callTenTimes(laughing);
+
+// printing hahaha N times to console
+// function repeatNtimes(func, num) {
+//   for (let i = 0; i < num; i++) {
+//     func();
+//   }
+// }
+
+// function laugh() {
+//   console.log("hahaha");
+// }
+
+// repeatNtimes(laugh, 10);
+
+// function add(x, y) {
+//   return x + y;
+// }
+
+// const multiply = function (x, y) {
+//   return x * y;
+// };
+
+// const operations = [add, multiply];
+// console.log(operations[0]);
+// console.log(operations[0](2, 5));
+
+// for (let func of operations) {
+//   let result = func(30, 5);
+//   console.log(result);
+// }
+
+// const thing = {
+//   add: add,
+//   multiply: multiply,
+// };
+// console.log(thing.add);
+// console.log(thing.add(4, 5));
+// console.log(thing.multiply);
+// console.log(thing.multiply(5, 10));
+
+// function morning(namess) {
+//   return `good morning ${namess.toUpperCase()}`;
+// }
+
+// function greet(cb, name) {
+//   const myName = "bharu";
+//   console.log(`${cb(name)}, my name is ${myName}`);
+// }
+
+// greet(morning, "peter");
+
+// good morning PETER, my name is bharu
+
+// function greet(cb, name, name1) {
+//   const myName = "bharu";
+//   console.log(`${cb(name, name1)}, my name is ${myName}`);
+// }
+
+// function morning(name, name1) {
+//   return `good morning ${name},${name1}`;
+// }
+
+// greet(morning, "peter", "rockzz");
