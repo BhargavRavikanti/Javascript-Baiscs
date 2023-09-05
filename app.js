@@ -8701,42 +8701,557 @@ console.log(developers);
 // ===================================
 // 020 - find
 // ===================================
+// find
+// returns single instance - (in this case object)
+// returns first match, if no match undefined
+// great for getting unique value
 
 /*
 // NOTES
 
+// find
+// returns single instance - (in this case object)
+// returns first match, if no match undefined
+// great for getting unique value
+
+const people = [
+  { name: 'bob', age: 20, position: 'developer', id: 1 },
+  { name: 'peter', age: 25, position: 'designer', id: 2 },
+  { name: 'susy', age: 30, position: 'the boss', id: 3 },
+  { name: 'anna', age: 35, position: 'the boss', id: 4 },
+];
+const names = ['bob', 'peter', 'susy'];
+console.log(
+  names.find(function (name) {
+    return name === 'zelda';
+  })
+);
+
+const person = people.find(function (person) {
+  return person.id === 3;
+});
+
+console.log(person.name);
+
+const person2 = people.filter(function (person) {
+  return person.id === 3;
+});
+
+console.log(person2[0].name);
 
 */
 
 // My Practice
 
+// find
+// returns single instance - (in this case object)
+// returns first match, if no match undefined
+// great for getting unique value
+
+// const people = [
+//   { name: "bob", age: 20, position: "developer", id: 1 },
+//   { name: "peter", age: 25, position: "designer", id: 2 },
+//   { name: "susy", age: 30, position: "the boss", id: 3 },
+//   { name: "anna", age: 35, position: "the boss", id: 4 },
+// ];
+
+// const names = ["bob", "peter", "susy"];
+// console.log(
+//   names.find(function (name) {
+//     return name === "bob";
+//     // return name === "zelda"; // undefined
+//   })
+// );
+// // find
+// const person = people.find(function (item) {
+//   return item.id === 3;
+//   // return item.id === 5; // TypeError: Cannot read properties of undefined
+// });
+// console.log(person.name);
+// // filter
+// const person2 = people.filter(function (item) {
+//   return item.id === 3;
+// });
+// console.log(person2);
+// console.log(person2[0].name);
 // ===================================
-// 021 -
+// 021 - reduce
 // ===================================
+// reduce
+// iterates, callback function
+// reduces to a single value - number, array, object
+// 1 parameter ('acc') - total of all calculations
+// 2 parameter ('curr') - current iteration/value
 
 /*
 // NOTES
 
+// reduce
+// iterates, callback function
+// reduces to a single value - number, array, object
+// 1 parameter ('acc') - total of all calculations
+// 2 parameter ('curr') - current iteration/value
 
+const people = [
+  { name: 'bob', age: 20, position: 'developer', id: 1, salary: 200 },
+  { name: 'peter', age: 25, position: 'designer', id: 2, salary: 300 },
+  { name: 'susy', age: 30, position: 'the boss', id: 3, salary: 500 },
+  { name: 'anna', age: 35, position: 'the boss', id: 4, salary: 500 },
+];
+
+const total = people.reduce(function (acc, currItem) {
+  console.log(`total ${acc}`);
+  console.log(`current money : ${currItem.salary}`);
+  acc += currItem.salary;
+  return acc;
+}, 500);
+
+console.log(total);
 */
 
 // My Practice
 
+// reduce
+// iterates, callback function
+// reduces to a single value - number, array, object
+// 1 parameter ('acc') - total of all calculations
+// 2 parameter ('curr') - current iteration/value
+
+// const people = [
+//   { name: "bob", age: 20, position: "developer", id: 1, salary: 200 },
+//   { name: "peter", age: 25, position: "designer", id: 2, salary: 300 },
+//   { name: "susy", age: 30, position: "the boss", id: 3, salary: 500 },
+//   { name: "anna", age: 35, position: "the boss", id: 4, salary: 500 },
+// ];
+
+// const total = people.reduce(function (total, currentItem) {
+//   console.log(`total ${total}`);
+//   console.log(`current money : ${currentItem.salary}`);
+//   total += currentItem.salary;
+//   return total;
+// }, 0);
+// console.log(total);
+
 // ===================================
-// 022 -
+// 022 - Array Challenge Intro
+// ===================================
+
+// ===================================
+// 023 - Array Challenge - setup Data
 // ===================================
 
 /*
-// NOTES
+## Array Methods #9
 
+Multiple Videos
 
+#### Create Students Array
+
+1. setup students array with 5 students
+   {
+   id: 1,
+   name: 'peter',
+   score: 80,
+   favoriteSubject: 'math',
+   },
+
+#### Use Multiple Files
+
+- easer to manage code base (file, project)
+- order matters
+- other ways to achieve the same result (ES6 modules, fetch DB )
+- not limited to just static data
+
+#### updatedStudents
+
+1. add role:'student' property to each object
+   using MAP method
+2. assign to 'updatedStudents' variable and log
+
+#### highScores
+
+1. filter array and return only scores >= 80
+2. assign to 'highScores' variable and log
+
+#### specificId
+
+1. find specific id in array
+2. assign to 'specificId' variable and log
+
+#### averageScore
+
+1. sum up all student.score values with reduce
+2. divide by the length of the students array
+3. assign to 'averageScore' and log
+
+#### survey
+
+1. list favorite subjects with reduce
+   {
+   english: 1
+   history: 1
+   math: 3
+   }
+2. assign to survey and log
 */
 
-// My Practice
+// const students = [
+//   {
+//     id: 1,
+//     name: "peter",
+//     score: 80,
+//     favoriteSubject: "math",
+//   },
+//   {
+//     id: 2,
+//     name: "susan",
+//     score: 99,
+//     favoriteSubject: "history",
+//   },
+//   {
+//     id: 3,
+//     name: "anna",
+//     score: 85,
+//     favoriteSubject: "math",
+//   },
+//   {
+//     id: 4,
+//     name: "john",
+//     score: 34,
+//     favoriteSubject: "art",
+//   },
+//   {
+//     id: 5,
+//     name: "bobo",
+//     score: 74,
+//     favoriteSubject: "math",
+//   },
+// ];
+// console.log(students);
 
 // ===================================
-// 023 -
+// 024 - Array Challenge - Multiple Files
+// ===================================
+
+// const students = [
+//   {
+//     id: 1,
+//     name: "peter",
+//     score: 80,
+//     favoriteSubject: "math",
+//   },
+//   {
+//     id: 2,
+//     name: "susan",
+//     score: 99,
+//     favoriteSubject: "history",
+//   },
+//   {
+//     id: 3,
+//     name: "anna",
+//     score: 85,
+//     favoriteSubject: "math",
+//   },
+//   {
+//     id: 4,
+//     name: "john",
+//     score: 34,
+//     favoriteSubject: "art",
+//   },
+//   {
+//     id: 5,
+//     name: "bobo",
+//     score: 74,
+//     favoriteSubject: "math",
+//   },
+// ];
+// console.log(students);
+
+// ===================================
+// 025 - Array Challenge - Map
+// ===================================
+/*
+// #### updatedStudents
+
+1. add role:'student' property to each object
+   using MAP method
+2. assign to 'updatedStudents' variable and log
+*/
+
+// const students = [
+//   {
+//     id: 1,
+//     name: "peter",
+//     score: 80,
+//     favoriteSubject: "math",
+//   },
+//   {
+//     id: 2,
+//     name: "susan",
+//     score: 99,
+//     favoriteSubject: "history",
+//   },
+//   {
+//     id: 3,
+//     name: "anna",
+//     score: 85,
+//     favoriteSubject: "math",
+//   },
+//   {
+//     id: 4,
+//     name: "john",
+//     score: 34,
+//     favoriteSubject: "art",
+//   },
+//   {
+//     id: 5,
+//     name: "bobo",
+//     score: 74,
+//     favoriteSubject: "math",
+//   },
+// ];
+
+// map method practice
+// const updatedStudents = students.map(function (item) {
+//   // console.log(item);
+//   item.role = "student";
+//   return item;
+// });
+// console.log(updatedStudents);
+
+// ===================================
+// 026 - Array Challenge - Filter
+// ===================================
+/*
+#### highScores
+
+1. filter array and return only scores >= 80
+2. assign to 'highScores' variable and log
+*/
+
+// const students = [
+//   {
+//     id: 1,
+//     name: "peter",
+//     score: 80,
+//     favoriteSubject: "math",
+//   },
+//   {
+//     id: 2,
+//     name: "susan",
+//     score: 99,
+//     favoriteSubject: "history",
+//   },
+//   {
+//     id: 3,
+//     name: "anna",
+//     score: 85,
+//     favoriteSubject: "math",
+//   },
+//   {
+//     id: 4,
+//     name: "john",
+//     score: 34,
+//     favoriteSubject: "art",
+//   },
+//   {
+//     id: 5,
+//     name: "bobo",
+//     score: 74,
+//     favoriteSubject: "math",
+//   },
+// ];
+
+// filter method practice
+/*
+#### highScores
+
+1. filter array and return only scores >= 80
+2. assign to 'highScores' variable and log
+*/
+
+// // Method 1
+// const highScores = students.filter(function (item) {
+//   return item.score >= 80;
+// });
+// console.log(highScores);
+// // Method 2
+// const highScores2 = students.filter(function (item) {
+//   if (item.score >= 80) {
+//     return item;
+//   }
+// });
+// console.log(highScores2);
+// // Method 3 // one liner
+// const highScores3 = students.filter(function (item) {
+//   if (item.score >= 80) return item;
+// });
+// console.log(highScores3);
+
+// ===================================
+// 027 - Array Challenge - File Alternative Syntax
+// ===================================
+
+// covered in 027
+
+// ===================================
+// 028 - Array Challenge - Find
+// ===================================
+/*
+#### specificId
+
+1. find specific id in array
+2. assign to 'specificId' variable and log
+*/
+
+// const students = [
+//   {
+//     id: 1,
+//     name: "peter",
+//     score: 80,
+//     favoriteSubject: "math",
+//   },
+//   {
+//     id: 2,
+//     name: "susan",
+//     score: 99,
+//     favoriteSubject: "history",
+//   },
+//   {
+//     id: 3,
+//     name: "anna",
+//     score: 85,
+//     favoriteSubject: "math",
+//   },
+//   {
+//     id: 4,
+//     name: "john",
+//     score: 34,
+//     favoriteSubject: "art",
+//   },
+//   {
+//     id: 5,
+//     name: "bobo",
+//     score: 74,
+//     favoriteSubject: "math",
+//   },
+// ];
+
+// find method practice
+/*
+#### specificId
+
+1. find specific id in array
+2. assign to 'specificId' variable and log
+*/
+// const specificId = students.find(function (item) {
+//   return item.id === 1;
+//   // return item.id === 2;
+// });
+// console.log(specificId);
+
+// const fruits = ["banana", "orange"];
+
+// const random = fruits.find(function (item) {
+//   return item === "banana";
+//   // return item === "bananas"; // undefined
+// });
+// console.log(random);
+
+// ===================================
+// 029 - Array Challenge - Reduce #1
+// ===================================
+/*
+#### averageScore
+
+1. sum up all student.score values with reduce
+2. divide by the length of the students array
+3. assign to 'averageScore' and log
+*/
+
+const students = [
+  {
+    id: 1,
+    name: "peter",
+    score: 80,
+    favoriteSubject: "math",
+  },
+  {
+    id: 2,
+    name: "susan",
+    score: 99,
+    favoriteSubject: "history",
+  },
+  {
+    id: 3,
+    name: "anna",
+    score: 85,
+    favoriteSubject: "math",
+  },
+  {
+    id: 4,
+    name: "john",
+    score: 34,
+    favoriteSubject: "art",
+  },
+  {
+    id: 5,
+    name: "bobo",
+    score: 74,
+    favoriteSubject: "math",
+  },
+];
+
+// Reduce method practice part 1
+/*
+#### averageScore
+
+1. sum up all student.score values with reduce
+2. divide by the length of the students array
+3. assign to 'averageScore' and log
+*/
+
+// // method 1
+// const averageScore = students.reduce(function (total, currentValue) {
+//   total += currentValue.score / students.length;
+//   return total;
+// }, 0);
+// console.log(averageScore);
+// method 2
+// const averageScore2 = students.reduce(function (scoresTotal, student) {
+//   // console.log(student);
+//   // console.log(scoresTotal);
+//   return (scoresTotal += student.score / students.length);
+// }, 0);
+// console.log(averageScore2);
+// method 3 // may be it is good method
+const averageScore3 =
+  students.reduce(function (scoresTotal, student) {
+    // console.log(student);
+    // console.log(scoresTotal);
+    return (scoresTotal += student.score);
+  }, 0) / students.length;
+console.log(averageScore3);
+
+// ===================================
+// 030 - Square Breacket Notation
 // ===================================
 // ===================================
-// 024 -
+// 031 - Array Challenge - Reduce #2
+// ===================================
+/*
+#### survey
+
+1. list favorite subjects with reduce
+   {
+   english: 1
+   history: 1
+   math: 3
+   }
+*/
+// ===================================
+// 032 - Math Object
+// ===================================
+// ===================================
+// 033 - Date Object
 // ===================================
