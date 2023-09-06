@@ -9169,38 +9169,38 @@ Multiple Videos
 3. assign to 'averageScore' and log
 */
 
-const students = [
-  {
-    id: 1,
-    name: "peter",
-    score: 80,
-    favoriteSubject: "math",
-  },
-  {
-    id: 2,
-    name: "susan",
-    score: 99,
-    favoriteSubject: "history",
-  },
-  {
-    id: 3,
-    name: "anna",
-    score: 85,
-    favoriteSubject: "math",
-  },
-  {
-    id: 4,
-    name: "john",
-    score: 34,
-    favoriteSubject: "art",
-  },
-  {
-    id: 5,
-    name: "bobo",
-    score: 74,
-    favoriteSubject: "math",
-  },
-];
+// const students = [
+//   {
+//     id: 1,
+//     name: "peter",
+//     score: 80,
+//     favoriteSubject: "math",
+//   },
+//   {
+//     id: 2,
+//     name: "susan",
+//     score: 99,
+//     favoriteSubject: "history",
+//   },
+//   {
+//     id: 3,
+//     name: "anna",
+//     score: 85,
+//     favoriteSubject: "math",
+//   },
+//   {
+//     id: 4,
+//     name: "john",
+//     score: 34,
+//     favoriteSubject: "art",
+//   },
+//   {
+//     id: 5,
+//     name: "bobo",
+//     score: 74,
+//     favoriteSubject: "math",
+//   },
+// ];
 
 // Reduce method practice part 1
 /*
@@ -9224,18 +9224,27 @@ const students = [
 //   return (scoresTotal += student.score / students.length);
 // }, 0);
 // console.log(averageScore2);
-// method 3 // may be it is good method
-const averageScore3 =
-  students.reduce(function (scoresTotal, student) {
-    // console.log(student);
-    // console.log(scoresTotal);
-    return (scoresTotal += student.score);
-  }, 0) / students.length;
-console.log(averageScore3);
+// // method 3 // may be it is good method
+// const averageScore3 =
+//   students.reduce(function (scoresTotal, student) {
+//     // console.log(student);
+//     // console.log(scoresTotal);
+//     return (scoresTotal += student.score);
+//   }, 0) / students.length;
+// console.log(averageScore3);
 
 // ===================================
-// 030 - Square Breacket Notation
+// 030 - Square Bracket Notation
 // ===================================
+
+// const subject = "art";
+
+// const total = {};
+// // total.art = "some value";
+// // // or use can use any method . or []
+// total[subject] = "some value"; // dynamic method
+// console.log(total);
+
 // ===================================
 // 031 - Array Challenge - Reduce #2
 // ===================================
@@ -9249,9 +9258,191 @@ console.log(averageScore3);
    math: 3
    }
 */
+
+// const students = [
+//   {
+//     id: 1,
+//     name: "peter",
+//     score: 80,
+//     favoriteSubject: "math",
+//   },
+//   {
+//     id: 2,
+//     name: "susan",
+//     score: 99,
+//     favoriteSubject: "history",
+//   },
+//   {
+//     id: 3,
+//     name: "anna",
+//     score: 85,
+//     favoriteSubject: "math",
+//   },
+//   {
+//     id: 4,
+//     name: "john",
+//     score: 34,
+//     favoriteSubject: "art",
+//   },
+//   {
+//     id: 5,
+//     name: "bobo",
+//     score: 74,
+//     favoriteSubject: "math",
+//   },
+// ];
+
+// Reduce method practice part 2
+/*
+#### survey
+
+1. list favorite subjects with reduce
+   {
+   english: 1
+   history: 1
+   math: 3
+   }
+*/
+
+// const survey = students.reduce(function (survey, student) {
+//   // console.log(survey);
+//   // console.log(student.favoriteSubject);
+//   const favSubject = student.favoriteSubject;
+//   if (survey[favSubject]) {
+//     survey[favSubject] = survey[favSubject] + 1;
+//   } else {
+//     survey[favSubject] = 1;
+//   }
+//   return survey;
+// }, {});
+// console.log(survey);
+
 // ===================================
 // 032 - Math Object
 // ===================================
+// Math
+// Standard built-in objects - always available
+
+/*
+// NOTES
+
+// Math
+// Standard built-in objects - always available
+
+// const number = 4.56789;
+// const result = Math.floor(number);
+
+// const number = 4.12222;
+// const result = Math.ceil(number);
+
+// const number = 89;
+// const result = Math.sqrt(number);
+
+// const result = Math.PI;
+// const result = Math.min(4, 5, 6, 7, 9);
+// const result = Math.max(4, 5, 6, 7, 9, 100, 200, 1000);
+
+const result = Math.floor(Math.random() * 10 + 1);
+
+console.log(result);
+*/
+
+// My Practice
+
+// Math
+// Standard built-in objects - always available
+
+// const number = 4.56789;
+// const result = Math.floor(number);
+
+// const number = 4.12222;
+// const result = Math.ceil(number);
+
+// const number = 89;
+// const result = Math.sqrt(number);
+
+// const result = Math.PI;
+// const result = Math.min(4, 5, 6, 7, 9);
+// const result = Math.max(4, 5, 6, 7, 9, 100, 200, 1000);
+
+// const result = Math.floor(Math.random() * 10 + 1);
+// console.log(result);
+
 // ===================================
 // 033 - Date Object
+// ===================================
+// Date
+
+// const months = [
+//   "January",
+//   "February",
+//   "March",
+//   "April",
+//   "May",
+//   "June",
+//   "July",
+//   "August",
+//   "September",
+//   "October",
+//   "November",
+//   "December",
+// ];
+
+// const days = [
+//   "Sunday",
+//   "Monday",
+//   "Tuesday",
+//   "Wednesday",
+//   "Thursday",
+//   "Friday",
+//   "Saturtday",
+// ];
+
+/*
+// NOTES
+
+// const date = new Date();
+const date = new Date('1/12/2004');
+const month = date.getMonth();
+console.log(months[month]);
+
+const day = date.getDay();
+console.log(days[day]);
+
+console.log(date.getDate());
+console.log(date.getFullYear());
+
+const sentence = `${days[day]}, ${date.getDate()} ${
+  months[month]
+} ${date.getFullYear()}`;
+
+document.body.innerHTML = sentence;
+*/
+
+// My Practice
+
+// // const date = new Date();
+// const date = new Date("1/12/2004");
+// const month = date.getMonth();
+// console.log(months[month]);
+
+// const day = date.getDay();
+// console.log(days[day]);
+
+// console.log(date.getDate());
+// console.log(date.getFullYear());
+
+// const sentence = `${days[day]}, ${date.getDate()} ${
+//   months[month]
+// } ${date.getFullYear()}`;
+// console.log(sentence);
+
+// document.body.innerHTML = sentence;
+
+////////////////////////////////
+// 0 -
+////////////////////////////////
+
+// ===================================
+// 0 -
 // ===================================
