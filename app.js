@@ -9439,10 +9439,455 @@ document.body.innerHTML = sentence;
 
 // document.body.innerHTML = sentence;
 
+// =========================================
+// =========================================
+//               COLT STEELE
+// =========================================
+// =========================================
+
 ////////////////////////////////
-// 0 -
+// 12 - Object Methods and the 'THIS' Keyword
 ////////////////////////////////
 
 // ===================================
-// 0 -
+// 001 - Shorthand Object Properties
+// ===================================
+// METHOD & THIS Objects pt.2
+// GOALS
+// Add methods to objects
+// Use new object shorthand syntax
+// Understand prototypes
+// Explain how the %$@# this works.
+
+/*
+// NOTES
+
+// const getStats = (arr) => {
+//   const max = Math.max(...arr);
+//   const min = Math.min(...arr);
+//   const sum = arr.reduce((sum, r) => sum + r);
+//   const avg = sum / arr.length;
+// The "old" way:
+//   return {
+//     max: max,
+//     min: min,
+//     sum: sum,
+//     avg: avg
+//   }
+// }
+
+const getStats = (arr) => {
+  const max = Math.max(...arr);
+  const min = Math.min(...arr);
+  const sum = arr.reduce((sum, r) => sum + r);
+  const avg = sum / arr.length;
+  // Using the new shorthand property syntax:
+  return {
+    max,
+    min,
+    sum,
+    avg
+  }
+}
+const reviews = [4.5, 5.0, 3.44, 2.8, 3.5, 4.0, 3.5];
+
+const stats = getStats(reviews);
+
+function pick(arr) {
+  //return random element from arr
+  const idx = Math.floor(Math.random() * arr.length);
+  return arr[idx];
+}
+
+function getCard() {
+  const values = [
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6',
+    '7',
+    '8',
+    '9',
+    '10',
+    'J',
+    'Q',
+    'K',
+    'A'
+  ];
+  const suits = ['clubs', 'spades', 'hearts', 'diamonds'];
+  const value = pick(values);
+  const suit = pick(suits)
+  return {
+    value,
+    suit
+  };
+}
+*/
+
+// My Practice
+
+// const getStats = (arr) => {
+//   const max = Math.max(...arr);
+//   const min = Math.min(...arr);
+//   const sum = arr.reduce((sum, r) => sum + r);
+//   const avg = sum / arr.length;
+//   // the "old way"
+//   return {
+//     max: max,
+//     min: min,
+//     sum: sum,
+//     avg: avg,
+//   };
+// };
+
+// const getStats = (arr) => {
+//   const max = Math.max(...arr);
+//   const min = Math.min(...arr);
+//   const sum = arr.reduce((sum, r) => sum + r);
+//   const avg = sum / arr.length;
+//   // Using the new shorthand property syntax:
+//   return {
+//     max,
+//     min,
+//     sum,
+//     avg,
+//   };
+// };
+// const reviews = [4.5, 5.0, 3.44, 2.8, 3.5, 4.0, 3.5];
+// const stats = getStats(reviews);
+// console.log(stats);
+
+// function pick(arr) {
+//   //return random element from arr
+//   const idx = Math.floor(Math.random() * arr.length);
+//   return arr[idx];
+// }
+
+// function getCard() {
+//   const values = [
+//     "1",
+//     "2",
+//     "3",
+//     "4",
+//     "5",
+//     "6",
+//     "7",
+//     "8",
+//     "9",
+//     "10",
+//     "J",
+//     "Q",
+//     "K",
+//     "A",
+//   ];
+//   const suits = ["clubs", "spades", "hearts", "diamonds"];
+//   const value = pick(values);
+//   const suit = pick(suits);
+//   return {
+//     value,
+//     suit,
+//   };
+// }
+// console.log(getCard());
+
+// ===================================
+// 002 - Computed Properties
+// ===================================
+
+/*
+// NOTES
+
+const role = 'host';
+const person = 'Jools Holland';
+const role2 = 'Director'
+const person2 = 'James Cameron'
+
+// The old way: 
+// Make the object
+// const team = {};
+// Then add a property using dynamic key:
+// team[role] = person;
+// team[role2] = person2;
+
+// USING COMPUTED PROPERTIES!
+const team = {
+  [role]: person,
+  [role2]: person2,
+  [1 + 6 + 9]: 'sixteen'
+}
+
+// function addProp(obj, k, v) {
+//   const copy = {
+//     ...obj
+//   };
+//   copy[k] = v;
+//   return copy;
+// }
+
+// const addProp = (obj, k, v) => {
+//   return {
+//     ...obj,
+//     [k]: v
+//   }
+// }
+
+const addProp = (obj, k, v) => ({
+  ...obj,
+  [k]: v
+})
+const res = addProp(team, 'happy', ':)')
+*/
+
+// My Practice
+
+// const role = "host";
+// const person = "jools Holland";
+// const role2 = "director";
+// const person2 = "James Cameron";
+
+// The old way
+// Make the object
+// const team = {};
+// team[role] = person;
+// team[role2] = person2;
+// console.log(team);
+
+// COMPUTED PROPERTIES
+// We can use a variable as a key name in an object literal property!
+// const userName = "Jools";
+// const userRole = {
+//   [userName]: "Admin",
+// };
+// console.log(userRole);
+
+// USING COMPUTED PROPERTIES!
+// const role = "host";
+// const person = "jools Holland";
+// const role2 = "director";
+// const person2 = "James Cameron";
+
+// const team = {
+//   [role]: person,
+//   [role2]: person2,
+//   [1 + 6 + 9]: "sixteen",
+// };
+// console.log(team);
+
+// function addProp(object, key, value) {
+//   const copy = {
+//     ...object,
+//   };
+//   copy[key] = value;
+//   return copy;
+// }
+// const res = addProp(team, "happy", ":)");
+// console.log(res);
+
+// // using arrow function
+// const addProp = (object, key, value) => {
+//   return {
+//     ...object,
+//     [key]: value,
+//   };
+// };
+
+// const res = addProp(team, "happy", ":)");
+// console.log(res);
+
+// // using arrow function not using return
+// const addProp = (object, key, value) => ({ ...object, [key]: value });
+
+// const res = addProp(team, "happy", ":)");
+// console.log(res);
+
+// ===================================
+// 003 - Adding Methods to Objects
+// ===================================
+// METHODS
+// We can add functions as properties as objects.
+// We call them methods!
+// We have seen functions store them in variables,arrays,we can pass them as arguments,we can return them from a function,we can also store them in objects.
+
+/*
+// NOTES
+
+// Adding methods to an object!
+const math = {
+  numbers: [1, 2, 3, 4, 5],
+  add: function (x, y) {
+    return x + y;
+  },
+  multiply: function (x, y) {
+    return x * y;
+  }
+}
+
+// To execute multiply:
+math.multiply(5, 9); //45
+*/
+
+// My Practice
+
+// METHODS
+// We can add functions as properties as objects.
+// We call them methods!
+// We have seen functions store them in variables,arrays,we can pass them as arguments,we can return them from a function,we can also store them in objects.
+
+// console.log("hello".toUpperCase()); // this is aslo a method
+
+// it is uncommon way mostly we will not declare function outside add to object
+// const add = function (x, y) {
+//   return x + y;
+// };
+
+// const math = {
+//   add,
+// };
+// console.log(math);
+// console.log(math.add(2, 3));
+
+// // common way
+// const math = {
+//   numbers: [1, 2, 3, 4, 5],
+//   add: function (x, y) {
+//     return x + y;
+//   },
+//   multiply: function (x, y) {
+//     return x * y;
+//   },
+// };
+// console.log(math);
+// // accessing elements from objects
+// console.log(math.numbers);
+// console.log(math.add);
+// console.log(math.multiply);
+// console.log(math.add(5, 6));
+// console.log(math.multiply(6, 7));
+
+// ===================================
+// 004 - Methods Shorthand Syntax
+// ===================================
+// SHORTHAND newer syntax
+
+/*
+// NOTES
+
+const auth = {
+  username: 'TommyBot',
+  login() {
+    console.log("LOGGED YOU IN!")
+  },
+  logout() {
+    console.log("GOODBYE")
+  }
+}
+*/
+
+// My Practice
+
+// // previous suntax
+// const math = {
+//   multiply: function (x, y) {
+//     return x * y;
+//   },
+//   divide: function (x, y) {
+//     return x / y;
+//   },
+//   square: function (x) {
+//     return x * x;
+//   },
+// };
+// console.log(math);
+// console.log(math.multiply);
+// console.log(math.multiply(4, 6));
+// console.log(math.divide(15, 5));
+// console.log(math.square(5));
+
+// // newer modern syntax
+// const math2 = {
+//   multiply(x, y) {
+//     return x * y;
+//   },
+//   divide(x, y) {
+//     return x / y;
+//   },
+//   square(x) {
+//     return x * x;
+//   },
+// };
+// console.log(math2);
+// console.log(math2.multiply);
+// console.log(math2.multiply(4, 6));
+// console.log(math2.divide(15, 5));
+// console.log(math2.square(5));
+
+// // shorthand
+// // We do this so often that there's a new shortand way of adding methods.
+// const math3 = {
+//   blah: "Hi!",
+//   add(x, y) {
+//     return x + y;
+//   },
+//   multiply(x, y) {
+//     return x * y;
+//   },
+// };
+// console.log(math3);
+// console.log(math3.add(50, 60));
+
+// const auth = {
+//   username: "TommyBot",
+//   login() {
+//     console.log("logged you in");
+//   },
+//   logout() {
+//     console.log("goodbye");
+//   },
+//   login2: () => {
+//     console.log("hello");
+//   },
+//   multiply: (x, y) => x * y,
+//   multiply2: (x, y) => {
+//     return x * y;
+//   },
+// };
+// console.log(auth);
+// auth.login();
+// auth.logout();
+// auth.login2();
+// console.log(auth.multiply(12, 2));
+// console.log(auth.multiply2(12, 4));
+
+// ===================================
+// 005 - Intro to Keyword THIS
+// ===================================
+
+/*
+// NOTES
+
+*/
+
+// My Practice
+
+// ===================================
+// 006 -
+// ===================================
+
+/*
+// NOTES
+
+*/
+
+// My Practice
+
+// ===================================
+// 007 -
+// ===================================
+// ===================================
+// 008 -
+// ===================================
+// ===================================
+// 009 -
 // ===================================
