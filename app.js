@@ -9867,12 +9867,455 @@ const auth = {
 /*
 // NOTES
 
+function sayHi() {
+  console.log("HI")
+  //this refers to the window (global scope object in the browser)
+  console.log(this);
+}
+
+const greet = function () {
+  //this refers to the window (global scope object in the browser)
+  console.log(this);
+}
 */
 
 // My Practice
 
+// function sayHi() {
+//   console.log("HI");
+//   console.log(this);
+// }
+// sayHi();
+// console.log(window);
+
+// const greet = function () {
+//   console.log(this);
+// };
+// greet();
+
 // ===================================
-// 006 -
+// 006 - Using THIS in Methods
+// ===================================
+// THIS IN METHODS
+// Use the keyword THIS to access other properties on the same object
+
+/*
+// NOTES
+
+function sayHi() {
+  console.log("HI")
+  //this refers to the window (global scope object in the browser)
+  console.log(this);
+}
+
+
+const person = {
+  first: 'Cherilyn',
+  last: 'Sarkisian',
+  nickName: 'Cher',
+  fullName() {
+    //In a method, this refers to the object the method "lives" in:
+    const {
+      first,
+      last,
+      nickName
+    } = this;
+    return `${first} ${last } AKA ${nickName}`;
+  },
+  printBio() {
+    const fullName = this.fullName();
+    console.log(`${fullName} is a person!`)
+  }
+}
+*/
+
+// My Practice
+
+// THIS IN METHODS
+// Use the keyword THIS to access other properties on the same object
+
+// function sayHi() {
+//   console.log("HI");
+//   //this refers to the window (global scope object in the browser)
+//   console.log(this);
+// }
+
+// const person = {
+//   first: "Cherilyn",
+//   last: "Sarkisian",
+//   nickName: "Cher",
+//   fullName() {
+//     console.log(`${this.first} ${this.last} AKA ${this.nickName}`);
+//   },
+// };
+// person.fullName();
+
+// // using destructuring
+// const person2 = {
+//   first: "Cherilyn",
+//   last: "Sarkisian",
+//   nickName: "Cher",
+//   fullName() {
+//     const { first, last, nickName } = this;
+//     return `${first} ${last} AKA ${nickName}`;
+//   },
+//   printBio() {
+//     const fullName = this.fullName();
+//     console.log(`${fullName} is a person!`);
+//   },
+// };
+// person2.fullName();
+// person2.nickName = "CHERRRRR";
+// console.log(person2);
+// person2.fullName();
+// person2.printBio();
+
+// THIS IN METHODS
+// Use the keyword THIS to access other properties on the same object
+
+// const person3 = {
+//   first: "Robert",
+//   last: "Herjavec",
+//   // fullname() {
+//   //   return `${this.first} ${this.last}`;
+//   // },
+//   // using destructuring
+//   fullname() {
+//     const { first, last } = this;
+//     return `${first} ${last}`;
+//   },
+// };
+// console.log(person3.fullname()); // Robert Herjavec
+// person3.last = "Plant";
+// console.log(person3.fullname()); // Robert Plant
+
+// ===================================
+// 007 - THIS Invocation Context
+// ===================================
+// The value of THIS depends on the invocation context of the function it is used in.
+//Arrow functions don't get their 'own' this.
+
+/*
+// NOTES
+
+function sayHi() {
+  console.log("HI")
+  //this refers to the window (global scope object in the browser)
+  console.log(this);
+}
+
+const person = {
+  first: 'Cherilyn',
+  last: 'Sarkisian',
+  nickName: 'Cher',
+  fullName() {
+    //In a method, this refers to the object the method "lives" in
+    const {
+      first,
+      last,
+      nickName
+    } = this;
+    return `${first} ${last } AKA ${nickName}`;
+  },
+  printBio() {
+    console.log(this);
+    const fullName = this.fullName();
+    console.log(`${fullName} is a person!`)
+  },
+  laugh: () => {
+    //Arrow functions don't get their 'own' this.
+    console.log(this);
+    console.log(`${this.nickName} says HAHAHAHAH`)
+  }
+}
+
+// INVOCATION CONTEXT MATTERS!!!
+person.printBio(); //THIS refers to the person object
+
+const printBio = person.printBio;
+printBio(); //THIS refers to window object
+*/
+
+// My Practice
+
+// The value of THIS depends on the invocation context of the function it is used in.
+//Arrow functions don't get their 'own' this.
+
+// function sayHi() {
+//   console.log("HI")
+//   //this refers to the window (global scope object in the browser)
+//   console.log(this);
+// }
+
+// const person = {
+//   first: 'Cherilyn',
+//   last: 'Sarkisian',
+//   nickName: 'Cher',
+//   fullName() {
+//     //In a method, this refers to the object the method "lives" in
+//     const {
+//       first,
+//       last,
+//       nickName
+//     } = this;
+//     return `${first} ${last } AKA ${nickName}`;
+//   },
+//   printBio() {
+//     console.log(this);
+//     const fullName = this.fullName();
+//     console.log(`${fullName} is a person!`)
+//   },
+//   laugh: () => {
+//     //Arrow functions don't get their 'own' this.
+//     console.log(this);
+//     console.log(`${this.nickName} says HAHAHAHAH`)
+//   }
+// }
+
+// // INVOCATION CONTEXT MATTERS!!!
+// person.printBio(); //THIS refers to the person object
+
+// const printBio = person.printBio;
+// printBio(); //THIS refers to window object
+
+// ===================================
+// 008 - Annoyomatic Demo
+// ===================================
+
+/*
+// NOTES
+
+const annoyer = {
+  phrases: ["literally", "cray cray", "I can't even", "Totes!", "YOLO", "Can't Stop, Won't Stop"],
+  pickPhrase() {
+    const {
+      phrases
+    } = this;
+    const idx = Math.floor(Math.random() * phrases.length);
+    return phrases[idx]
+  },
+  start() {
+    //Use an arrow function to avoid getting a different 'this':
+    this.timerId = setInterval(() => {
+      console.log(this.pickPhrase())
+    }, 3000)
+  },
+  stop() {
+    clearInterval(this.timerId);
+    console.log("PHEW THANK HEAVENS THAT IS OVER!")
+  }
+}
+*/
+
+// My Practice
+
+// const annoyer = {
+//   phrases: [
+//     "literally",
+//     "cray cray",
+//     "I can't even",
+//     "Totes!",
+//     "YOLO",
+//     "Can't Stop, Won't Stop",
+//   ],
+//   pickPhrase() {
+//     const { phrases } = this;
+//     const idx = Math.floor(Math.random() * phrases.length);
+//     return phrases[idx];
+//   },
+//   start() {
+//     this.timerId = setInterval(() => {
+//       console.log(this.pickPhrase());
+//     }, 3000);
+//   },
+//   stop() {
+//     clearInterval(this.timerId);
+//     console.log("PHEW THANK HEAVENS THAT IS OVER!");
+//   },
+// };
+// // console.log(annoyer);
+// // console.log(annoyer.pickPhrase());
+// annoyer.start();
+// // console.log(annoyer);
+// annoyer.stop();
+
+// ===================================
+// 009 - Putting It All Together Deck Of Cards
+// ===================================
+
+/*
+// NOTES
+
+// **********************************
+// WRITING EVERYTHING USING FUNCTIONS
+// **********************************
+function initializeDeck() {
+  const deck = [];
+  const suits = ['hearts', 'diamonds', 'spades', 'clubs'];
+  const values = '2,3,4,5,6,7,8,9,10,J,Q,K,A';
+  for (let value of values.split(',')) {
+    for (let suit of suits) {
+      deck.push({
+        value,
+        suit
+      })
+    }
+  }
+  return deck;
+}
+
+function drawCard(deck, drawnCards) {
+  const card = deck.pop();
+  drawnCards.push(card);
+  return card;
+}
+
+function drawMultiple(numCards, deck, drawnCards) {
+  const cards = [];
+  for (let i = 0; i < numCards; i++) {
+    cards.push(drawCard(deck, drawnCards));
+  }
+  return cards;
+}
+
+function shuffle(deck) {
+  // loop over array backwards
+  for (let i = deck.length - 1; i > 0; i--) {
+    //pick random index before current element
+    let j = Math.floor(Math.random() * (i + 1));
+    //swap
+    [deck[i], deck[j]] = [deck[j], deck[i]];
+  }
+  return deck;
+}
+
+
+// We have to create a bunch of variables:
+const firstDeck = initializeDeck();
+const drawnCards = [];
+shuffle(firstDeck);
+// We have to pass a ton of arguments around:
+const hand1 = drawMultiple(2, firstDeck, drawnCards);
+const hand2 = drawMultiple(2, firstDeck, drawnCards);
+const pokerHand = drawMultiple(5, firstDeck, drawnCards);
+
+
+
+
+
+// **********************************
+// USING AN OBJECT + METHODS INSTEAD:
+// **********************************
+
+const myDeck = {
+  deck: [],
+  drawnCards: [],
+  suits: ['hearts', 'diamonds', 'spades', 'clubs'],
+  values: '2,3,4,5,6,7,8,9,10,J,Q,K,A',
+  initializeDeck() {
+    const {
+      suits,
+      values,
+      deck
+    } = this;
+    for (let value of values.split(',')) {
+      for (let suit of suits) {
+        deck.push({
+          value,
+          suit
+        })
+      }
+    }
+    // return deck;
+  },
+  drawCard() {
+    const card = this.deck.pop();
+    this.drawnCards.push(card);
+    return card;
+  },
+  drawMultiple(numCards) {
+    const cards = [];
+    for (let i = 0; i < numCards; i++) {
+      cards.push(this.drawCard());
+    }
+    return cards;
+  },
+  shuffle() {
+    const {
+      deck
+    } = this;
+    // loop over array backwards
+    for (let i = deck.length - 1; i > 0; i--) {
+      //pick random index before current element
+      let j = Math.floor(Math.random() * (i + 1));
+      //swap
+      [deck[i], deck[j]] = [deck[j], deck[i]];
+    }
+  }
+}
+
+// Much cleaner!!
+myDeck.initializeDeck();
+myDeck.shuffle();
+const h1 = myDeck.drawMultiple(2);
+const h2 = myDeck.drawMultiple(2);
+const h3 = myDeck.drawMultiple(5);
+*/
+
+// My Practice
+
+const mainDeck = makeDeck();
+
+function makeDeck() {
+  const deck = [];
+  const suits = ["hearts", "diamonds", "spades", "clubs"];
+  const values = "2,3,4,5,6,7,8,9,10,J,Q,K,A";
+  for (let value of values.split(",")) {
+    for (let suit of suits) {
+      deck.push({
+        value,
+        suit,
+      });
+    }
+  }
+  return deck;
+}
+
+function drawCard(deck) {
+  return deck.pop();
+}
+
+// const myDeck = makeDeck();
+// const card1 = drawCard(myDeck);
+// console.log(card1);
+// console.log(myDeck);
+// const card2 = drawCard(myDeck);
+// console.log(card2);
+// console.log(myDeck);
+
+const myDeck = {
+  deck: [],
+  suits: ["hearts", "diamonds", "spades", "clubs"],
+  values: "2,3,4,5,6,7,8,9,10,J,Q,K,A",
+  initializeDeck() {
+    const [suits, values, deck] = this;
+    for (let value of values.split(",")) {
+      for (let suit of suits) {
+        deck.push({
+          value,
+          suit,
+        });
+      }
+    }
+    // return deck;
+  },
+};
+console.log(myDeck);
+console.log(myDeck.initializeDeck());
+console.log(myDeck);
+
+// ===================================
+// 010 -
 // ===================================
 
 /*
@@ -9881,13 +10324,3 @@ const auth = {
 */
 
 // My Practice
-
-// ===================================
-// 007 -
-// ===================================
-// ===================================
-// 008 -
-// ===================================
-// ===================================
-// 009 -
-// ===================================

@@ -140,3 +140,22 @@
 // const triple = multiplyBy(3);
 // console.log(triple(8));
 // console.log(triple(50));
+
+// const suits = ["hearts", "diamonds", "spades", "clubs"];
+// const values = "2,3,4,5,6,7,8,9,10,J,Q,K,A";
+
+// function initializeDeck() {
+//   const deck = [];
+//   const suits = ["hearts", "diamonds", "spades", "clubs"];
+//   const values = "2,3,4,5,6,7,8,9,10,J,Q,K,A";
+//   for (let value of values.split(",")) {
+//     for (let suit of suits) {
+//       deck.push({
+//         value,
+//         suit,
+//       });
+//     }
+//   }
+//   return deck;
+// }
+// console.log(initializeDeck());
