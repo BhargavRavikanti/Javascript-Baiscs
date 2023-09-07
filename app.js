@@ -10140,7 +10140,7 @@ const annoyer = {
 // annoyer.stop();
 
 // ===================================
-// 009 - Putting It All Together Deck Of Cards
+// 009 - Putting It All Together Deck Of Cards //// i will come back to practice
 // ===================================
 
 /*
@@ -10264,26 +10264,26 @@ const h3 = myDeck.drawMultiple(5);
 
 // My Practice
 
-const mainDeck = makeDeck();
+// const mainDeck = makeDeck();
 
-function makeDeck() {
-  const deck = [];
-  const suits = ["hearts", "diamonds", "spades", "clubs"];
-  const values = "2,3,4,5,6,7,8,9,10,J,Q,K,A";
-  for (let value of values.split(",")) {
-    for (let suit of suits) {
-      deck.push({
-        value,
-        suit,
-      });
-    }
-  }
-  return deck;
-}
+// function makeDeck() {
+//   const deck = [];
+//   const suits = ["hearts", "diamonds", "spades", "clubs"];
+//   const values = "2,3,4,5,6,7,8,9,10,J,Q,K,A";
+//   for (let value of values.split(",")) {
+//     for (let suit of suits) {
+//       deck.push({
+//         value,
+//         suit,
+//       });
+//     }
+//   }
+//   return deck;
+// }
 
-function drawCard(deck) {
-  return deck.pop();
-}
+// function drawCard(deck) {
+//   return deck.pop();
+// }
 
 // const myDeck = makeDeck();
 // const card1 = drawCard(myDeck);
@@ -10293,29 +10293,222 @@ function drawCard(deck) {
 // console.log(card2);
 // console.log(myDeck);
 
-const myDeck = {
-  deck: [],
-  suits: ["hearts", "diamonds", "spades", "clubs"],
-  values: "2,3,4,5,6,7,8,9,10,J,Q,K,A",
-  initializeDeck() {
-    const [suits, values, deck] = this;
-    for (let value of values.split(",")) {
-      for (let suit of suits) {
-        deck.push({
-          value,
-          suit,
-        });
-      }
-    }
-    // return deck;
-  },
-};
-console.log(myDeck);
-console.log(myDeck.initializeDeck());
-console.log(myDeck);
+// const myDeck = {
+//   deck: [],
+//   drawnCards: [],
+//   suits: ["hearts", "diamonds", "spades", "clubs"],
+//   values: "2,3,4,5,6,7,8,9,10,J,Q,K,A",
+//   initializeDeck() {
+//     const { suits, values, deck } = this;
+//     for (let value of values.split(",")) {
+//       for (let suit of suits) {
+//         deck.push({
+//           value,
+//           suit,
+//         });
+//       }
+//     }
+//     // return deck;
+//   },
+//   drawCard() {
+//     const card = this.deck.pop();
+//     this.drawnCards.push(card);
+//     return card;
+//   },
+//   drawMultiple(numcards) {
+//     const cards = [];
+//     for (let i = 0; i < numcards; i++) {
+//       cards.push(this.drawCard());
+//     }
+//     return cards;
+//   },
+//   shuffle() {
+//     const { deck } = this;
+//     // loop over array backwards
+//     for (let i = deck.length - 1; i > 0; i--) {
+//       //pick random index before current element
+//       let j = Math.floor(Math.random() * (i + 1));
+//       //swap
+//       [deck[i], deck[j]] = [deck[j], deck[i]];
+//     }
+//   },
+// };
+// console.log(myDeck);
+// console.log(myDeck.initializeDeck());
+// console.log(myDeck);
+// console.log(myDeck.deck);
+
+// console.log(myDeck.initializeDeck());
+// console.log(myDeck.drawCard());
+// console.log(myDeck.drawCard());
+// console.log(myDeck.drawCard());
+// console.log(myDeck.drawCard());
+// console.log(myDeck.drawCard());
+// console.log(myDeck.drawCard());
+// console.log(myDeck.drawCard());
+// console.log(myDeck);
+
+// console.log(myDeck.initializeDeck());
+// console.log(myDeck.drawMultiple(4));
+// console.log(myDeck);
+
+// // after shuffle code put into my deck
+// console.log(myDeck.initializeDeck());
+// console.log(myDeck.deck);
+// console.log(myDeck.shuffle());
+// console.log(myDeck);
+
+// shuffle code for practice copy and pasty to myDeck
+// function shuffle(arr) {
+//   // loop over array backwards
+//   for (let i = arr.length - 1; i > 0; i--) {
+//     //pick random index before current element
+//     let j = Math.floor(Math.random() * (i + 1));
+//     //swap
+//     [arr[i], arr[j]] = [arr[j], arr[i]];
+//     // console.log(arr);
+//   }
+// }
+// shuffle(["a", "b", "c", "d", "e", "f"]); // testing shuffle
+// shuffle(["a", "b", "c", "d", "e", "f"]); // testing shiffle
+
+// const letters = ["a", "b", "c", "d", "e", "f"];
+// console.log(([letters[0], letters[3]] = [letters[3], letters[0]]));
+// console.log(letters);
 
 // ===================================
 // 010 -
+// ===================================
+
+/*
+// NOTES
+
+*/
+
+// My Practice
+
+////////////////////////////////
+// 16 - Asynchronous Code,Callbacks & Promises
+////////////////////////////////
+
+// ===================================
+// 001 - The Call Stack
+// ===================================
+// CALL STACK
+// The machanism the JS interpreter uses to keep track of its place in a script that calls multiple functions.
+// How JS "knows" what function is currently being run and what functions are called from within that function, etc.
+// recently placed item will be the first thing out.
+
+// HOW IT WORKS
+// When a script calls a function, the interpreter adds it to the call stack and then starts carrying out the function.
+// Any functions that are called by that function are added to the call stack furthur up, and run where their calls are reached.
+// When the current function is finished, the interpreter takes it off the stack and resumes execution where it left off in the last code listing.
+
+// const multiply = (x, y) => x * y;
+
+// const square = (x) => multiply(x, x);
+
+// const isRightTriangle = (a, b, c) => {
+//   return square(a) + square(b) === square(c);
+// };
+// console.log(isRightTriangle(3, 4, 5));
+
+// ===================================
+// 002 - Call Stack Debugging Web Dev Tools
+// ===================================
+
+// const repeat = (str, times) => {
+//   let result = "";
+//   for (let i = 0; i < times; i++) {
+//     result += str;
+//   }
+//   return result;
+// };
+
+// const scream = (str) => {
+//   return str.toUpperCase() + "!!!";
+// };
+
+// const getRantText = (phrase) => {
+//   let text = scream(phrase);
+//   let rant = repeat(text, 8);
+//   return rant;
+// };
+
+// const makeRant = (phrase, el) => {
+//   const h1 = document.createElement("h1");
+//   h1.innerText = getRantText(phrase);
+//   el.appendChild(h1);
+// };
+// console.log("HELLO!");
+
+// makeRant("I hate mayonnaise", document.body);
+// // makeRant('if you have to cough, please cover your mouth', document.body);
+
+// ===================================
+// 003 - JS is single Threaded
+// ===================================
+// JS is single threaded
+// WHAT DOES THAT MEAN?
+// At any given point in time, that single JS thread is running at most one line of JS code.
+
+/*
+// NOTES
+
+console.log('I HAPPEN FIRST!');
+alert('Hi there!'); //This holds everything up!
+console.log('I HAPPEN SECOND!');
+
+console.log('I HAPPEN FIRST!');
+setTimeout(function() {
+	//This does NOT hold everything up, because...
+	//JS relies on THE BROWSER itself to keep track of the timer
+	console.log('I HAPPEN THIRD!');
+}, 3000);
+console.log('I HAPPEN SECOND!');
+*/
+
+// My Practice
+
+// JS is single threaded
+// WHAT DOES THAT MEAN?
+// At any given point in time, that single JS thread is running at most one line of JS code.
+
+// console.log("i happen first");
+// alert("hi there");
+// console.log("i happen second");
+
+// ===================================
+// 004 - How Asynchronous Callbacks Actually Work
+// ===================================
+
+// console.log("i happen first");
+// alert("hi there");
+// console.log("i happen second");
+
+// JS does one thing at a time console.log("i happen first"); happens first next alert("hi there"); this works after that only this works console.log("i happen second");.but alert("hi there"); stops next line code which is  console.log("i happen second"); this.
+
+// console.log("i happen first");
+// setTimeout(function () {
+//   console.log("i happen third");
+// }, 3000);
+// console.log("i happen second");
+
+// but here setTimeout works after 3 secs. first  console.log("i happen first"); runs second console.log("i happen second"); runs next // setTimeout(function () {
+//   console.log("i happen third");
+// }, 3000); runs WHY ?
+// HOW DOES IT WORK ?
+// ACTUALLY THE BROWSER DOES THE WORK!
+
+// OK BUT HOW ?
+// Browsers come with WEB APIs that are able to handle certain tasks in the background (like making requests or setTimeout )
+
+// The JS call stack recognizes these WEB API functions and pass them off to the browser to take care of
+
+// Once the browser finishes those tasks, they return and are pushed onto the stack as a callback.
+
+// ===================================
+// 005 -
 // ===================================
 
 /*
