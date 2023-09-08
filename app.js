@@ -10727,18 +10727,106 @@ moveX(
 // step1();
 
 // ===================================
-// 006 -
+// 006 - Introducing Promises
+// ===================================
+// ENTER PROMISES
+// A Promise is an object representing the eventual completion or failure of an asynchronous operation
+// A promise is a returned object to which you attach callbacks, instead of passing callbacks into a function
+
+/*
+// NOTES
+
+const willGetYouADog = new Promise((resolve, reject) => {
+	const rand = Math.random();
+	if (rand < 0.5) {
+		resolve();
+	}
+	else {
+		reject();
+	}
+});
+willGetYouADog.then(() => {
+	console.log('YAY WE GOT A DOG!!!!');
+});
+willGetYouADog.catch(() => {
+	console.log(':( NO DOG');
+});
+*/
+
+// My Practice
+// ENTER PROMISES
+// A Promise is an object representing the eventual completion or failure of an asynchronous operation
+// A promise is a returned object to which you attach callbacks, instead of passing callbacks into a function
+
+// const willGetYouADog = new Promise((resolve, reject) => {
+//   const rand = Math.random();
+//   if (rand < 0.5) {
+//     resolve();
+//   } else {
+//     reject();
+//   }
+// });
+// willGetYouADog.then(() => {
+//   console.log("yay we got a dog");
+// });
+// willGetYouADog.catch(() => {
+//   console.log("no dog");
+// });
+
+// ===================================
+// 007 - Returning Promises from Functions
 // ===================================
 
 /*
 // NOTES
 
+const makeDogPromise = () => {
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			const rand = Math.random();
+			if (rand < 0.5) {
+				resolve();
+			}
+			else {
+				reject();
+			}
+		}, 5000);
+	});
+};
+makeDogPromise()
+	.then(() => {
+		console.log('YAY WE GOT A DOG!!!!');
+	})
+	.catch(() => {
+		console.log(':( NO DOG');
+	});
+
 */
 
 // My Practice
 
+const makeDogPromise = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const rand = Math.random();
+      if (rand < 0.5) {
+        resolve();
+      } else {
+        reject();
+      }
+    }, 5000);
+  });
+};
+makeDogPromise()
+  .then(() => {
+    console.log("YAY WE GOT A DOG!!!!");
+  })
+  .catch(() => {
+    console.log(":( NO DOG");
+  });
+
 // ===================================
-// 007 -
+// 008 -
 // ===================================
 
 /*
