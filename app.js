@@ -10601,7 +10601,7 @@ moveX(
 
 // My Practice
 
-const btn = document.querySelector("button");
+// const btn = document.querySelector("button");
 
 // setTimeout(() => {
 //   btn.style.transform = `translate(100px)`;
@@ -10613,27 +10613,118 @@ const btn = document.querySelector("button");
 //         btn.style.transform = `translate(400px)`;
 //         setTimeout(() => {
 //           btn.style.transform = `translate(500px)`;
-//         }, 1000);
-//       }, 1000);
-//     }, 1000);
-//   }, 1000);
-// }, 1000);
+//         }, 3000);
+//       }, 3000);
+//     }, 3000);
+//   }, 3000);
+// }, 3000);
 
-const moveX = (element, amount, delay, callback) => {
-  setTimeout(() => {
-    element.style.transform = `translateX(${amount}px)`;
-    if (callback) callback();
-  }, delay);
-};
-moveX(btn, 100, 1000, () => {
-  moveX(btn, 200, 1000, () => {
-    moveX(btn, 300, 1000, () => {
-      moveX(btn, 400, 1000, () => {
-        moveX(btn, 500, 1000);
-      });
-    });
-  });
-});
+// const moveX = (element, amount, delay, callback, onSuccess, onFailure) => {
+//   const bodyBoundary = document.body.clientWidth;
+//   const elRight = element.getBoundingClientRect().right;
+//   const currLeft = element.getBoundingClientRect().left;
+//   if (elRight + amount > bodyBoundary) {
+//     onFailure();
+//   } else {
+//     setTimeout(() => {
+//       element.style.transform = `translateX(${currLeft + amount}px)`;
+//       onSuccess();
+//     }, delay);
+//   }
+// };
+
+// // LOOK AT THIS UGLY MESS!
+// moveX(
+// 	btn,
+// 	300,
+// 	1000,
+// 	() => {
+// 		//success callback
+// 		moveX(
+// 			btn,
+// 			300,
+// 			1000,
+// 			() => {
+// 				//success callback
+// 				moveX(
+// 					btn,
+// 					300,
+// 					1000,
+// 					() => {
+// 						//success callback
+// 						moveX(
+// 							btn,
+// 							300,
+// 							1000,
+// 							() => {
+// 								//success callback
+// 								moveX(
+// 									btn,
+// 									300,
+// 									1000,
+// 									() => {
+// 										//success callback
+// 										alert('YOU HAVE A WIDE SCREEN!');
+// 									},
+// 									() => {
+// 										//failure callback
+// 										alert('CANNOT MOVE FURTHER!');
+// 									}
+// 								);
+// 							},
+// 							() => {
+// 								//failure callback
+// 								alert('CANNOT MOVE FURTHER!');
+// 							}
+// 						);
+// 					},
+// 					() => {
+// 						//failure callback
+// 						alert('CANNOT MOVE FURTHER!');
+// 					}
+// 				);
+// 			},
+// 			() => {
+// 				//failure callback
+// 				alert('CANNOT MOVE FURTHER!');
+// 			}
+// 		);
+// 	},
+// 	() => {
+// 		//failure callback
+// 		alert('CANNOT MOVE FURTHER!');
+// 	}
+// );
+
+// moveX(btn, 100, 2000, () => {
+//   moveX(btn, 100, 3000, () => {
+//     moveX(btn, 100, 3000, () => {
+//       moveX(btn, 100, 3000, () => {
+//         moveX(btn, 1000, 3000);
+//       });
+//     });
+//   });
+// });
+
+// // // // // callback hell from youtube // // // // //
+// function step1() {
+//   setTimeout(() => {
+//     console.log("step1 done");
+//     setTimeout(() => {
+//       console.log("step2 done");
+//       setTimeout(() => {
+//         console.log("step3 done");
+//         setTimeout(() => {
+//           console.log("step4 done");
+//           setTimeout(() => {
+//             console.log("step5 done");
+//           }, 3000);
+//         }, 3000);
+//       }, 4000);
+//     }, 4000);
+//   }, 4000);
+// }
+// step1();
 
 // ===================================
 // 006 -
@@ -10645,8 +10736,20 @@ moveX(btn, 100, 1000, () => {
 */
 
 // My Practice
+
 // ===================================
 // 007 -
+// ===================================
+
+/*
+// NOTES
+
+*/
+
+// My Practice
+
+// ===================================
+// 008 -
 // ===================================
 
 /*
