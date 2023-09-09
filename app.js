@@ -10951,6 +10951,8 @@ fakeRequest('/dogs')
 
 // My Practice
 
+//This is a FAKE Http Request Function
+//It takes 1 second to resolve or reject the promise, depending on the url that is passed in
 // const fakeRequest = (url) => {
 //   return new Promise((resolve, reject) => {
 //     setTimeout(() => {
@@ -10993,10 +10995,169 @@ fakeRequest('/dogs')
 //     console.log("request failed");
 //   });
 
+// ===================================
+// 009 - The Delights of Promise Chaining not completely learned rewise it another time
+// ===================================
 
+/*
+// NOTES
+
+//This is a FAKE Http Request Function
+//It takes 1 second to resolve or reject the promise, depending on the url that is passed in
+const fakeRequest = (url) => {
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			const pages = {
+				'/users'        : [
+					{ id: 1, username: 'Bilbo' },
+					{ id: 5, username: 'Esmerelda' }
+				],
+				'/users/1'      : {
+					id        : 1,
+					username  : 'Bilbo',
+					upvotes   : 360,
+					city      : 'Lisbon',
+					topPostId : 454321
+				},
+				'/users/5'      : {
+					id       : 5,
+					username : 'Esmerelda',
+					upvotes  : 571,
+					city     : 'Honolulu'
+				},
+				'/posts/454321' : {
+					id    : 454321,
+					title :
+						'Ladies & Gentlemen, may I introduce my pet pig, Hamlet'
+				},
+				'/about'        : 'This is the about page!'
+			};
+			const data = pages[url];
+			if (data) {
+				resolve({ status: 200, data }); //resolve with a value!
+			}
+			else {
+				reject({ status: 404 }); //reject with a value!
+			}
+		}, 1000);
+	});
+};
+
+fakeRequest('/users')
+	.then((res) => {
+		console.log(res);
+		const id = res.data[0].id;
+		return fakeRequest(`/users/${id}`);
+	})
+	.then((res) => {
+		console.log(res);
+		const postId = res.data.topPostId;
+		return fakeRequest(`/posts/${postId}`);
+	})
+	.then((res) => {
+		console.log(res);
+	})
+	.catch((err) => {
+		console.log('OH NO!', err);
+	});
+
+// ************************************************
+// ATTEMPT 2 (deliberate error to illustrate CATCH)
+// ************************************************
+// fakeRequest('/users')
+// 	.then((res) => {
+// 		console.log(res);
+// 		const id = res.data[0].id;
+// 		return fakeRequest(`/useALSKDJrs/${id}`); //INVALID URL, CATCH WILL RUN!
+// 	})
+// 	.then((res) => {
+// 		console.log(res);
+// 		const postId = res.data.topPostId;
+// 		return fakeRequest(`/posts/${postId}`);
+// 	})
+// 	.then((res) => {
+// 		console.log(res);
+// 	})
+// 	.catch((err) => {
+// 		console.log('OH NO!', err);
+// 	});
+
+*/
+
+// My Practice
 
 // ===================================
-// 009 -
+// 010 - Refactoring w_Promises
+// ===================================
+
+/*
+// NOTES
+
+*/
+
+// My Practice
+
+////////////////////////////////
+// 17 - Making HTTP Requests
+////////////////////////////////
+
+// ===================================
+// 001 - Intro to AJAX
+// ===================================
+// REQUESTS
+// -> XMLHTTP
+// -> FETCH
+// -> AXIOS
+
+// AJAX  -> ASYNCHRONOUS JAVASCRIPT AND XML
+
+// AJAJ -> ASYNCHRONOUS JAVASCRIPT AND JSON
+
+// ===================================
+// 002 - JSON & XML
+// ===================================
+// JSON -> Java Script Object Notation
+
+// This is JSON format // we cannot store complicated things like functions
+// {"squadName" : "Super hero squad",
+// "homeTown" : "Metro City",
+// "formed" : 2016,
+// "secretBase" : "Super tower",
+// "active" : true,
+// "members" : [
+//   "Molecule Man",
+//   "Madame Uppercut",
+//   "Eternal Flame"
+// ]
+// }
+
+// ===================================
+// 003 - XML HttpRequests_ The Basics
+// ===================================
+
+/*
+// NOTES
+
+const firstReq = new XMLHttpRequest();
+firstReq.addEventListener('load', function() {
+	console.log('IT WORKED!!!');
+	const data = JSON.parse(this.responseText);
+	for (let planet of data.results) {
+		console.log(planet.name);
+	}
+});
+firstReq.addEventListener('error', () => {
+	console.log('ERROR!!!!!!');
+});
+firstReq.open('GET', 'https://swapi.co/api/planets/');
+firstReq.send();
+console.log('Request Sent!');
+*/
+
+// My Practice
+
+// ===================================
+// 00 -
 // ===================================
 
 /*
@@ -11007,7 +11168,7 @@ fakeRequest('/dogs')
 // My Practice
 
 // ===================================
-// 010 -
+// 00 -
 // ===================================
 
 /*
