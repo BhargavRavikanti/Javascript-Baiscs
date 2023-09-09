@@ -10805,28 +10805,198 @@ makeDogPromise()
 
 // My Practice
 
-const makeDogPromise = () => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const rand = Math.random();
-      if (rand < 0.5) {
-        resolve();
-      } else {
-        reject();
-      }
-    }, 5000);
-  });
-};
-makeDogPromise()
-  .then(() => {
-    console.log("YAY WE GOT A DOG!!!!");
-  })
-  .catch(() => {
-    console.log(":( NO DOG");
-  });
+// const makeDogPromise = () => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       const rand = Math.random();
+//       if (rand < 0.5) {
+//         resolve();
+//       } else {
+//         reject();
+//       }
+//     }, 5000);
+//   });
+// };
+// makeDogPromise()
+//   .then(() => {
+//     console.log("YAY WE GOT A DOG!!!!");
+//   })
+//   .catch(() => {
+//     console.log(":( NO DOG");
+//   });
+
+////////////////////////////////
+////// youtube yahoo baba //////
+///////////////////////////////
+// function prom(complete) {
+//   return new Promise(function (resolve, reject) {
+//     console.log("fetching data, please wait.");
+//     setTimeout(() => {
+//       if (complete) {
+//         resolve("iam sucessful");
+//       } else {
+//         reject("iam failed");
+//       }
+//     }, 3000);
+//   });
+// }
+
+// for Method 3 these are not needed
+// let onFullFillment = (result) => {
+//   console.log(result);
+// };
+
+// let onRejection = (error) => {
+//   console.log(error);
+// };
+
+// Method 1
+// prom(false).then(onFullFillment);
+// prom(false).catch(onRejection);
+// Method 2
+// prom(false).then(onFullFillment).catch(onRejection);
+// // Method 3
+// prom(true)
+//   .then((result) => {
+//     console.log(result);
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
+
+// // using two paramters
+// function prom(a, b) {
+//   return new Promise(function (resolve, reject) {
+//     console.log("fetching data, please wait.");
+//     var c = a / b;
+//     setTimeout(() => {
+//       if ((a, b)) {
+//         resolve(`Your answer ${c}`);
+//       } else {
+//         reject("failed to calculate.");
+//       }
+//     }, 3000);
+//   });
+// }
+// // Method 3
+// prom(5, 2)
+//   .then((result) => {
+//     console.log(result);
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
+// // Method 3
+// prom(9, 2)
+//   .then((result) => {
+//     console.log(result);
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
 
 // ===================================
-// 008 -
+// 008 - Resolving Rejecting w_Values
+// ===================================
+
+/*
+// NOTES
+
+//This is a FAKE Http Request Function
+//It takes 1 second to resolve or reject the promise, depending on the url that is passed in
+const fakeRequest = (url) => {
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			const pages = {
+				'/users' : [
+					{ id: 1, username: 'Bilbo' },
+					{ id: 5, username: 'Esmerelda' }
+				],
+				'/about' : 'This is the about page!'
+			};
+			const data = pages[url];
+			if (data) {
+				resolve({ status: 200, data }); //resolve with a value!
+			}
+			else {
+				reject({ status: 404 }); //reject with a value!
+			}
+		}, 1000);
+	});
+};
+
+fakeRequest('/users')
+	.then((res) => {
+		console.log('Status Code', res.status);
+		console.log('Data', res.data);
+		console.log('REQUEST WORKED!');
+	})
+	.catch((res) => {
+		console.log(res.status);
+		console.log('REQUEST FAILED');
+	});
+
+fakeRequest('/dogs')
+	.then((res) => {
+		console.log('Status Code', res.status);
+		console.log('Data', res.data);
+		console.log('REQUEST WORKED!');
+	})
+	.catch((res) => {
+		console.log(res.status);
+		console.log('REQUEST FAILED');
+	});
+
+*/
+
+// My Practice
+
+// const fakeRequest = (url) => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       const pages = {
+//         "/users": [
+//           { id: 1, username: "Bilbo" },
+//           { id: 1, username: "Esmerelda" },
+//         ],
+//         "/about": "This is the about page!",
+//       };
+//       const data = pages[url];
+//       if (data) {
+//         resolve({ status: 200, data });
+//       } else {
+//         reject({ status: 404 });
+//       }
+//     }, 2000);
+//   });
+// };
+
+// fakeRequest("/users")
+//   .then((response) => {
+//     console.log("Status Code", response.status);
+//     console.log("Status Code", response.data);
+//     console.log("REQUEST WORKED!");
+//   })
+//   .catch((response) => {
+//     console.log(response.status);
+//     console.log("request failed");
+//   });
+
+// fakeRequest("/dogs")
+//   .then((response) => {
+//     console.log("Status Code", response.status);
+//     console.log("Status Code", response.data);
+//     console.log("REQUEST WORKED!");
+//   })
+//   .catch((response) => {
+//     console.log(response.status);
+//     console.log("request failed");
+//   });
+
+
+
+// ===================================
+// 009 -
 // ===================================
 
 /*
@@ -10837,7 +11007,7 @@ makeDogPromise()
 // My Practice
 
 // ===================================
-// 008 -
+// 010 -
 // ===================================
 
 /*
