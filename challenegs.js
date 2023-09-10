@@ -34,8 +34,8 @@
 // const c = a + b;
 // console.log(c);
 
-// let a = prompt("enter first number", "");
-// let b = prompt("enter second number", "");
+// let a = prompt("enter first number");
+// let b = prompt("enter second number");
 // let c = parseInt(a) + parseInt(b);
 // console.log(c);
 
@@ -56,12 +56,12 @@
 
 ////////// 3) Square Root of Number. //////////
 
-// const a = prompt("enter number", "");
+// const a = prompt("enter number");
 // const b = Math.sqrt(a);
 // console.log(b);
 
-// square of a number
-// let a = prompt("enter a number", "");
+// // square of a number
+// let a = prompt("enter a number");
 // let b = parseInt(a * a);
 // console.log(b);
 
@@ -97,7 +97,70 @@
 // }
 // console.log(aOfTriangle(10, 10));
 
-////////// 5) . //////////
+// // static
+// const a = 10;
+// const b = 5;
+// const c = 10;
+// const s = (a + b + c) / 2;
+// const temp = s * (s - a) * (s - b) * (s - c);
+// // console.log(temp);
+// const area = Math.sqrt(temp);
+// console.log(area); // 24.206145913796355
+
+// // static
+// const a = 20;
+// const b = 5;
+// const c = 20;
+// const s = (a + b + c) / 2;
+// const temp = s * (s - a) * (s - b) * (s - c);
+// // console.log(temp);
+// const area = Math.sqrt(temp);
+// console.log(area); // 49.607837082461074
+
+// // dynamic
+// const a = prompt("enter a value");
+// const b = prompt("enter b value");
+// const c = prompt("enter c value");
+// const s = (parseInt(a) + parseInt(b) + parseInt(c)) / 2;
+// // console.log(s);
+// const temp = s * (s - a) * (s - b) * (s - c);
+// // console.log(temp);
+// let area = alert(temp);
+// area = Math.sqrt(temp);
+// console.log(area); // 24.206145913796355 // 49.607837082461074
+
+////////// 5) Swap two Numbera Using & without using temporary variable. //////////
+// Our Agenda
+// 1. Swapping using temporary variable.
+// 2. Swapping without using temporary variable.
+
+// let a = prompt("enter a value");
+// let b = prompt("enter b value");
+// console.log(`a value is ${a}, b value is ${b}`);
+// let temp;
+// temp = a;
+// a = b;
+// b = temp;
+// console.log(`After Swapping \n a value is ${a}, b value is ${b}`);
+
+// static
+// let a = 5;
+// let b = 6;
+// console.log(`a value is ${a}, b value is ${b}`);
+// a = a + b;
+// b = a - b;
+// a = a - b;
+// console.log(`Ater Swaping \n a value is ${a}, b value is ${b}`);
+
+// // dynamic
+// let a = parseInt(prompt("enter a value"));
+// let b = parseInt(prompt("enter b value"));
+// console.log(`a = ${a}, b = ${b}`);
+// a = a + b;
+// b = a - b;
+// a = a - b;
+// console.log(`Ater Swaping \n a = ${a}, b = ${b}`);
+
 ////////// 6) . //////////
 ////////// 7) . //////////
 ////////// 8) . //////////
@@ -106,3 +169,22 @@
 ////////// 11) . //////////
 ////////// 12) . //////////
 ////////// 13) . //////////
+////////// 14) . //////////
+////////// 15) . //////////
+////////// 16) . //////////
+////////// 17) . //////////
+////////// 18) . //////////
+////////// 19) . //////////
+////////// 20) . //////////
+////////// 21) . //////////
+////////// 22) . //////////
+////////// 23) . //////////
+////////// 24) . //////////
+////////// 25) . //////////
+////////// 26) . //////////
+////////// 27) . //////////
+////////// 28) . //////////
+////////// 29) . //////////
+////////// 30) . //////////
+////////// 31) . //////////
+////////// 32) . //////////
