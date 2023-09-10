@@ -216,8 +216,33 @@
 // }
 // console.log(num);
 
-////////// 11) . //////////
-////////// 12) . //////////
+// let num = prompt();
+// let oddOrEven = num % 2 === 0 ? "even" : "odd";
+// console.log(oddOrEven);
+
+////////// 11) Check if a Number is a Prime Number. //////////
+
+////////// 12) Find Largest Among Three Numbers . //////////
+// Our Agenda
+// Using Math.max() method.
+// Using user defined method
+
+// let rand = prompt();
+// let rand2 = prompt();
+// let rand3 = prompt();
+// console.log(Math.max(rand, rand2, rand3));
+
+// let rand = prompt();
+// let rand2 = prompt();
+// let rand3 = prompt();
+// if (rand >= rand2 && rand >= rand3) {
+//   console.log(`rand ${rand} is greater than ${rand2} and ${rand3}`);
+// } else if (rand2 >= rand && rand2 >= rand3) {
+//   console.log(`rand2 ${rand2} is greater than ${rand} and ${rand3}`);
+// } else {
+//   console.log(`rand3 ${rand3} is greater than ${rand} and ${rand2}`);
+// }
+
 ////////// 13) . //////////
 ////////// 14) . //////////
 ////////// 15) . //////////
