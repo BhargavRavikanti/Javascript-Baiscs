@@ -161,11 +161,61 @@
 // a = a - b;
 // console.log(`Ater Swaping \n a = ${a}, b = ${b}`);
 
-////////// 6) . //////////
-////////// 7) . //////////
-////////// 8) . //////////
-////////// 9) . //////////
-////////// 10) . //////////
+////////// 6) Convert Kilometers to miles . //////////
+
+// const Kilometers = 0.621371;
+// const factor = prompt();
+// const miles = Kilometers * factor;
+// console.log(miles);
+
+////////// 7) Convert Celcius to FahrenHeit. //////////
+
+// const celcius = prompt();
+// const fahrenheit = celcius * 1.8 + 32;
+// console.log(fahrenheit);
+
+////////// 8) Check if a number is Positive, Negative or Zero. //////////
+// Our Agenda
+// Using Math.sign() method
+// Using user defined function
+
+// const check = Math.sign(0);
+// console.log(check);
+
+// let num = prompt();
+// if (num > 0) {
+//   console.log("positive");
+// } else if (num < 0) {
+//   console.log("negative");
+// } else if (num == 0) {
+//   console.log(0);
+// } else {
+//   console.log("enter a number");
+// }
+// console.log(num);
+
+////////// 9) Generate a random Number Using Math.random(). //////////
+// Our Agenda
+// Using Math.random() method.
+
+// let rand = Math.floor(Math.random() * 9000 + 1000);
+// console.log(rand);
+
+////////// 10) Check if a Number is Odd or Even. //////////
+// Our Agenda
+// Checking using if-else
+// Checking using ternary operator
+
+// let num = prompt();
+// if (num % 2 === 0) {
+//   console.log("Even");
+// } else if (num % 2 === 1) {
+//   console.log("Odd");
+// } else {
+//   console.log(NaN);
+// }
+// console.log(num);
+
 ////////// 11) . //////////
 ////////// 12) . //////////
 ////////// 13) . //////////
