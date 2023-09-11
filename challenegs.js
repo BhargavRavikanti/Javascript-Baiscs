@@ -243,7 +243,8 @@
 //   console.log(`rand3 ${rand3} is greater than ${rand} and ${rand2}`);
 // }
 
-////////// 13) . //////////
+////////// 13) Find the Factorial of a Number. //////////
+
 ////////// 14) . //////////
 ////////// 15) . //////////
 ////////// 16) . //////////
@@ -263,3 +264,50 @@
 ////////// 30) . //////////
 ////////// 31) . //////////
 ////////// 32) . //////////
+
+// Flatten Array of Arrays - Episode - 2
+// let array = [
+//   [0, 1],
+//   [2, 3],
+//   [4, 5],
+// ];
+
+// const flatterdArray = array.reduce(
+//   (previousValue, currentValue) => previousValue.concat(currentValue),
+//   []
+// );
+// console.log(flatterdArray);
+
+// Largest Prime Number in an Array - Episode - 3
+// const array = [4,5,7,8,9,11,12,17,97,47];
+
+// Remove duplicates from an Array - Episode - 4
+// const array = [2, 3, 5, 3, 6, 8, 9, 2, 11, 5];
+// console.log([...new Set(array)]);
+
+// const stringArray = [
+//   "Mike",
+//   "John",
+//   "Nancy",
+//   "Thomas",
+//   "Nancy",
+//   "Peter",
+//   "Mike",
+// ];
+// console.log([...new Set(stringArray)]);
+
+// Find Array.length Code Output - Episode - 5
+// Guess the output with reason
+// const intArray = [1, 2, 3];
+// intArray[50] = 50;
+// console.log(intArray.length);
+// console.log(intArray);
+
+//  Find Last element of Array - Episode - 2
+// (without using length property)
+// const array = ["white", "red", "black", "yellow"];
+// console.log(array.at(-1));
+
+//  - Episode - 2
+//  - Episode - 2
+//  - Episode - 2
