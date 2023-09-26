@@ -8,13 +8,13 @@
 // 01 - Introduction
 // ======================================
 
-// 001
+// 001 How This Course Works
 // ======================================
-// 002
+// 002 JS, ECMA, TC39_ What Do They Mean..
 // ======================================
-// 003
+// 003 The Tools You Need
 // ======================================
-// 004
+// 005 A Quick Note About MDN
 // ======================================
 
 // ======================================
@@ -78,8 +78,10 @@
 // NaN
 // NOT A NUMBER
 // NaN is a numeric value that represents something that is not ...a number
+// In JavaScript, NaN stands for Not a Number. It represents a value that is not a valid number. It can be used to check whether a number entered is a valid number or not a number.
 
 // console.log(0 / 0);
+// console.log(NaN / 0);
 // console.log(1 + NaN);
 // console.log(5 + NaN);
 // console.log(NaN + 7);
@@ -95,7 +97,9 @@
 // console.log("bharu" * 1);
 // console.log("bharu" % 1);
 
+// // remember this
 // console.log("2" - 1);
+// console.log("2" + 1);
 // console.log("2" * 1);
 // console.log("2" / 1);
 
@@ -10451,6 +10455,7 @@ const h3 = myDeck.drawMultiple(5);
 // JS is single threaded
 // WHAT DOES THAT MEAN?
 // At any given point in time, that single JS thread is running at most one line of JS code.
+// Javascript is a single-threaded language, meaning that just one line of code may be run at once.
 
 /*
 // NOTES
