@@ -310,7 +310,8 @@
 // someThing = "3" % 2;
 // console.log(someThing);
 
-// 003 String Indices
+// ======================================
+// 003 - String Indices
 // ======================================
 // length property gives how many characters it has
 

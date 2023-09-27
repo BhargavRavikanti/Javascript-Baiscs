@@ -143,6 +143,12 @@
 // ======================================
 // 001 - Booleans Intro
 // ======================================
+/*
+// 1) create a variable and set value true and console.
+// 2) create a variable and set value false and console.
+// 3) create a variable and set value false and update it true and console.
+// 4) create a variable and set a number and change it to boolean.
+*/
 
 // 1) create a variable and set value true and console.
 // const bharuIsGood = true;
@@ -165,3 +171,38 @@
 // console.log(bharuHas);
 // bharuHas = true;
 // console.log(bharuHas);
+
+// ======================================
+// 002 - Strings
+// ======================================
+/*
+// 1) create a string and check whether it is a string or not and console.
+// 2) create two strings and merge it and console.
+// 3) create number as a string and add,sub,div,multiply,modulus observe weird behaviour.
+*/
+
+// 1) create a string and check whether it is a string or not and console.
+// const brotherName = "dhanush";
+// console.log(brotherName, "is a", typeof brotherName);
+
+// 2) create two strings and merge it and console.
+// const firstName = "Bhargav";
+// const lastName = "Ravikanti";
+// console.log(firstName + lastName);
+// console.log(firstName + " " + lastName);
+
+// 3) create number as a string and add,sub,div,multiply,modulus observe weird behaviour mainly add.
+// let random = "20";
+// console.log(random);
+// random = "20" + 1;
+// console.log(random);
+// random = "20" - 1;
+// console.log(random);
+// random = "20" / 2;
+// console.log(random);
+// random = "20" % 2;
+// console.log(random);
+// random = "20" % 3;
+// console.log(random);
+// random = "20" % 7;
+// console.log(random);
