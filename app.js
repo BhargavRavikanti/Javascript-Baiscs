@@ -147,6 +147,7 @@
 // 007 Unary Operators
 // ======================================
 // uninary means one side
+// x(operand) +(operator) y(operand) =(opeator) z(result)
 
 // // normal way
 // let score = 0;
@@ -227,13 +228,13 @@
 
 // let wind_Speed = 76;
 
-// wind_Speed += 5; // not good
+// // wind_Speed += 5; // not good
 // wind_Speed--; // not good
 // console.log(wind_Speed);
 
-// ======================================
+////////////////////////////////
 // 03 - How to Model Data Efficiency
-// ======================================
+////////////////////////////////
 
 // 001 Booleans Intro
 // ======================================
