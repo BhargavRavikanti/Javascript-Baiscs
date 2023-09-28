@@ -206,3 +206,91 @@
 // console.log(random);
 // random = "20" % 7;
 // console.log(random);
+
+// ======================================
+// 003 - String Indices
+// ======================================
+/*
+// 1) create a string
+// check how many characters that string has.
+// access the 3rd character
+// access the 6th character
+// acess the last character
+// set 3rd character as X
+// set 6th character as Y
+// set last character as Z and console it.
+*/
+
+// // 1) create a string
+// let fullName = "Ravikanti Bhargav";
+
+// // check how many characters that string has.
+// console.log(fullName.length);
+
+// // access the 3rd character
+// console.log(fullName[2]);
+
+// // access the 6th character
+// console.log(fullName[5]);
+
+// // access the last character
+// console.log(fullName[fullName.length - 1]);
+
+// // set 3rd character as X
+// console.log((fullName[2] = "X"));
+
+// // set 6th character as Y
+// console.log((fullName[5] = "Y"));
+
+// // set last character as Z and console it.
+// console.log(fullName.length - 1);
+// console.log(fullName[fullName.length - 1]);
+// console.log((fullName[fullName.length - 1] = "Z"));
+
+// ======================================
+// 004 - String Methods
+// ======================================
+/*
+// 1) create a string having both sides some white spaces and check length and remove white spaces of that string.
+// 2) create a string make all capital letters.
+// make i as capital letter
+// 3) create a string make all small letters.
+// make I as small letter
+*/
+
+// 1) create a string having both sides some white spaces and check length and remove white spaces from both sides of that string and check length.
+// let fullName = "  Ravikanti Bhargav    ";
+// console.log(fullName.length);
+// let fullName1 = fullName.trim();
+// console.log(fullName1);
+// console.log(fullName1.length);
+
+// 2) create a string make all letters capital.
+// let fullName = "Ravikanti Bhargav";
+// let fullName1 = fullName.toUpperCase();
+// console.log(fullName1);
+
+// // make i as capital letter
+// console.log("Ravikanti".length);
+// console.log("Ravikanti"["Ravikanti".length - 1]);
+// let fullName2 = (fullName[8] = "I");
+// console.log(fullName2);
+// let fullName3 = fullName[8].toUpperCase();
+// console.log(fullName3);
+
+// 3) create a string make all small letters.
+// let fullName = "rAVIKANTI bHARGAV";
+// let fullName1 = fullName.toLowerCase();
+// console.log(fullName1);
+
+// // make i as small letter
+// console.log("rAVIKANTI".length);
+// console.log("rAVIKANTI"["rAVIKANTI".length - 1]);
+// let fullName2 = (fullName[8] = "i"); // method 1 not recommended
+// console.log(fullName2);
+// let fullName3 = fullName[8].toLowerCase(); // method 2 always use this method
+// console.log(fullName3);
+
+// ======================================
+// 005 - More String Methods
+// ======================================

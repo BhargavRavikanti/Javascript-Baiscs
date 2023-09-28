@@ -338,7 +338,8 @@
 // console.log((mySong[0] = "A"));
 // console.log(mySong); // we can't change string characters string are immutable means cannot changeble
 
-// 004 String Methods
+// ======================================
+// 004 - String Methods
 // ======================================
 // syntax string.method()
 // 1.toUpperCase() 2.toLowerCase()
@@ -373,7 +374,8 @@
 // console.log(middleSpaces.trim()); // trim() will not remove middle empty spaces
 // console.log(middleSpaces);
 
-// 005 More String Methods
+// ======================================
+// 005 - More String Methods
 // ======================================
 // syntax string.method(arguments)
 // some methods accept arguments that modify their behavior.we pass these arguments inside of the parentheses.

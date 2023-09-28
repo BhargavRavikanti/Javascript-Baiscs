@@ -103,11 +103,27 @@
 // ======================================
 // 003 - String Indices
 // ======================================
+
+// 1) create a string
+// check how many characters that string has.
+// access the 3rd character
+// access the 6th character
+// acess the last character
+// set 3rd character as X
+// set 6th character as Y
+// set last character as Z and console it.
+
 // ======================================
-// 004 -
+// 004 - String Methods
 // ======================================
+// 1) create a string having both sides some white spaces and check length and remove white spaces of that string.
+// 2) create a string make all capital letters.
+// make i as capital letter
+// 3) create a string make all small letters.
+// make I as small letter
+
 // ======================================
-// 005 -
+// 005 - More String Methods
 // ======================================
 // ======================================
 // 006 -
