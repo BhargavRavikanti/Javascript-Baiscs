@@ -125,6 +125,21 @@
 // ======================================
 // 005 - More String Methods
 // ======================================
+
+// 1) create a variable fullName store Ravikanti Bhargav as a string.
+// search B  in that string see what returns to console?
+// if B not present in that string what returns to console?
+
+// 2) create a variable fullName store Ravikanti Bhargav as a string.
+// extract part of a string using single paramter return to console.
+// extract part of a string using two paramters return to console.
+// extract part of a string using negative paramter(-1) return to console.
+// extract part of a string using any negative paramter return to console.
+// extract part of a string using two negative paramters return to console.
+
+// 3) create a variable someThing store one one two two three in that string.
+// replace one with "1"
+
 // ======================================
 // 006 -
 // ======================================

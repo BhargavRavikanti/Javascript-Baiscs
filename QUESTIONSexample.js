@@ -294,3 +294,45 @@
 // ======================================
 // 005 - More String Methods
 // ======================================
+
+// 1) create a variable fullName store Ravikanti Bhargav.
+// let fullName = "Ravikanti Bhargav";
+
+// search B  in that string see what returns to console?
+// let checkCharcter = fullName.indexOf("B");
+// console.log(checkCharcter);
+// console.log(fullName[10]);
+
+// search b in that string see what returns to console?
+// console.log(fullName.indexOf("b"));
+
+// // 2) create a variable full store Ravikanti Bhargav as a string.
+// let fullName = "Ravikanti Bhargav";
+
+// // extract part of a string using single paramter return to console.
+// let extractPart = fullName.slice(2);
+// console.log(extractPart);
+
+// // extract part of a string using two paramters return to console.
+// let extractPart1 = fullName.slice(2, 5);
+// console.log(extractPart1);
+
+// // extract part of a string using negative paramter(-1) return to console.
+// let extractPart2 = fullName.slice(-1);
+// console.log(extractPart2);
+
+// // extract part of a string using any negative paramter return to console.
+// let extractPart3 = fullName.slice(-3);
+// console.log(extractPart3);
+
+// // extract part of a string using two negative paramters return to console.
+// let extractPart4 = fullName.slice(-3, -1);
+// console.log(extractPart4);
+
+// 3) create a variable someThing store one one two two three in that string.
+// let someThing = "one one two two three";
+// // replace one with "1"
+// let replace = someThing.replace("one", "1");
+// console.log(replace);
+// let replace1 = someThing.replace("two", "1");
+// console.log(replace1);

@@ -381,7 +381,7 @@
 // some methods accept arguments that modify their behavior.we pass these arguments inside of the parentheses.
 
 // 4.indexOf()
-// The indexOf() method returns the position of the first occurrence of a value in a string.
+// The indexOf() method returns the position(means index number) of the first occurrence of a value in a string.
 // The indexOf() method returns -1 if the value is not found.
 // The indexOf() method is case sensitive.
 
@@ -454,9 +454,10 @@
 // console.log("ha ha ha".replace("ha", "hee"));
 // console.log("ha ha ha".replace("ha ha", "spar"));
 // console.log("ha ha ha".replace("ha ha ha", "power"));
-// console.log("ha ha ha".replace("haaa", "power")); // if haaa doesn't find it reamains unchanged
+// console.log("ha ha ha".replace("haaa", "power")); // if haaa doesn't find. it reamains unchanged
 
-// 006 Strings Quiz
+// ======================================
+// 006 - Strings Quiz
 // ======================================
 
 // const age = "5" + "4";
@@ -517,14 +518,16 @@
 // console.log("GARBAGE!".slice(2).replace("B", " "));
 // console.log("GARBAGE!".slice(2).replace("B", "  "));
 
-// 007 String Escape Characters
+// ======================================
+// 007 - String Escape Characters
 // ======================================
 
 // console.log("HELLO\nGOODBYE");
 // // console.log("\"); // wrong
 // console.log("\\"); // wright
 
-// 008 String Template Literals
+// ======================================
+// 008 - String Template Literals
 // ======================================
 
 // Template literals are strings that allow embedded expressions, which will be evaluated and then turned into a resulting string.
@@ -565,7 +568,8 @@
 //   } years`
 // );
 
-// 009 Null & Undefined
+// ======================================
+// 009 - Null & Undefined
 // ======================================
 // Null *) "Intenational abscence of any value"
 //      *) Must be assigned
@@ -589,7 +593,8 @@
 // console.log(color); // it exists but value not assigned
 // // // console.log(bhar); // it does not exist so error
 
-// 010 The Math Object & Random Numbers
+// ======================================
+// 010 - The Math Object & Random Numbers
 // ======================================
 // MATH OBJECT contains properties and methods for mathematical constants and functions
 
@@ -629,7 +634,8 @@
 
 // console.log(Math.floor(Math.random() * 6) + 1);
 
-// 011 TYPE OF
+// ======================================
+// 011 - TYPE OF
 // ======================================
 
 // console.log(typeof 99);
@@ -640,8 +646,10 @@
 // console.log(typeof undefined);
 // console.log(typeof null); // object // weird behaviour of javascript
 
-// 012 parseInt & parseFloat
 // ======================================
+// 012 - parseInt & parseFloat
+// ======================================
+// The parseInt method parses a value as a string and returns the first integer.
 // parseInt & parseFloat use to parse strings into numbers, but watch out NaN!
 
 // console.log(parseInt("24"));
@@ -666,18 +674,52 @@
 // console.log(parseInt("   .9976654665457cents")); // NaN
 // console.log(parseInt(".9976654665457cents"));
 
-// ======================================
-// 04 - Controlling Program Logic and Flow
-// ======================================
+/*
+Description
+The parseInt method parses a value as a string and returns the first integer.
 
-// 001 Making Decisions in JS
+A radix parameter specifies the number system to use:
+
+2 = binary, 8 = octal, 10 = decimal, 16 = hexadecimal.
+
+If radix is omitted, JavaScript assumes radix 10. If the value begins with "0x", JavaScript assumes radix 16.
+
+Notes
+If the first character cannot be converted, NaN is returned.
+
+Leading and trailing spaces are ignored.
+
+Only the first integer found is returned.
+
+Older browsers will return 8 for parseInt("010"). Older versions of ECMAScript used octal (radix 8) for values beginning with "0". From ECMAScript 5 (2009) default is decimal (radix 10).
+
+Syntax
+parseInt(string, radix)
+Parameters
+Parameter	Description
+value	Required.
+The value to be parsed.
+radix	Optional. Default is 10.
+A number (2 to 36) specifying the number system.
+Return Value
+Type	Description
+A number.	NaN if no integer is found.
+*/
+
+////////////////////////////////
+// 04 - Controlling Program Logic and Flow
+////////////////////////////////
+
+// ======================================
+// 001 - Making Decisions in JS
 // ======================================
 // GOALS
 // Understand comparision Operators
 // Write Conditionals
 // Work with Boolean Operators
 
-// 002 Comparision Operators
+// ======================================
+// 002 - Comparision Operators
 // ======================================
 // COMPARISIONS
 // >    GREATER THAN
@@ -718,7 +760,7 @@
 // console.log("A" < "a");
 // console.log("B" < "a");
 
-// console.log("#" < "$"); // $ is greater thsn #
+// console.log("#" < "$"); // $ is greater than #
 
 // 003 Double Equals(==)
 // ======================================
@@ -1096,7 +1138,8 @@
 //   );
 // }
 
-// 009 Nesting Conditionals
+// ======================================
+// 009 - Nesting Conditionals
 // ======================================
 // we can nest conditionals inside conditional
 
@@ -1156,7 +1199,7 @@
 // LOGICAL OPERATORS
 // LOGICAL AND ( && ), LOGICAL OR ( || ), LOGICAL NOT ( ! )
 
-// logical AND ( && ) Both sides must me true in order for the whole thingto be true
+// logical AND ( && ) Both sides must me true in order for the whole thing to be true
 
 // console.log(true && true); // true
 // console.log(true && false); // false
@@ -1203,7 +1246,8 @@
 //   console.log("INVALID PASSWORD");
 // }
 
-// 012 Logical OR ( || )
+// ======================================
+// 012 - Logical OR ( || )
 // ======================================
 //if one side is true, the whole thing is true
 
@@ -1249,7 +1293,8 @@
 //   console.log("GREAT CHOICE!");
 // }
 
-// 013 NOT operator (!)
+// ======================================
+// 013 - NOT operator (!)
 // ======================================
 // logical NOT (!) returns true if the expression is false
 
@@ -1266,7 +1311,7 @@
 // console.log(Boolean(loggedInUser)); // checking loggedInUser is true or false // got false
 // console.log(!loggedInUser);
 
-// if runs when condition is true
+// if code runs when condition is true
 // loggedInUser false, by using !loggedInUser we are setting it to true
 // but we are changing loggedInUser to true using !
 // if (!loggedInUser) {
@@ -1304,7 +1349,8 @@
 //   console.log("he has 10rs");
 // }
 
-// 014 Operator Precedence
+// ======================================
+// 014 - Operator Precedence
 // ======================================
 // OPERATOR PRECEDENCE
 // NOT (!) has higher precedence that && and ||
@@ -1315,7 +1361,8 @@
 // console.log(x === 7 || (x === 3 && x > 10));
 // console.log((x === 7 || x === 3) && x > 10);
 
-// 015 The Switch Statement
+// ======================================
+// 015 - The Switch Statement
 // ======================================
 
 // using if else if
@@ -1391,7 +1438,8 @@
 //     break;
 // }
 
-// 016 Ternary Operator
+// ======================================
+// 016 - Ternary Operator
 // ======================================
 // This operator is frequently used as an alternative to an if...else statement.
 // condition ? expressionIfTrue : expressionIfFalse
@@ -1427,11 +1475,12 @@
 
 // let color = status === "offline" ? console.log("red") : console.log("green");
 
-// ======================================
+////////////////////////////////
 // 05 - Capture Collections of Data with Arrays
-// ======================================
+////////////////////////////////
 
-// 001 Creating Arrays
+// ======================================
+// 001 - Creating Arrays
 // ======================================
 // GOALS
 // Work with Arrays
@@ -1467,7 +1516,8 @@
 // newArray = new Array(1, 2, 3, 4, 5);
 // console.log(newArray);
 
-// 002 Array Indices
+// ======================================
+// 002 - Array Indices
 // ======================================
 // ARRAYS ARE INDEXED
 // Accessing items from an array
@@ -1491,8 +1541,9 @@
 // console.log("bharu"[0]);
 // console.log("bharu"[3]);
 
-// 003 Modifying Arrays
 // ======================================
+// 003 - Modifying Arrays
+// =====================================
 // unlike strings which are immutable Arrays are mutuable which means we can change array items
 
 // let colors = ["rad", "orange", "green", "yellow"];
@@ -1529,7 +1580,8 @@
 // shoppingList[0] = "Bread";
 // console.log(shoppingList);
 
-// 004 Push and Pop
+// ======================================
+// 004 - Push and Pop
 // ======================================
 // ARRAY METHODS
 // Push - add to end
@@ -1570,7 +1622,8 @@
 // topSongs.pop();
 // console.log(topSongs);
 
-// 005 Shift and Unshift
+// ======================================
+// 005 - Shift and Unshift
 // ======================================
 // Unshift - add to start
 // shift - remove from start
@@ -1635,7 +1688,8 @@
 // console.log(veggies);
 // console.log(meats);
 
-// 007 Includes and IndexOf
+// ======================================
+// 007 - Includes and IndexOf
 // ======================================
 // includes - look for a value
 // indexOf - just like str.indexOf
@@ -1687,9 +1741,10 @@
 // console.log(ingredients.indexOf("brown sugar", 4));
 // console.log(ingredients.indexOf("brown sugar", 5));
 
-// 008 Reverse and Join
 // ======================================
-// Join - creates a string from array
+// 008 - Reverse and Join
+// ======================================
+// Join - creates a string from an array
 // Reverse - reverses an array!
 
 // let letters = ["T", "C", "E", "P", "S", "E", "R"];
@@ -1714,7 +1769,8 @@
 // console.log([12.3, 60, false].join(" # "));
 // console.log([12.3, 60, false].join(" # -> "));
 
-// 009 Slice
+// ======================================
+// 009 - Slice
 // ======================================
 // slice - copy portion of an array
 
@@ -1743,7 +1799,8 @@
 
 // console.log(animals); // original
 
-// 010 Splice
+// ======================================
+// 010 - Splice
 // ======================================
 // spilce - remove/replace elements
 
@@ -1793,7 +1850,8 @@ animals.splice(3, 2, 'orca', 'grizzly');
 // ["shark", "octopus", "salmon", "orca", "grizzly"]
 */
 
-// 011 Sorting(part 1)
+// ======================================
+// 011 - Sorting(part 1)
 // ======================================
 // sort - sorts an array
 
@@ -1918,7 +1976,8 @@ console.log(`the name of the first person is ${person.name}`);
 console.log(`the name of the second person is ${person2.name}`);
 */
 
-// 013 Using Const with Arrays
+// ======================================
+// 013 - Using Const with Arrays
 // ======================================
 // CONST & ARRAYS
 // You will often see people use const with arrays
@@ -1943,7 +2002,8 @@ console.log(`the name of the second person is ${person2.name}`);
 
 // // // foods = []; // we cannot do this
 
-// 014 Working with Nested Arrays
+// ======================================
+// 014 - Working with Nested Arrays
 // ======================================
 // NESTED ARRAYS or MULTI DIMENSIONAL ARRAYS
 // We can store arrays inside other arrays!
@@ -2004,11 +2064,12 @@ animalPairs[0][1].push('hart');
 // console.log(animalPairs[0]);
 // console.log(animalPairs[0][1][1]);
 
-// ======================================
+////////////////////////////////
 // 06 - Objects - The Core of Javascript
-// ======================================
+////////////////////////////////
 
-// 001 Intro to Objects
+// ======================================
+// 001 - Intro to Objects
 // ======================================
 // OBJECTS
 // Objects are collections of properties.
@@ -2042,7 +2103,8 @@ const lucyFitbitData = [ 12344, 1814, 211 ];
 //   avgGoodSleep: "2:13",
 // };
 
-// 002 Creating Object Literals
+// ======================================
+// 002 - Creating Object Literals
 // ======================================
 // PROPERTY = KEY + VALUE
 // VALID KEYS
@@ -2084,7 +2146,8 @@ const lucyFitbitData = [ 12344, 1814, 211 ];
 //   isGilded: false,
 // };
 
-// 003 Accessing Object Properties
+// ======================================
+// 003 - Accessing Object Properties
 // ======================================
 // PROPERTY = KEY + VALUE
 // VALID KEYS
@@ -2149,7 +2212,8 @@ palette[mysteryColor]; //'#30336b'
 
 // console.log(palette["bl" + "ue"]);
 
-// 004 Adding and Updating Properties
+// ======================================
+// 004 - Adding and Updating Properties
 // ======================================
 // UPDATING & ADDING PROPERTIES
 
@@ -2182,7 +2246,8 @@ userReviews.mrSmith78++;
 // userReviews.mrSmith78++;
 // console.log(userReviews);
 
-// 005 Nested Arrays & Objects
+// ======================================
+// 005 - Nested Arrays & Objects
 // ======================================
 // ARRAYS + OBJECTS
 
@@ -2247,7 +2312,8 @@ userReviews.mrSmith78++;
 // console.log(game.board[1][1]);
 // console.log(game.board[1][2]);
 
-// 006 Objects and Reference Types
+// ======================================
+// 006 - Objects and Reference Types
 // ======================================
 //Objects & Arrays are reference types
 //Both variables reflect that change...
@@ -2287,7 +2353,8 @@ palette2.green; //"#ebf876"
 // console.log(palette);
 // console.log(palette2);
 
-// 007 Array_Object Equality
+// ======================================
+// 007 -Array_Object Equality
 // ======================================
 
 // let nums = [1, 2, 3];
@@ -2327,9 +2394,9 @@ palette2.green; //"#ebf876"
 // console.log(data1);
 // console.log(data2);
 
-// ======================================
+////////////////////////////////
 // 07 - The World of Loops
-// ======================================
+////////////////////////////////
 
 // 001 Intro to Loops
 // ======================================
@@ -2607,11 +2674,12 @@ for (let i = 1; i <= 20; i += 2) {
 // for (let i = examScores.length - 1; i >= 0; i--) {
 //   console.log(examScores[i]);
 // }
-// FORWARD LOOPING WITH INDEX NUMBERED
+// BACKWARD LOOPING WITH INDEX NUMBERED
 // for (let i = examScores.length - 1; i >= 0; i--) {
 //   console.log(examScores[i], i);
 // }
 
+// AVG OF examScores
 // let total = 0;
 // for (let i = 0; i < examScores.length; i++) {
 //   total += examScores[i];
@@ -3093,7 +3161,7 @@ console.log("Average Rating: ", avg);
 
 // 012 For...In Loops
 // ======================================
-// To iterate objects directly without using Object.keys() for keys or Object.values() for values of an object Instead use for...in loop
+// To iterate objects directly without using Object.keys() for keys or Object.values() for values of an object or Object.entries() for both Instead use for...in loop
 
 // const jeopardyWinnings = {
 //   regularPLay: 2522700,
@@ -3466,9 +3534,9 @@ console.log("Average Rating: ", avg);
 
 // 34 - String.raw()
 
-// ======================================
-// 08 - Writing Reusable Code with Functions
-// ======================================
+////////////////////////////////
+// 08 - Writing Resusable Code with Functions
+////////////////////////////////
 
 // 001 Our First Function
 // ======================================
@@ -3502,6 +3570,8 @@ console.log("Average Rating: ", avg);
 // Reusable procedures
 // Functions allow us to write reusable, modular code
 // We define a "chunk" of code that we can then execute at a later point.
+// what is function?
+// A function is a group of reusable code which can be called anywhere in your program. This eliminates the need of writing the same code again and again.
 
 // function grumps() {
 //   console.log("iam bharu");
@@ -4304,9 +4374,9 @@ console.log("Average Rating: ", avg);
 
 // console.log(getCard());
 
-// ======================================
+////////////////////////////////
 // 09 - An Advanced Look at Functions
-// ======================================
+////////////////////////////////
 
 // 001 Function Scope
 // ======================================
@@ -4316,6 +4386,8 @@ console.log("Average Rating: ", avg);
 // Understand Scope
 // Write Higher Order Functions
 // Pass functions as callbacks
+
+// Scope refers to the part of a program where we can access a variable.
 
 /*
 // NOTES
@@ -5055,9 +5127,9 @@ outer(); //'AMADEUS'
 
 // hoot();
 
-// ======================================
-// 10 - Apply Functions to Collections of Data
-// ======================================
+////////////////////////////////
+// 010 - Apply Functions to Collections of Data
+////////////////////////////////
 
 // 001 Intro to Array Callback Methods
 // ======================================
