@@ -4815,7 +4815,7 @@ outer(); //'AMADEUS'
 //   console.log("hahahahahahah"); // we can pass this function as an argument
 // }
 
-// callTwice(laugh); // pass a function as an argument
+// callTwice(laugh); // passing  function laugh as an argument
 
 // function callThreeTimes(f) {
 //   f();
@@ -5039,6 +5039,7 @@ outer(); //'AMADEUS'
 // My Practice
 // CALLBACK FUNCTIONS A callback function is a function passed into another function as an argument, which is then invoked inside the outer function.
 
+//  Callbacks make sure that a function is not going to run before a task is completed but will run right after the task has completed.
 // METHOD 1
 // function grumps() {
 //   // console.log("go away");
@@ -6874,7 +6875,7 @@ NOTES
 // or
 // an object expression to be EXPANDED in places where zero or more key-value pairs (for object literals) are expected.
 
-// There is only three use cases
+// There are only three use cases
 // spread in function calls
 // spread in array literals
 // spread in object literals
@@ -10589,7 +10590,7 @@ console.log('I HAPPEN SECOND!');
 // Once the browser finishes those tasks, they return and are pushed onto the stack as a callback.
 
 // ===================================
-// 005 -
+// 005 - Welcome to Callback Hell
 // ===================================
 
 /*
@@ -11174,6 +11175,127 @@ fakeRequest('/users')
 /*
 // NOTES
 
+const moveX = (element, amount, delay) => {
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			const bodyBoundary = document.body.clientWidth;
+			const elRight = element.getBoundingClientRect().right;
+			const currLeft = element.getBoundingClientRect().left;
+			if (elRight + amount > bodyBoundary) {
+				reject({ bodyBoundary, elRight, amount });
+			}
+			else {
+				element.style.transform = `translateX(${currLeft + amount}px)`;
+				resolve();
+			}
+		}, delay);
+	});
+};
+
+const btn = document.querySelector('button');
+moveX(btn, 100, 1000)
+	.then(() => moveX(btn, 100, 1000))
+	.then(() => moveX(btn, 100, 1000))
+	.then(() => moveX(btn, 100, 1000))
+	.then(() => moveX(btn, 100, 1000))
+	.then(() => moveX(btn, 100, 1000))
+	.then(() => moveX(btn, 100, 1000))
+	.then(() => moveX(btn, 100, 1000))
+	.then(() => moveX(btn, 100, 1000))
+	.then(() => moveX(btn, 100, 1000))
+	.then(() => moveX(btn, 100, 1000))
+	.then(() => moveX(btn, 100, 1000))
+	.then(() => moveX(btn, 100, 1000))
+	.then(() => moveX(btn, 100, 1000))
+	.then(() => moveX(btn, 100, 1000))
+	.then(() => moveX(btn, 100, 1000))
+	.catch(({ bodyBoundary, amount, elRight }) => {
+		console.log(`Cannot Move! Body is ${bodyBoundary}px wide`);
+		console.log(`Element is at ${elRight}px, ${amount}px is too large!`);
+	});
+
+//This function moves an element "amount" number of pixels after a delay.
+//If the element will stay on screen, we move the element and call the onSuccess callback function
+//If the element will move off screen, we do not move the element and instead call the onFailure callback
+// const moveX = (element, amount, delay, onSuccess, onFailure) => {
+// 	setTimeout(() => {
+// 		const bodyBoundary = document.body.clientWidth;
+// 		const elRight = element.getBoundingClientRect().right;
+// 		const currLeft = element.getBoundingClientRect().left;
+// 		if (elRight + amount > bodyBoundary) {
+// 			onFailure();
+// 		}
+// 		else {
+// 			element.style.transform = `translateX(${currLeft + amount}px)`;
+// 			onSuccess();
+// 		}
+// 	}, delay);
+// };
+
+// LOOK AT THIS UGLY MESS!
+// moveX(
+// 	btn,
+// 	300,
+// 	1000,
+// 	() => {
+// 		//success callback
+// 		moveX(
+// 			btn,
+// 			300,
+// 			1000,
+// 			() => {
+// 				//success callback
+// 				moveX(
+// 					btn,
+// 					300,
+// 					1000,
+// 					() => {
+// 						//success callback
+// 						moveX(
+// 							btn,
+// 							300,
+// 							1000,
+// 							() => {
+// 								//success callback
+// 								moveX(
+// 									btn,
+// 									300,
+// 									1000,
+// 									() => {
+// 										//success callback
+// 										alert('YOU HAVE A WIDE SCREEN!');
+// 									},
+// 									() => {
+// 										//failure callback
+// 										alert('CANNOT MOVE FURTHER!');
+// 									}
+// 								);
+// 							},
+// 							() => {
+// 								//failure callback
+// 								alert('CANNOT MOVE FURTHER!');
+// 							}
+// 						);
+// 					},
+// 					() => {
+// 						//failure callback
+// 						alert('CANNOT MOVE FURTHER!');
+// 					}
+// 				);
+// 			},
+// 			() => {
+// 				//failure callback
+// 				alert('CANNOT MOVE FURTHER!');
+// 			}
+// 		);
+// 	},
+// 	() => {
+// 		//failure callback
+// 		alert('CANNOT MOVE FURTHER!');
+// 	}
+// );
+
+
 */
 
 // My Practice
@@ -11182,79 +11304,4 @@ fakeRequest('/users')
 // 17 - Making HTTP Requests
 ////////////////////////////////
 
-// ===================================
-// 001 - Intro to AJAX
-// ===================================
-// REQUESTS
-// -> XMLHTTP
-// -> FETCH
-// -> AXIOS
-
-// AJAX  -> ASYNCHRONOUS JAVASCRIPT AND XML
-
-// AJAJ -> ASYNCHRONOUS JAVASCRIPT AND JSON
-
-// ===================================
-// 002 - JSON & XML
-// ===================================
-// JSON -> Java Script Object Notation
-
-// This is JSON format // we cannot store complicated things like functions
-// {"squadName" : "Super hero squad",
-// "homeTown" : "Metro City",
-// "formed" : 2016,
-// "secretBase" : "Super tower",
-// "active" : true,
-// "members" : [
-//   "Molecule Man",
-//   "Madame Uppercut",
-//   "Eternal Flame"
-// ]
-// }
-
-// ===================================
-// 003 - XML HttpRequests_ The Basics
-// ===================================
-
-/*
-// NOTES
-
-const firstReq = new XMLHttpRequest();
-firstReq.addEventListener('load', function() {
-	console.log('IT WORKED!!!');
-	const data = JSON.parse(this.responseText);
-	for (let planet of data.results) {
-		console.log(planet.name);
-	}
-});
-firstReq.addEventListener('error', () => {
-	console.log('ERROR!!!!!!');
-});
-firstReq.open('GET', 'https://swapi.co/api/planets/');
-firstReq.send();
-console.log('Request Sent!');
-*/
-
-// My Practice
-
-// ===================================
-// 00 -
-// ===================================
-
-/*
-// NOTES
-
-*/
-
-// My Practice
-
-// ===================================
-// 00 -
-// ===================================
-
-/*
-// NOTES
-
-*/
-
-// My Practice
+// continue on app2.js
